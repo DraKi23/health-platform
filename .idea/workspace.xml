@@ -377,10 +377,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1575100677411" />
-    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1575123720210">
+    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1575123920752">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575123720210" />
+    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575123920752" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1575099275560">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -437,14 +437,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1575111531186" />
+    <state x="392" y="79" key="MultipleFileMergeDialog" timestamp="1575123893409">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="79" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1575123893409" />
     <state x="298" y="12" width="916" height="716" key="SettingsEditor" timestamp="1575114285466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="12" width="916" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575114285466" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1575111841759">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1575123856699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1575111841759" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1575123856699" />
     <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1575123169430">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
