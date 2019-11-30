@@ -12,7 +12,7 @@ import java.util.List;
 public class Mother {
     Integer id;//妈妈id
     String name;//妈妈姓名
-    String wxOpenid;//微信id
+    String wx_openid;//微信id
     String phone;//电话号码
     String address;//地址
     String birthday;//宝宝出生日期

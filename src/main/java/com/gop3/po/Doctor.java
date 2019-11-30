@@ -13,7 +13,7 @@ import java.util.List;
 public class Doctor {
     Integer id;//医生id
     String name;//医生姓名
-    String wxOpenid;//微信id
+    String wx_openid;//微信id
     String phone;//电话号码
     String hospital;//医院
     String address;//地址
