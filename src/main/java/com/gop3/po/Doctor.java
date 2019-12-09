@@ -1,6 +1,8 @@
 package com.gop3.po;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,6 +12,8 @@ import java.util.List;
  * Create by Drgn on 2019/11/14 16:22
  */
 @Data
+@AllArgsConstructor
+@Builder
 public class Doctor {
     Integer id;//医生id
     String name;//医生姓名

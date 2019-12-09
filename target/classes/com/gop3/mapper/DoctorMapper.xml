@@ -5,4 +5,9 @@
     <select id="getDoctorByOpenid" parameterType="String" resultType="com.gop3.po.Doctor">
         select * from health_doctor where wx_openid=#{openid}
     </select>
+    <!--添加意医生注册信息入数据库-->
+    <insert id="insertDoctor" parameterType="com.gop3.po.Doctor">
+        insert into health_doctor(name,phone,hospital,address,introduce,credentials,wx_openid,icon,create_time)
+        values(#{name},#{phone},#{hospital},#{address},#{introduce},#{credentials},#{wx_openid},#{icon},#{createTime})
+    </insert>
 </mapper>

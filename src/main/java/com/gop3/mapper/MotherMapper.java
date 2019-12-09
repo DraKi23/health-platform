@@ -12,4 +12,6 @@ public interface MotherMapper {
 
     //根据微信id获取妈妈对象
     Mother getMotherByOpenid(@Param("openid")String openid);
+    //将妈妈注册的信息存入数据库
+    Boolean insertMother(Mother mother);
 }

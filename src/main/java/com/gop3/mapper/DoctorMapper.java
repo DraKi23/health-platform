@@ -12,4 +12,6 @@ public interface DoctorMapper {
 
     //根据微信id获取医生对象
     Doctor getDoctorByOpenid(@Param("openid")String openid);
+    //将医生注册的信息存入数据库
+    Boolean insertDoctor(Doctor doctor);
 }
