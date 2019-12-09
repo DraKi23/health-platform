@@ -5,4 +5,9 @@
     <select id="getMotherByOpenid" parameterType="String" resultType="com.gop3.po.Mother">
         select * from health_mother where wx_openid=#{openid}
     </select>
+    <!--添加妈妈注册信息入数据库-->
+    <insert id="insertMother" parameterType="com.gop3.po.Mother">
+        insert into health_mother(name,phone,address,birthday,pregnant_weeks,baby_weeks,wx_openid,icon,create_time)
+        values(#{name},#{phone},#{address},#{birthday},#{pregnantWeeks},#{babyWeeks},#{wx_openid},#{icon},#{createTime})
+    </insert>
 </mapper>

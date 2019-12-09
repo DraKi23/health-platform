@@ -42,4 +42,33 @@ public class RegisterServiceImpl implements RegisterService {
         }
         return registerSuccess;
     }
+
+    /**
+     * @Description:医生注册填写的信息存入数据库
+     * @Author: jinli
+     * @Date: 2019/12/9 11:23
+     * @param doctor: 注册填写的信息
+     * @return: java.lang.Boolean
+     **/
+    @Override
+    public Boolean insertDoctorData(Doctor doctor) {
+        Boolean loginSuccess=false;
+        loginSuccess=doctorMapper.insertDoctor(doctor);
+        return loginSuccess;
+    }
+
+    /**
+     * @Description:妈妈注册填写的信息存入数据库
+     * @Author: jinli
+     * @Date: 2019/12/9 22:04
+     * @param mother: 注册填写的信息
+     * @return: java.lang.Boolean
+     **/
+    @Override
+    public Boolean insertMotherData(Mother mother) {
+        Boolean loginSuccess=false;
+        loginSuccess=motherMapper.insertMother(mother);
+        return loginSuccess;
+    }
+
 }
