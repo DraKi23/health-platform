@@ -15,17 +15,17 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Doctor {
-    Integer id;//医生id
-    String name;//医生姓名
-    String wx_openid;//微信id
-    String phone;//电话号码
-    String hospital;//医院
-    String address;//地址
-    String introduce;//医生介绍
-    String icon;//医生用户头像url
-    String credentials;//资格证书图片URL
-    Date createTime;//医生用户创建时间
-    Integer state;//医生用户状态，0表示正常、1表示禁用
+    private Integer id;//医生id
+    private String name;//医生姓名
+    private String wx_openid;//微信id
+    private String phone;//电话号码
+    private String hospital;//医院
+    private String address;//地址
+    private String introduce;//医生介绍
+    private String icon;//医生用户头像url
+    private String credentials;//资格证书图片URL
+    private Date createTime;//医生用户创建时间
+    private Integer state;//医生用户状态，0表示正常、1表示禁用
 
     private List<Mother> motherList;//关联妈妈表，多对多
 }
