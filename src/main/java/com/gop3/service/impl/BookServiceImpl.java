@@ -1,10 +1,12 @@
 package com.gop3.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.BookInfoDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 import com.gop3.mapper.BookMapper;
 import com.gop3.service.intf.BookService;
+import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,17 +24,23 @@ public class BookServiceImpl implements BookService {
     BookMapper bookMapper;
 
     /*
-       妈妈相关的预约复诊功能
+     * 妈妈相关的预约复诊功能
      */
     /**
      * @Description: 获取妈妈的预约复诊历史记录
      * @Author: Drgn
      * @Date: 2020/1/16 22:43
-     * @param openid: 预约用户填写的预约信息
+     * @param code: 妈妈的小程序用户信息
      * @return: java.util.List<com.gop3.entity.BookVO>
      **/
     @Override
-    public List<BookedInfoDTO> getBookedListForMom(String openid) {
+    public List<BookedInfoDTO> getBookedListForMom(String code) {
+        String openid = null;
+        try {
+            openid = OpenIdUtil.getOpenid(code);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         return bookMapper.getAllBookedListForMom(openid);
     }
 
@@ -51,8 +59,7 @@ public class BookServiceImpl implements BookService {
         book.setMid(mid);
         book.setDid(did);
         book.setCreateTime(currentTime);
-        boolean createBookInfoFlag = false;
-        createBookInfoFlag = bookMapper.createBookInfo(book);
+        boolean createBookInfoFlag = bookMapper.createBookInfo(book);
         return createBookInfoFlag;
     }
 
@@ -60,16 +67,22 @@ public class BookServiceImpl implements BookService {
      * @Description: 获取妈妈的关注医生列表
      * @Author: Drgn
      * @Date: 2020/2/11 22:10
-     * @param openid: 妈妈的微信openID
+     * @param code: 妈妈的小程序用户信息
      * @return: java.util.List<com.gop3.dto.MyDoctorInfoDTO>
      **/
     @Override
-    public List<MyDoctorInfoDTO> getMyDocInfoList(String openid) {
+    public List<MyDoctorInfoDTO> getMyDocInfoList(String code) {
+        String openid = null;
+        try {
+            openid = OpenIdUtil.getOpenid(code);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         return bookMapper.getMyDocInfoList(openid);
     }
 
     /*
-        医生相关的功能
+     *  医生相关的功能
      */
 //    @Override
 //    public List<BookVO> getBookedListForDoc(BookVO book) {
