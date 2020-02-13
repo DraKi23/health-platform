@@ -18,8 +18,6 @@ import java.util.List;
 public class AttentionController {
     @Autowired
     AttentionService attentionService;
-    OpenIdUtil openIdUtil=new OpenIdUtil();
-
     /**
      * @Description:妈妈关注医生列表
      * @Author: jinli

@@ -27,7 +27,6 @@ public class AttentionServiceImpl implements AttentionService {
     DoctorMapper doctorMapper;
     @Autowired
     MotherDoctorMapper motherDoctorMapper;
-    OpenIdUtil openIdUtil=new OpenIdUtil();
     /**
      * @Description:妈妈关注的医生列表
      * @Author: jinli
@@ -36,7 +35,7 @@ public class AttentionServiceImpl implements AttentionService {
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
     public List<AttenDoctorDTO> getAttenDoctorListById(String code) throws JsonProcessingException {
-        String wx_openid=openIdUtil.getOpenid(code);
+        String wx_openid=OpenIdUtil.getOpenid(code);
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
         List<AttenDoctorDTO> doctorList=doctorMapper.getAttenDoctorListById(mid);
         return doctorList;
@@ -50,7 +49,7 @@ public class AttentionServiceImpl implements AttentionService {
      **/
     @Override
     public List<AttenDoctorDTO> getUnAttenDoctorListById(String code) throws JsonProcessingException {
-        String wx_openid=openIdUtil.getOpenid(code);
+        String wx_openid=OpenIdUtil.getOpenid(code);
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
         List<AttenDoctorDTO> doctorList=doctorMapper.getUnAttenDoctorListById(mid);
         return doctorList;
