@@ -1,10 +1,11 @@
 package com.gop3.controller;
 
-import com.gop3.dto.RegisterDTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.gop3.dto.RegDoctorDTO;
+import com.gop3.dto.RegMotherDTO;
 import com.gop3.entity.AjaxResponse;
-import com.gop3.po.Doctor;
-import com.gop3.po.Mother;
 import com.gop3.service.intf.RegisterService;
+import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,8 @@ public class RegisterController {
 
     @Autowired
     RegisterService registerService;
+    OpenIdUtil openIdUtil=new OpenIdUtil();
+
 
     /**
      * @Description: 响应前台，返回用户是否注册的响应体
@@ -28,27 +31,26 @@ public class RegisterController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("user/{openid}")
-    public AjaxResponse getRegisterInfo(@PathVariable String openid){
-        RegisterDTO registerDTO = registerService.getRegisterInfo(openid);
-        return AjaxResponse.success(registerDTO);
+    public AjaxResponse isRegisterByOpenid(@PathVariable String openid){
+        boolean registerSuccess = registerService.isRegisterByOpenid(openid);
+        return AjaxResponse.success(registerSuccess);
     }
 
     /**
      * @Description:获取医生注册填写的信息，存入数据库
      * @Author: jinli
      * @Date: 2019/12/9 11:21
-     * @param doctor:医生注册填写的信息
+     * @param regDoctorDTO:医生注册填写的信息
      * @return: com.gop3.entity.AjaxResponse
      **/
     @RequestMapping(value = {"/doctorRegister"},method = RequestMethod.POST)
     @ResponseBody
-    public AjaxResponse addDoctor(@RequestBody(required = false) Doctor doctor) {
-        //@requestparam获取不到json格式的前台数据
-        //存入数据库的，要把表的字段编码修改（一个字段一个字段修改才起作用，修改整张表无效）
+    public AjaxResponse addDoctor(@RequestBody RegDoctorDTO regDoctorDTO) throws JsonProcessingException {
+        regDoctorDTO.setWx_openid(openIdUtil.getOpenid(regDoctorDTO.getCode()));
         Date currentTime  = new Date();
-        doctor.setCreateTime(currentTime );
+        regDoctorDTO.setCreateTime(currentTime );
         Boolean registerSuccess = false;
-        registerSuccess = registerService.insertDoctorData(doctor);
+        registerSuccess = registerService.insertDoctorData(regDoctorDTO);
         return AjaxResponse.success(registerSuccess);
     }
 
@@ -56,16 +58,17 @@ public class RegisterController {
      * @Description:获取妈妈注册填写的信息，存入数据库
      * @Author: jinli
      * @Date: 2019/12/9 22:06
-     * @param mother: 妈妈注册填写的信息
+     * @param regMotherDTO: 妈妈注册填写的信息
      * @return: com.gop3.entity.AjaxResponse
      **/
     @RequestMapping(value = {"/motherRegister"},method = RequestMethod.POST)
     @ResponseBody
-    public AjaxResponse addMother(@RequestBody(required = false) Mother mother) {
+    public AjaxResponse addMother(@RequestBody(required = false) RegMotherDTO regMotherDTO) throws JsonProcessingException {
+        regMotherDTO.setWx_openid(openIdUtil.getOpenid(regMotherDTO.getCode()));
         Date currentTime  = new Date();
-        mother.setCreateTime(currentTime );
+        regMotherDTO.setCreateTime(currentTime );
         Boolean registerSuccess = false;
-        registerSuccess = registerService.insertMotherData(mother);
+        registerSuccess = registerService.insertMotherData(regMotherDTO);
         return AjaxResponse.success(registerSuccess);
     }
 
