@@ -2,6 +2,7 @@ package com.gop3.service.intf;
 
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.dto.RegMotherDTO;
+import com.gop3.dto.RegisterDTO;
 import com.gop3.po.Doctor;
 import com.gop3.po.Mother;
 
@@ -11,7 +12,7 @@ import com.gop3.po.Mother;
 public interface RegisterService {
 
     //判断用户是否注册
-    boolean isRegisterByOpenid(String openid);
+    RegisterDTO getRegisterInfo(String openid);
     //医生注册信息写入数据库
     Boolean insertDoctorData(RegDoctorDTO regDoctorDTO);
     //妈妈注册信息写入数据库

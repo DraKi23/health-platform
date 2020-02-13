@@ -3,6 +3,7 @@ package com.gop3.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.dto.RegMotherDTO;
+import com.gop3.dto.RegisterDTO;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.RegisterService;
 import com.gop3.utils.OpenIdUtil;
@@ -31,9 +32,9 @@ public class RegisterController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("user/{openid}")
-    public AjaxResponse isRegisterByOpenid(@PathVariable String openid){
-        boolean registerSuccess = registerService.isRegisterByOpenid(openid);
-        return AjaxResponse.success(registerSuccess);
+    public AjaxResponse getRegisterInfo(@PathVariable String openid){
+        RegisterDTO registerDTO = registerService.getRegisterInfo(openid);
+        return AjaxResponse.success(registerDTO);
     }
 
     /**

@@ -2,6 +2,7 @@ package com.gop3.service.impl;
 
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.dto.RegMotherDTO;
+import com.gop3.dto.RegisterDTO;
 import com.gop3.mapper.DoctorMapper;
 import com.gop3.mapper.MotherMapper;
 import com.gop3.po.Doctor;
@@ -30,19 +31,27 @@ public class RegisterServiceImpl implements RegisterService {
      * @return: boolean
      **/
     @Override
-    public boolean isRegisterByOpenid(String openid) {
+    public RegisterDTO getRegisterInfo(String openid) {
         //设置标记，默认为false
         boolean registerSuccess = false;
-
+        boolean isMother = false;
+        boolean isDoctor = false;
+        RegisterDTO registerDTO = new RegisterDTO();
         //在数据库中查找用户信息
         Mother mother = motherMapper.getMotherByOpenid(openid);
         Doctor doctor = doctorMapper.getDoctorByOpenid(openid);
-
-        //若两类用户有一类不为空，则表示用户已经注册
-        if(mother!=null || doctor!=null){
-            registerSuccess = true;
+        //设置用户是否注册的标志
+        if(mother != null){
+            isMother = true;
         }
-        return registerSuccess;
+        if(doctor != null) {
+            isDoctor = true;
+        }
+        registerSuccess = isMother || isDoctor;
+        registerDTO.setMother(isMother);
+        registerDTO.setDoctor(isDoctor);
+        registerDTO.setRegister(registerSuccess);
+        return registerDTO;
     }
 
     /**
