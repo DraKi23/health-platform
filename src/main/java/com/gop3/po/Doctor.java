@@ -12,8 +12,6 @@ import java.util.List;
  * Create by Drgn on 2019/11/14 16:22
  */
 @Data
-@AllArgsConstructor
-@Builder
 public class Doctor {
     private Integer id;//医生id
     private String name;//医生姓名
@@ -24,7 +22,7 @@ public class Doctor {
     private String introduce;//医生介绍
     private String icon;//医生用户头像url
     private String credentials;//资格证书图片URL
-    private Date createTime;//医生用户创建时间
+    private Date create_time;//医生用户创建时间
     private Integer state;//医生用户状态，0表示正常、1表示禁用
 
     private List<Mother> motherList;//关联妈妈表，多对多

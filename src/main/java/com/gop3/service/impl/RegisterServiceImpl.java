@@ -1,5 +1,7 @@
 package com.gop3.service.impl;
 
+import com.gop3.dto.RegDoctorDTO;
+import com.gop3.dto.RegMotherDTO;
 import com.gop3.mapper.DoctorMapper;
 import com.gop3.mapper.MotherMapper;
 import com.gop3.po.Doctor;
@@ -47,13 +49,13 @@ public class RegisterServiceImpl implements RegisterService {
      * @Description:医生注册填写的信息存入数据库
      * @Author: jinli
      * @Date: 2019/12/9 11:23
-     * @param doctor: 注册填写的信息
+     * @param doctorDTto: 注册填写的信息
      * @return: java.lang.Boolean
      **/
-    @Override
-    public Boolean insertDoctorData(Doctor doctor) {
+    public Boolean insertDoctorData(RegDoctorDTO doctorDTto) {
         Boolean loginSuccess=false;
-        loginSuccess=doctorMapper.insertDoctor(doctor);
+        doctorDTto.setState(1);
+        loginSuccess=doctorMapper.insertDoctor(doctorDTto);
         return loginSuccess;
     }
 
@@ -61,13 +63,14 @@ public class RegisterServiceImpl implements RegisterService {
      * @Description:妈妈注册填写的信息存入数据库
      * @Author: jinli
      * @Date: 2019/12/9 22:04
-     * @param mother: 注册填写的信息
+     * @param regMotherDTO: 注册填写的信息
      * @return: java.lang.Boolean
      **/
     @Override
-    public Boolean insertMotherData(Mother mother) {
+    public Boolean insertMotherData(RegMotherDTO regMotherDTO) {
         Boolean loginSuccess=false;
-        loginSuccess=motherMapper.insertMother(mother);
+        regMotherDTO.setState(1);
+        loginSuccess=motherMapper.insertMother(regMotherDTO);
         return loginSuccess;
     }
 
