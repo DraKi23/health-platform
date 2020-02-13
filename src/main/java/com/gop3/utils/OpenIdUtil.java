@@ -9,8 +9,8 @@ import com.gop3.po.OpenIdJson;
  */
 //@RestController
 public class OpenIdUtil {
-    private static final String APP_ID = "wx9c6c9a6f04c15d81";//小程序id
-    private static final String APP_SECRET = "9cb9c2fcfd0b34c78c59ec3abfd4e098";//小程序密钥
+    private static final String APP_ID = "xxxxxx";//小程序id
+    private static final String APP_SECRET = "xxxxxxx";//小程序密钥
    // @PostMapping("/getopenid")
     /**
      * @Description: 用code换取openid
@@ -22,7 +22,7 @@ public class OpenIdUtil {
     public static String getOpenid(String code) throws JsonProcessingException {
         String result = "";
         //HttpUtil是自定义工具类
-        try{//请求微信服务器，用code换取openid。HttpUtil是工具类，后面会给出实现，Configure类是小程序配置信息，后面会给出代码
+        try{
             result = HttpUtil.doGet(
                     "https://api.weixin.qq.com/sns/jscode2session?appid="
                             + APP_ID + "&secret="
