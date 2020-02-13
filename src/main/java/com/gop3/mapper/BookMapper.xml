@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <!--通过妈妈的微信id获取妈妈的id-->
+    <select id="getMomId" parameterType="String" resultType="Integer">
+        select id from health_mother where wx_openid = #{mom_openid}
+    </select>
+    <!--通过医生的微信id获取医生的id-->
+    <select id="getDocId" parameterType="String" resultType="Integer">
+        select id from health_doctor where wx_openid = #{doc_openid}
+    </select>
+
+
+    <!-- 妈妈预约复诊相关 -->
+    <!-- 预约复诊历史记录查询 -->
+    <select id="getAllBookedListForMom" parameterType="String" resultMap="bookedInfo">
+        select b.icon, b.name, a.bookTime, a.isReturn
+        from health_book a, health_doctor b
+        where a.id = b.did and a.mid in (select id from health_mother where wx_openid = #{openid}) and isReturn != -1
+    </select>
+    <resultMap id="bookedInfo" type="com.gop3.dto.BookedInfoDTO">
+        <result column="icon" property="icon"/>
+        <result column="name" property="doctor_name"/>
+        <result column="bookTime" property="bookTime"/>
+        <result column="isReturn" property="reply"/>
+    </resultMap>
+
+    <!-- 创建预约记录 -->
+    <insert id="createBookInfo" parameterType="com.gop3.dto.BookInfoDTO">
+        insert into health_book(did, mid, name, phone, bookTime, create_time)
+        value #{did},#{mid},#{mother_name},#{phone},#{bookTime},#{createTime}
+    </insert>
+
+    <!-- 获取关注医生信息列表 -->
+    <select id="getMyDocInfoList" parameterType="String" resultMap="myDoctorInfo">
+        select c.wx_openid, c.name, c.hospital
+        from health_mother a, health_mother_doctor b, health_doctor c
+        where a.id = b.mid and b.did = c.did and a.wx_openid = #{openid}
+    </select>
+    <resultMap id="myDoctorInfo" type="com.gop3.dto.MyDoctorInfoDTO">
+        <result column="wx_openid" property="doctor_openid"/>
+        <result column="name" property="doctor_name"/>
+        <result column="hospital" property="hospital"/>
+    </resultMap>
+
+<!--    &lt;!&ndash; 预约复诊信息查看&ndash;&gt;-->
+<!--    <select id="getBookInfoForMom" parameterType="String" resultType="com.gop3.po.Book">-->
+<!--        select * from health_book-->
+<!--        where mid in(select id from health_mother where wx_openid = #{openid}) and isReturn = -1;-->
+<!--    </select>-->
+<!--    &lt;!&ndash; 预约复诊信息修改 &ndash;&gt;-->
+<!--    <update id="updateBookInfo" parameterType="com.gop3.po.Book">-->
+<!--        update health_book-->
+<!--        set name=#{name}, phone=#{phone}, bookTime=#{bookTime}, create_time=#{create_time}-->
+<!--        where mid=#{mid} and did = #{did} and isReturn=-1-->
+<!--    </update>-->
+<!--    &lt;!&ndash;预约复诊信息取消/删除&ndash;&gt;-->
+<!--    <delete id="deleteBookInfo" parameterType="com.gop3.po.Book">-->
+<!--        delete from health_book-->
+<!--        where mid=#{mid} and did = #{did} and isReturn=-1-->
+<!--    </delete>-->
+
+<!--    &lt;!&ndash; 已处理预约信息记录删除 &ndash;&gt;-->
+<!--    <delete id="deleteBookedInfo" parameterType="com.gop3.po.Book">-->
+<!--        delete from health_book-->
+<!--        where did in (select id from health_mother where wx_openid = #{wx_openid})-->
+<!--        and isReturn != -1 and bookTime = #{bookTime}-->
+<!--        and doc_deleted = 1 and mom_deleted = 1-->
+<!--    </delete>-->
+<!--    &lt;!&ndash; 修改妈妈的删除记录位mom_deleted &ndash;&gt;-->
+<!--    <update id="updateDelStateForMom" parameterType="com.gop3.po.Book">-->
+<!--        update health_book-->
+<!--        set mom_deleted = #{mom_deleted}-->
+<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
+<!--    </update>-->
+<!--    &lt;!&ndash; 修改医生的删除记录位doc_deleted &ndash;&gt;-->
+<!--    <update id="updateDelStateForDoc" parameterType="com.gop3.po.Book">-->
+<!--        update health_book-->
+<!--        set doc_deleted = #{doc_deleted}-->
+<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
+<!--    </update>-->
+<!--    &lt;!&ndash;  查询妈妈的删除记录位mom_deleted &ndash;&gt;-->
+<!--    <select id="getMomDeleted" parameterType="com.gop3.po.Book">-->
+<!--        select mom_deleted from health_book-->
+<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
+<!--    </select>-->
+<!--    &lt;!&ndash;  查询医生的删除记录位doc_deleted &ndash;&gt;-->
+<!--    <select id="getDocDeleted" parameterType="com.gop3.po.Book">-->
+<!--        select doc_deleted from health_book-->
+<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
+<!--    </select>-->
+
+    <!-- 医生预约回复相关 -->
+    <!-- 已处理预约信息列表查询 -->
+    <select id="getAllBookedListForDoc" parameterType="String" resultType="com.gop3.po.Book">
+        select * from health_book
+        where did in (select id from health_doctor where wx_openid = #{openid}) and isReturn = -1
+    </select>
+    <!-- 未处理预约信息列表查看 -->
+    <select id="getBookListForDoc" parameterType="String" resultType="com.gop3.po.Book">
+        select * from health_book
+        where did in (select id from health_doctor where wx_openid = #{openid}) and isReturn != -1
+    </select>
+
+    <update id="updateBookingState" parameterType="com.gop3.po.Book">
+        update health_book
+        set isReturn = #{isReturn}
+        where mid=#{mid} and did = #{did} and isReturn=-1
+    </update>
+</mapper>

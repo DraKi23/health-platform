@@ -1,15 +1,13 @@
 package com.gop3.controller;
 
+import com.gop3.dto.RegisterDTO;
 import com.gop3.entity.AjaxResponse;
-import com.gop3.mapper.MotherMapper;
 import com.gop3.po.Doctor;
 import com.gop3.po.Mother;
 import com.gop3.service.intf.RegisterService;
-import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -30,9 +28,9 @@ public class RegisterController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("user/{openid}")
-    public AjaxResponse isRegisterByOpenid(@PathVariable String openid){
-        boolean registerSuccess = registerService.isRegisterByOpenid(openid);
-        return AjaxResponse.success(registerSuccess);
+    public AjaxResponse getRegisterInfo(@PathVariable String openid){
+        RegisterDTO registerDTO = registerService.getRegisterInfo(openid);
+        return AjaxResponse.success(registerDTO);
     }
 
     /**

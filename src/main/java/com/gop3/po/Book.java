@@ -16,5 +16,7 @@ public class Book {
     private String phone;//预约者联系方式
     private Date bookTime;//预约时间
     private Integer isReturn;//预约信息是否处理或者回复
+    private Integer mom_deleted;//妈妈是否删除了该历史记录，默认为0,1表已经删除
+    private Integer doc_deleted;//医生是否删除了该历史记录，默认为0,1表已经删除
     private Date create_time;//记录创建时间
 }
