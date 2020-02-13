@@ -23,17 +23,16 @@ public class RegisterController {
     RegisterService registerService;
     OpenIdUtil openIdUtil=new OpenIdUtil();
 
-
     /**
      * @Description: 响应前台，返回用户是否注册的响应体
      * @Author: Drgn
      * @Date: 2019/11/30 16:27
-     * @param openid: 微信用户的openid
+     * @param code: 微信用户的openid
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("user/{openid}")
-    public AjaxResponse getRegisterInfo(@PathVariable String openid){
-        RegisterDTO registerDTO = registerService.getRegisterInfo(openid);
+    @GetMapping("user/{code}")
+    public AjaxResponse getRegisterInfo(@PathVariable String code){
+        RegisterDTO registerDTO = registerService.getRegisterInfo(code);
         return AjaxResponse.success(registerDTO);
     }
 

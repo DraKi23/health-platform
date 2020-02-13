@@ -12,7 +12,7 @@ import com.gop3.po.Mother;
 public interface RegisterService {
 
     //判断用户是否注册
-    RegisterDTO getRegisterInfo(String openid);
+    RegisterDTO getRegisterInfo(String code);
     //医生注册信息写入数据库
     Boolean insertDoctorData(RegDoctorDTO regDoctorDTO);
     //妈妈注册信息写入数据库

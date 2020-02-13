@@ -1,5 +1,6 @@
 package com.gop3.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.dto.RegMotherDTO;
 import com.gop3.dto.RegisterDTO;
@@ -8,6 +9,7 @@ import com.gop3.mapper.MotherMapper;
 import com.gop3.po.Doctor;
 import com.gop3.po.Mother;
 import com.gop3.service.intf.RegisterService;
+import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,11 +29,17 @@ public class RegisterServiceImpl implements RegisterService {
      * @Description: 根据微信openid判断该用户是否注册
      * @Author: Drgn
      * @Date: 2019/11/30 15:58
-     * @param openid: 微信用户openid
+     * @param code: 微信用户openid
      * @return: boolean
      **/
     @Override
-    public RegisterDTO getRegisterInfo(String openid) {
+    public RegisterDTO getRegisterInfo(String code) {
+        String openid = null;
+        try {
+            openid = OpenIdUtil.getOpenid(code);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         //设置标记，默认为false
         boolean registerSuccess = false;
         boolean isMother = false;
