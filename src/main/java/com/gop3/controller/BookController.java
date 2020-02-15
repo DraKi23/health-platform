@@ -25,12 +25,12 @@ public class BookController {
      * @Description: 获取妈妈预约的历史记录列表
      * @Author: Drgn
      * @Date: 2020/2/10 22:59
-     * @param code: 妈妈的小程序用户信息
+     * @param mother_openid: 妈妈的小程序用户信息
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/mom/bookedList/{code}")
-    public AjaxResponse getBookedInfoForMom(@PathVariable String code){
-        List<BookedInfoDTO> bookedInfoDTOList = bookService.getBookedListForMom(code);
+    @GetMapping("/mom/bookedList/{mother_openid}")
+    public AjaxResponse getBookedInfoForMom(@PathVariable String mother_openid){
+        List<BookedInfoDTO> bookedInfoDTOList = bookService.getBookedListForMom(mother_openid);
         return AjaxResponse.success(bookedInfoDTOList);
     }
 
@@ -51,12 +51,12 @@ public class BookController {
      * @Description: 获取关注医生列表
      * @Author: Drgn
      * @Date: 2020/2/11 22:18
-     * @param code: 妈妈的小程序用户信息
+     * @param mother_openid: 妈妈的小程序用户信息
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/mom/myDocInfo")
-    public AjaxResponse getMyDocInfoList(String code){
-        List<MyDoctorInfoDTO> myDocInfoList = bookService.getMyDocInfoList(code);
+    @GetMapping("/mom/myDocInfo/{mother_openid}")
+    public AjaxResponse getMyDocInfoList(@PathVariable String mother_openid){
+        List<MyDoctorInfoDTO> myDocInfoList = bookService.getMyDocInfoList(mother_openid);
         return AjaxResponse.success(myDocInfoList);
     }
 

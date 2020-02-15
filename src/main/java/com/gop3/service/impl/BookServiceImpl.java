@@ -30,17 +30,11 @@ public class BookServiceImpl implements BookService {
      * @Description: 获取妈妈的预约复诊历史记录
      * @Author: Drgn
      * @Date: 2020/1/16 22:43
-     * @param code: 妈妈的小程序用户信息
+     * @param openid: 妈妈的openid
      * @return: java.util.List<com.gop3.entity.BookVO>
      **/
     @Override
-    public List<BookedInfoDTO> getBookedListForMom(String code) {
-        String openid = null;
-        try {
-            openid = OpenIdUtil.getOpenid(code);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+    public List<BookedInfoDTO> getBookedListForMom(String openid) {
         return bookMapper.getAllBookedListForMom(openid);
     }
 
@@ -67,17 +61,11 @@ public class BookServiceImpl implements BookService {
      * @Description: 获取妈妈的关注医生列表
      * @Author: Drgn
      * @Date: 2020/2/11 22:10
-     * @param code: 妈妈的小程序用户信息
+     * @param openid: 妈妈的openids
      * @return: java.util.List<com.gop3.dto.MyDoctorInfoDTO>
      **/
     @Override
-    public List<MyDoctorInfoDTO> getMyDocInfoList(String code) {
-        String openid = null;
-        try {
-            openid = OpenIdUtil.getOpenid(code);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+    public List<MyDoctorInfoDTO> getMyDocInfoList(String openid) {
         return bookMapper.getMyDocInfoList(openid);
     }
 

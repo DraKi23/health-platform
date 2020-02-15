@@ -12,7 +12,7 @@ import java.util.List;
 public interface BookService {
     //妈妈相关
     //查看预约历史记录
-    List<BookedInfoDTO> getBookedListForMom(String code);
+    List<BookedInfoDTO> getBookedListForMom(String openid);
     //创建预约复诊记录
     boolean createBookInfo(BookInfoDTO book);
     //获取关注医生列表
