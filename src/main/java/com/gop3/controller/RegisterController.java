@@ -42,6 +42,7 @@ public class RegisterController {
      * @param code: 用后的小程序用户信息
      * @return: com.gop3.entity.AjaxResponse
      **/
+    @GetMapping("user/openid")
     public AjaxResponse getOpenid(String code){
         String openid = null;
         try {
