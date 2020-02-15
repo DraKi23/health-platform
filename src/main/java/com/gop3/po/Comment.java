@@ -10,10 +10,8 @@ import java.util.Date;
 @Data
 public class Comment {
     private Integer id;//评论id
-    private String context;//评论内容
+    private String content;//评论内容
     private Date createTime;//创建时间
-
-    private Caze caze;//关联病历表，一对一
-    private Doctor doctor;//关联医生表，一对一
-    private Mother mother;//关联妈妈表，一对一
+    private Integer did;//医生id
+    private Integer mid;//妈妈id
 }
