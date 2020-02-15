@@ -36,6 +36,23 @@ public class RegisterController {
     }
 
     /**
+     * @Description: 获取用户的openID
+     * @Author: Drgn
+     * @Date: 2020/2/15 16:11
+     * @param code: 用后的小程序用户信息
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    public AjaxResponse getOpenid(String code){
+        String openid = null;
+        try {
+            openid = OpenIdUtil.getOpenid(code);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return AjaxResponse.success(openid);
+    }
+
+    /**
      * @Description:获取医生注册填写的信息，存入数据库
      * @Author: jinli
      * @Date: 2019/12/9 11:21
