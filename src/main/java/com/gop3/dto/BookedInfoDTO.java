@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 public class BookedInfoDTO {
     private String icon;//医生头像
-    private String doctor_name;//医生姓名
+    private String name;//医生姓名
     private Date bookTime;//预约时间
-    private Integer reply;//受理情况，分为：受理中，预约成功，预约失败
+    private Integer isReturn;//受理情况，分为：受理中，预约成功，预约失败
 }

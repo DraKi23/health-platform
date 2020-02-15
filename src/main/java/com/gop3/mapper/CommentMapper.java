@@ -1,7 +1,10 @@
 package com.gop3.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
+
 /**
- * Create by Drgn on 2020/2/15 14:34
+ * Create by Drgn on 2020/2/15 15:19
  */
-public class CommentMapper {
+@Mapper
+public interface CommentMapper {
 }

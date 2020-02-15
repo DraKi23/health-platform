@@ -21,15 +21,15 @@
     </select>
     <resultMap id="bookedInfo" type="com.gop3.dto.BookedInfoDTO">
         <result column="icon" property="icon"/>
-        <result column="name" property="doctor_name"/>
+        <result column="name" property="name"/>
         <result column="bookTime" property="bookTime"/>
-        <result column="isReturn" property="reply"/>
+        <result column="isReturn" property="isReturn"/>
     </resultMap>
 
     <!-- 创建预约记录 -->
     <insert id="createBookInfo" parameterType="com.gop3.dto.BookInfoDTO">
         insert into health_book(did, mid, name, phone, bookTime, create_time)
-        value #{did},#{mid},#{mother_name},#{phone},#{bookTime},#{createTime}
+        value #{did},#{mid},#{name},#{phone},#{bookTime},#{createTime}
     </insert>
 
     <!-- 获取关注医生信息列表 -->
