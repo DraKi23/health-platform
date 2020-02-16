@@ -23,11 +23,11 @@ import java.util.List;
 @Transactional
 public class AttentionServiceImpl implements AttentionService {
     @Autowired
-    MotherMapper motherMapper;
+    private MotherMapper motherMapper;
     @Autowired
-    DoctorMapper doctorMapper;
+    private DoctorMapper doctorMapper;
     @Autowired
-    MotherDoctorMapper motherDoctorMapper;
+    private MotherDoctorMapper motherDoctorMapper;
     /**
      * @Description:妈妈关注的医生列表
      * @Author: jinli

@@ -14,9 +14,9 @@ import java.util.List;
 @Transactional
 public class CheckArticleServiceImpl implements CheckArticleService {
     @Autowired
-    CheckArticleMapper checkArticleMapper;
+    private CheckArticleMapper checkArticleMapper;
     @Autowired
-    DoctorMapper doctorMapper;
+    private DoctorMapper doctorMapper;
 
     /**
      * @Description:返回所有文章的信息

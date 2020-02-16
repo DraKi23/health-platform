@@ -21,9 +21,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class RegisterServiceImpl implements RegisterService {
     @Autowired
-    MotherMapper motherMapper;
+    private MotherMapper motherMapper;
     @Autowired
-    DoctorMapper doctorMapper;
+    private DoctorMapper doctorMapper;
 
     /**
      * @Description: 根据微信openid判断该用户是否注册

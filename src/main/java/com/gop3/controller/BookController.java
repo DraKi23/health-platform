@@ -19,7 +19,7 @@ import java.util.List;
 public class BookController {
 
     @Autowired
-    BookService bookService;
+    private BookService bookService;
 
     /**
      * @Description: 获取妈妈预约的历史记录列表

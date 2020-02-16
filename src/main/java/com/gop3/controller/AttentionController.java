@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 public class AttentionController {
     @Autowired
-    AttentionService attentionService;
+    private AttentionService attentionService;
     /**
      * @Description:妈妈关注医生列表
      * @Author: jinli

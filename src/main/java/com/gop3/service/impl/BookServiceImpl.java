@@ -1,12 +1,10 @@
 package com.gop3.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.BookInfoDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 import com.gop3.mapper.BookMapper;
 import com.gop3.service.intf.BookService;
-import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +19,7 @@ import java.util.List;
 @Transactional
 public class BookServiceImpl implements BookService {
     @Autowired
-    BookMapper bookMapper;
+    private BookMapper bookMapper;
 
     /*
      * 妈妈相关的预约复诊功能

@@ -1,5 +1,7 @@
 package com.gop3.controller;
 
+import com.gop3.mapper.CommentMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -7,4 +9,6 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class CommentController {
+    @Autowired
+    private CommentMapper commentMapper;
 }

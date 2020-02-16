@@ -20,7 +20,7 @@ import java.util.Date;
 public class RegisterController {
 
     @Autowired
-    RegisterService registerService;
+    private RegisterService registerService;
 
     /**
      * @Description: 响应前台，返回用户是否注册的响应体

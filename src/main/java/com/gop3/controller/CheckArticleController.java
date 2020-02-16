@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class CheckArticleController {
     @Autowired
-    CheckArticleService checkArticleService;
+    private CheckArticleService checkArticleService;
 
     /**
      * @Description:无参数返回所有文章信息

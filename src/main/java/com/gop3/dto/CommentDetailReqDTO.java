@@ -11,5 +11,7 @@ import java.util.Date;
 public class CommentDetailReqDTO {
     private String mid;//妈妈openid
     private String did;//医生openID
+    private Integer motherID;//妈妈id
+    private Integer doctorID;//医生id
     private Date create_time;//上传日期
 }

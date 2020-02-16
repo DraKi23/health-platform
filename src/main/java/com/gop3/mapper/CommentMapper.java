@@ -18,9 +18,12 @@ public interface CommentMapper {
     List<SimpleCommentDTO> getCommentListForMom(@Param("motherOpenid") String motherOpenid);
     // 获取某条咨询医疗建议的详细信息
     CommentDetailDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO);
-    // 获取妈妈与医生之间的病历表
+    // 获取妈妈与医生之间的病历表图片列表
     List<String> getCasePictureListForMom(CommentDetailReqDTO commentDetailReqDTO);
-
-    // 创建上传给医生病例图片的记录
-    int insertCasePicture(CasePictureDTO casePictureDTO);
+    // 创建上传给医生病例记录
+    int insertCaseInfo(CasePictureDTO casePictureDTO);
+    // 创建病例图片记录
+    int insertCasePictures(CasePictureDTO casePictureDTO);
+    // 查找病例表记录id
+    Integer getCaseID(CasePictureDTO casePictureDTO);
 }
