@@ -9,7 +9,8 @@ import java.util.List;
  */
 @Data
 public class CasePictureDTO {
-    private String code;//妈妈小程序用户信息
-    private String did;//医生openID
+    private String mid;//妈妈openID
+    private String did;//医生openid
+    private String pictureURL;//单张病例照片的URL
     private List<String> picture;//病例照片列表
 }

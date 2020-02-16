@@ -9,7 +9,7 @@ import java.util.Date;
  */
 @Data
 public class CommentDetailReqDTO {
-    private String code;//妈妈小程序用户信息
+    private String mid;//妈妈openid
     private String did;//医生openID
     private Date create_time;//上传日期
 }

@@ -2,5 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gop3.mapper.CommentMapper">
+    <!-- 根据妈妈openID获取妈妈咨询建议的简要回复信息 -->
+    <select id="getCommentListForMom" parameterType="String" resultType="com.gop3.dto.SimpleCommentDTO">
+        select b.wx_openid, b.icon, b.name, a.create_time
+        from health_comment a, health_doctor b, health_mother c
+        where a.did = b.id and a.mid = c.id and c.wx_openid = #{motherOpenid}
+    </select>
 
+    <!-- 根据请求的字段标识获取评论详细信息 -->
+    <select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
+            resultType="com.gop3.dto.CommentDetailDTO">
+        select b.icon, b.name, a.create_time, a.content
+        from health_comment a, health_doctor b, health_mother c
+        where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
+            and b.wx_openid = #{did} and a.create_time = #{create_time}
+    </select>
+
+    <select id="getCasePictureListForMom" resultType="String"
+            parameterType="com.gop3.dto.CommentDetailReqDTO">
+
+    </select>
+
+    <!-- 创建上传给医生病例图片的记录 -->
+    <insert id="insertCasePicture" parameterType="com.gop3.dto.CasePictureDTO">
+
+    </insert>
 </mapper>
