@@ -1,6 +1,7 @@
 package com.gop3.mapper;
 
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.GetDoctorDTO;
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.po.Doctor;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,5 +26,11 @@ public interface DoctorMapper {
     List<AttenDoctorDTO> getUnAttenDoctorListById(@Param("mid")Integer mid);
     //通过微信openid查找到医生的id
     Integer getDoctorIdByOpenid(@Param("openid")String openid);
+    //根据微信id获取医生对象
+    GetDoctorDTO getGetDoctorDTOByOpenid(@Param("openid")String openid);
+    //通过医生id查找医生姓名
+    String getDoctorNameById(@Param("id")Integer id);
+    //通过id查找openid
+    String getOpenidById(@Param("id")Integer id);
 
 }
