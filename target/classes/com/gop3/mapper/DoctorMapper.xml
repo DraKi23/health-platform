@@ -6,6 +6,10 @@
         select * from health_doctor where wx_openid=#{openid}
     </select>
 
+    <select id="getGetDoctorDTOByOpenid" parameterType="String" resultType="com.gop3.dto.GetDoctorDTO">
+        select * from health_doctor where wx_openid=#{openid}
+    </select>
+
     <!--添加医生注册信息入数据库-->
     <insert id="insertDoctor" parameterType="com.gop3.dto.RegDoctorDTO">
         insert into health_doctor(name,phone,hospital,address,introduce,credentials,wx_openid,icon,create_time,state)
@@ -14,18 +18,28 @@
 
     <!--查找妈妈关注的医生列表-->
     <select id="getAttenDoctorListById" parameterType="Integer" resultType="com.gop3.dto.AttenDoctorDTO">
-         select name,wx_openid,hospital from health_doctor where id in
+         select name,wx_openid,hospital,icon from health_doctor where id in
         (select did from health_mother_doctor where mid=#{mid})
     </select>
 
     <!--查找妈妈未关注的医生列表-->
     <select id="getUnAttenDoctorListById" parameterType="Integer" resultType="com.gop3.dto.AttenDoctorDTO">
-         select name,wx_openid,hospital from health_doctor where id not in
+         select name,wx_openid,hospital,icon from health_doctor where id not in
         (select did from health_mother_doctor where mid=#{mid})
     </select>
 
     <!--通过openid查找医生的id-->
     <select id="getDoctorIdByOpenid" parameterType="String" resultType="Integer">
         select id from health_doctor where wx_openid=#{openid}
+    </select>
+
+     <!--通过id查找医生姓名-->
+    <select id="getDoctorNameById"  parameterType="Integer" resultType="String">
+         select name from health_doctor where id=#{id}
+    </select>
+
+    <!--通过id查找医生openid-->
+    <select id="getOpenidById"  parameterType="Integer" resultType="String">
+         select wx_openid from health_doctor where id=#{id}
     </select>
 </mapper>

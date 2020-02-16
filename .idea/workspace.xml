@@ -2,19 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CheckArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/ArticleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/GetDoctorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CheckArticleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CheckArticleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenDoctorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenDoctorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegDoctorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegDoctorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegMotherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegMotherDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/MotherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/MotherMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/controller/TmpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/service/impl/RegisterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/service/impl/RegisterServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/service/impl/TmpServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/service/intf/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/service/intf/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/service/intf/TmpService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/MotherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/MotherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Caze.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Caze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Comment.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +58,8 @@
         <option value="HTML File" />
         <option value="FxmlFile" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,7 +70,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Maven-Repository" />
-        <option name="mavenHome" value="D:/maven/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../maven/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -86,7 +98,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/gop3/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/gop3/mapper" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
@@ -95,11 +107,14 @@
       <recent name="com.gop3.service.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.gop3.service.impl" />
+      <recent name="com.gop3.controller" />
       <recent name="com.gop3.service.intf" />
+      <recent name="com.gop3.service.impl" />
+      <recent name="com.gop3.dto" />
       <recent name="com.gop3.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\health-platform\src\main\java\com\gop3\mapper" />
       <recent name="D:\idea\health-platform\src\main\java\com\gop3\controller" />
       <recent name="D:\idea\health-platform\src\main\java\com\gop3" />
     </key>
@@ -311,6 +326,7 @@
       <workItem from="1575890022264" duration="6335000" />
       <workItem from="1581567196834" duration="9804000" />
       <workItem from="1581602548318" duration="1773000" />
+      <workItem from="1581831648110" duration="5349000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>

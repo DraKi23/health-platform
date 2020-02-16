@@ -2,6 +2,7 @@ package com.gop3.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.GetDoctorDTO;
 import com.gop3.mapper.DoctorMapper;
 import com.gop3.mapper.MotherDoctorMapper;
 import com.gop3.mapper.MotherMapper;
@@ -31,11 +32,10 @@ public class AttentionServiceImpl implements AttentionService {
      * @Description:妈妈关注的医生列表
      * @Author: jinli
      * @Date: 2020/2/13 10:49
-     * @param code:
+     * @param wx_openid:
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
-    public List<AttenDoctorDTO> getAttenDoctorListById(String code) throws JsonProcessingException {
-        String wx_openid=OpenIdUtil.getOpenid(code);
+    public List<AttenDoctorDTO> getAttenDoctorListById(String wx_openid){
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
         List<AttenDoctorDTO> doctorList=doctorMapper.getAttenDoctorListById(mid);
         return doctorList;
@@ -44,12 +44,11 @@ public class AttentionServiceImpl implements AttentionService {
      * @Description:妈妈未关注医生列表
      * @Author: jinli
      * @Date: 2020/2/13 10:49
-     * @param code:
+     * @param wx_openid:
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
     @Override
-    public List<AttenDoctorDTO> getUnAttenDoctorListById(String code) throws JsonProcessingException {
-        String wx_openid=OpenIdUtil.getOpenid(code);
+    public List<AttenDoctorDTO> getUnAttenDoctorListById(String wx_openid) {
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
         List<AttenDoctorDTO> doctorList=doctorMapper.getUnAttenDoctorListById(mid);
         return doctorList;
@@ -62,9 +61,9 @@ public class AttentionServiceImpl implements AttentionService {
      * @return: com.gop3.po.Doctor
      **/
     @Override
-    public Doctor getDoctorByWxId(String wx_openid )  {
-        Doctor doctor=doctorMapper.getDoctorByOpenid(wx_openid);
-        return doctor;
+    public GetDoctorDTO getDoctorByWxId(String wx_openid )  {
+        GetDoctorDTO getDoctorDTO=doctorMapper.getGetDoctorDTOByOpenid(wx_openid);
+        return getDoctorDTO;
     }
   /**
    * @Description:

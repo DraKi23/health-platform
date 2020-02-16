@@ -2,6 +2,7 @@ package com.gop3.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.GetDoctorDTO;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.po.Doctor;
 import com.gop3.service.intf.AttentionService;
@@ -22,12 +23,12 @@ public class AttentionController {
      * @Description:妈妈关注医生列表
      * @Author: jinli
      * @Date: 2020/2/13 11:56
-     * @param code: 登陆凭证
+     * @param wx_openid: 登陆凭证
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
     @RequestMapping("/attenDoctorList")
-    public List<AttenDoctorDTO> getDoctorList(@RequestParam("code") String code) throws JsonProcessingException {
-        List<AttenDoctorDTO> doctorList=attentionService.getAttenDoctorListById(code);
+    public List<AttenDoctorDTO> getDoctorList(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
+        List<AttenDoctorDTO> doctorList=attentionService.getAttenDoctorListById(wx_openid);
         return doctorList;
     }
 
@@ -36,12 +37,12 @@ public class AttentionController {
      * @Description:妈妈未关注的医生列表
      * @Author: jinli
      * @Date: 2020/2/13 11:56
-     * @param code: 登陆凭证
+     * @param wx_openid: 登陆凭证
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
     @RequestMapping("/unattenDoctorList")
-    public List<AttenDoctorDTO> getUnDoctorList(@RequestParam("code") String code) throws JsonProcessingException {
-        List<AttenDoctorDTO> doctorList=attentionService.getUnAttenDoctorListById(code);
+    public List<AttenDoctorDTO> getUnDoctorList(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
+        List<AttenDoctorDTO> doctorList=attentionService.getUnAttenDoctorListById(wx_openid);
         return doctorList;
 
     }
@@ -54,8 +55,8 @@ public class AttentionController {
      * @param wx_openid:前台传来的
      * @return: com.gop3.po.Doctor
      **/
-    @RequestMapping("/doctor")
-    public Doctor getDoctor(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
+    @RequestMapping("/getDoctor")
+    public GetDoctorDTO getDoctor(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
         return attentionService.getDoctorByWxId(wx_openid);
 
     }
