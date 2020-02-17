@@ -2,13 +2,15 @@ package com.gop3.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.AttenMotherDTO;
 import com.gop3.dto.GetDoctorDTO;
+import com.gop3.dto.GetMotherDTO;
 import com.gop3.entity.AjaxResponse;
-import com.gop3.po.Doctor;
 import com.gop3.service.intf.AttentionService;
-import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -90,6 +92,29 @@ public class AttentionController {
         cancelSuccess = attentionService.deleteDoctorMother(m_openid,d_openid);
         return AjaxResponse.success(cancelSuccess);
     }
+    /**
+     * @Description:关注医生的妈妈列表
+     * @Author: jinli
+     * @Date: 2020/2/17 22:06
+     * @param wx_openid:
+     * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
+     **/
+    @RequestMapping("/attenMotherList")
+    public List<AttenMotherDTO> getMotherList(@RequestParam("wx_openid") String wx_openid){
+        List<AttenMotherDTO> motherList=attentionService.getAttenMotherListById(wx_openid);
+        return motherList;
+    }
+    /**
+     * @Description:获取某一位医生信息
+     * @Author: jinli
+     * @Date: 2020/2/17 23:03
+     * @param wx_openid:
+     * @return: com.gop3.dto.GetMotherDTO
+     **/
+    @RequestMapping("/getMother")
+    public GetMotherDTO getMother(@RequestParam("wx_openid") String wx_openid) {
+        return attentionService.getMotherByWxId(wx_openid);
 
+    }
 
 }

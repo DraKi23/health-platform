@@ -20,14 +20,8 @@ public interface DoctorMapper {
     Doctor getDoctorByOpenid(@Param("openid")String openid);
     //将医生注册的信息存入数据库
     Boolean insertDoctor(RegDoctorDTO regDoctorDTO);
-    //根据id查找妈妈关注的医生列表
-    List<AttenDoctorDTO> getAttenDoctorListById(@Param("mid")Integer mid);
-    //根据微信id查找妈妈未关注的医生列表
-    List<AttenDoctorDTO> getUnAttenDoctorListById(@Param("mid")Integer mid);
     //通过微信openid查找到医生的id
     Integer getDoctorIdByOpenid(@Param("openid")String openid);
-    //根据微信id获取医生对象
-    GetDoctorDTO getGetDoctorDTOByOpenid(@Param("openid")String openid);
     //通过医生id查找医生姓名
     String getDoctorNameById(@Param("id")Integer id);
     //通过id查找openid
