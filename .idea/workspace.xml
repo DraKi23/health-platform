@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CheckArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/ArticleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/GetDoctorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CheckArticleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CheckArticleService.java" afterDir="false" />
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 7th upload~~">
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/mapper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenDoctorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenDoctorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegDoctorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegDoctorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegMotherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/RegMotherDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/DoctorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/MotherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/MotherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/DoctorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/mapper/MotherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/mapper/MotherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Caze.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Caze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +85,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/gop3/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../git/VBlog" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
@@ -118,18 +105,6 @@
       <recent name="D:\idea\health-platform\src\main\java\com\gop3\controller" />
       <recent name="D:\idea\health-platform\src\main\java\com\gop3" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="HealthPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -298,6 +273,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -327,6 +314,7 @@
       <workItem from="1581567196834" duration="9804000" />
       <workItem from="1581602548318" duration="1773000" />
       <workItem from="1581831648110" duration="5349000" />
+      <workItem from="1581923215777" duration="4142000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -398,7 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581603024973</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="drgn 6th upload~~">
+      <created>1581838246280</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581838246280</updated>
+    </task>
+    <task id="LOCAL-00012" summary="drgn 6th upload~~private">
+      <created>1581847404740</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1581847404740</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +427,9 @@
     <MESSAGE value="drgn 4th upload~~" />
     <MESSAGE value="drgn 5th upload~~" />
     <MESSAGE value="jinli 3rd upload~~" />
-    <option name="LAST_COMMIT_MESSAGE" value="jinli 3rd upload~~" />
+    <MESSAGE value="drgn 6th upload~~" />
+    <MESSAGE value="drgn 6th upload~~private" />
+    <option name="LAST_COMMIT_MESSAGE" value="drgn 6th upload~~private" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575101065572">
@@ -440,50 +444,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="173" y="36" width="1092" height="691" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1575114662669" />
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1575100677411">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1581845611044">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1575100677411" />
-    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1581600874553">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581845611044" />
+    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1581928285841">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581600874553" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1575099275560">
+    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581928285841" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1581846406449">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575099275560" />
-    <state width="1323" height="95" key="GridCell.Tab.0.bottom" timestamp="1575123695244">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581846406449" />
+    <state width="1323" height="17" key="GridCell.Tab.0.bottom" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.0.center" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.0.center" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.0.left" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.0.left" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.0.right" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.0.right" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.1.bottom" timestamp="1575123695245">
+    <state width="1323" height="17" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.1.bottom" timestamp="1581928251820">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575123695245" />
-    <state width="1323" height="95" key="GridCell.Tab.1.center" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581928251820" />
+    <state width="1323" height="17" key="GridCell.Tab.1.center" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.1.left" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.1.left" timestamp="1581928251819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
-    <state width="1323" height="95" key="GridCell.Tab.1.right" timestamp="1575123695244">
+    <state width="1323" height="17" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
+    <state width="1323" height="17" key="GridCell.Tab.1.right" timestamp="1581928251820">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1575123695244" />
+    <state width="1323" height="17" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1581928251820" />
     <state width="1323" height="95" key="GridCell.Tab.2.bottom" timestamp="1575123695245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -512,14 +516,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="12" width="916" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575114285466" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581600221928">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581850798980">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581600221928" />
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1575123169430">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581850798980" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1581923217551">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575123169430" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581923217551" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/health_platform$HealthPlatformApplication.ic" NAME="HealthPlatformApplication Coverage Results" MODIFIED="1574952729576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

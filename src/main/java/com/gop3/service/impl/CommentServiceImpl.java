@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public class CommentServiceImpl implements CommentService {
     private MotherMapper motherMapper;
     @Autowired
     private DoctorMapper doctorMapper;
+
     /**
      * @Description: 获取咨询医疗建议列表
      * @Author: Drgn
@@ -47,8 +49,14 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
-
-        return null;
+        // 根据前台的请求标识寻找相关评论信息
+        CommentDetailDTO commentDetailDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
+        // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
+        Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
+        Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
+        List<String> pictures = commentMapper.getCasePictureListForMom(commentDetailReqDTO);
+        commentDetailDTO.setPicture(pictures);
+        return commentDetailDTO;
     }
 
     /**
@@ -60,6 +68,26 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
-        return false;
+        boolean insertSuccess = false;
+        Date submitTime = new Date();
+        casePictureDTO.setSubmitTime(submitTime);
+        boolean flag = insertCasePictureInfo(casePictureDTO);
+        if(flag){
+            Date createPictureTime = new Date();
+            casePictureDTO.setCreatePictureTime(createPictureTime);
+            // 根据妈妈和医生openID和上传时间获取病历表的主键id
+            Integer caseID = commentMapper.getCaseID(casePictureDTO);
+            casePictureDTO.setCaseID(caseID);
+            // 获取前台上传的病历图片集合
+            List<String> pictures = casePictureDTO.getPictures();
+            // 遍历每一张病例图片并插入到数据库对应的表中
+            for(String pictureURL:pictures){
+                casePictureDTO.setPictureURL(pictureURL);
+                commentMapper.insertCasePictures(casePictureDTO);
+            }
+            // 程序执行到此处，表示所有数据插入成功
+            insertSuccess = true;
+        }
+        return insertSuccess;
     }
 }

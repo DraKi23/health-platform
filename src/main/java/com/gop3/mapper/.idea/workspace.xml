@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f00874fa-86c8-434d-bb67-f47e875749bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../../.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dto/CasePictureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dto/CasePictureDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dto/CommentDetailReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dto/CommentDetailReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/impl/AttentionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/impl/AttentionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/impl/CheckArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/impl/CheckArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/impl/RegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/impl/RegisterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service/intf/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service/intf/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../target/classes/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Maven-Repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XsstmqWLZLgPCkuaQFqgtoS97f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f00874fa-86c8-434d-bb67-f47e875749bb" name="Default Changelist" comment="" />
+      <created>1581846353600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581846353600</updated>
+      <workItem from="1581846355353" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
