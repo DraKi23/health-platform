@@ -55,6 +55,7 @@ public class CommentController {
      * @param casePictureDTO: 前台上传的病例相关信息
      * @return: com.gop3.entity.AjaxResponse
      **/
+    @GetMapping("/case/pictures")
     public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO){
         boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
         return AjaxResponse.success(insertSuccess);

@@ -34,7 +34,7 @@
 
     <!-- 获取关注医生信息列表 -->
     <select id="getMyDocInfoList" parameterType="String" resultMap="myDoctorInfo">
-        select c.wx_openid, c.name, c.hospital
+        select c.wx_openid, c.name, c.hospital, c.icon
         from health_mother a, health_mother_doctor b, health_doctor c
         where a.id = b.mid and b.did = c.did and a.wx_openid = #{openid}
     </select>
@@ -42,6 +42,7 @@
         <result column="wx_openid" property="doctor_openid"/>
         <result column="name" property="doctor_name"/>
         <result column="hospital" property="hospital"/>
+        <result column="icon" property="icon"/>
     </resultMap>
 
 <!--    &lt;!&ndash; 预约复诊信息查看&ndash;&gt;-->
