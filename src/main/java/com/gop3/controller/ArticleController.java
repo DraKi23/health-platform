@@ -1,8 +1,10 @@
 package com.gop3.controller;
 
 import com.gop3.dto.ArticleDTO;
-import com.gop3.service.intf.CheckArticleService;
+import com.gop3.entity.AjaxResponse;
+import com.gop3.service.intf.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +15,9 @@ import java.util.List;
  * Create by jinli on 2020/2/14 10:55
  */
 @RestController
-public class CheckArticleController {
+public class ArticleController {
     @Autowired
-    private CheckArticleService checkArticleService;
+    private ArticleService articleService;
 
     /**
      * @Description:无参数返回所有文章信息
@@ -25,7 +27,7 @@ public class CheckArticleController {
      **/
     @RequestMapping("/checkAllAricle")
     public List<ArticleDTO> findAllArticle(){
-        return checkArticleService.findAllArticle();
+        return articleService.findAllArticle();
     }
 
     /**
@@ -37,6 +39,19 @@ public class CheckArticleController {
      **/
     @RequestMapping("/searchAricle")
     public List<ArticleDTO> SearchArticle(@RequestParam("keywords") String keywords){
-        return checkArticleService.SearchArticle(keywords);
+        return articleService.SearchArticle(keywords);
+    }
+    /**
+     * @Description:发表文章
+     * @Author: jinli
+     * @Date: 2020/2/18 22:25
+     * @param articleDTO:
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    @RequestMapping("/publishArticle")
+    public AjaxResponse publishArticle(@RequestBody ArticleDTO articleDTO) {
+        Boolean publishSuccess = false;
+        publishSuccess= articleService.publishArticle(articleDTO);
+        return AjaxResponse.success(publishSuccess);
     }
 }
