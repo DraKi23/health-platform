@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gop3.mapper.AttentionMapper">
+
+    <!--查找妈妈关注的医生列表-->
+    <select id="getAttenDoctorListById" parameterType="Integer" resultType="com.gop3.dto.AttenDoctorDTO">
+         select name,wx_openid,hospital,icon from health_doctor where id in
+        (select did from health_mother_doctor where mid=#{mid})
+    </select>
+
+    <!--查找妈妈未关注的医生列表-->
+    <select id="getUnAttenDoctorListById" parameterType="Integer" resultType="com.gop3.dto.AttenDoctorDTO">
+         select name,wx_openid,hospital,icon from health_doctor where id not in
+        (select did from health_mother_doctor where mid=#{mid})
+    </select>
+    <!--查找医生对象-->
+    <select id="getGetDoctorDTOByOpenid" parameterType="String" resultType="com.gop3.dto.GetDoctorDTO">
+        select * from health_doctor where wx_openid=#{openid}
+    </select>
+
+    <!--添加妈妈关注的医生到关注表-->
+    <insert id="insertDoctorMother" >
+        insert into health_mother_doctor(mid,did,create_time)
+        values(#{mid},#{did},#{create_time})
+    </insert>
+
+
+    <!--删除关注-->
+    <delete id="deleteDoctorMother">
+    delete from health_mother_doctor where mid=#{mid} and did=#{did}
+    </delete>
+    <!--查找妈妈关注的医生列表-->
+    <select id="getAttenMonterListById" parameterType="Integer" resultType="com.gop3.dto.AttenMotherDTO">
+         select name,wx_openid,birthday from health_mother where id in
+        (select mid from health_mother_doctor where did=#{did})
+    </select>
+
+    <!--查找妈妈对象-->
+    <select id="getGetMotherDTOByOpenid" parameterType="String" resultType="com.gop3.dto.GetMotherDTO">
+        select * from health_mother where wx_openid=#{openid}
+    </select>
+
+</mapper>

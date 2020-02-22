@@ -1,14 +1,13 @@
 package com.gop3.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.AttenMotherDTO;
 import com.gop3.dto.GetDoctorDTO;
+import com.gop3.dto.GetMotherDTO;
+import com.gop3.mapper.AttentionMapper;
 import com.gop3.mapper.DoctorMapper;
-import com.gop3.mapper.MotherDoctorMapper;
 import com.gop3.mapper.MotherMapper;
-import com.gop3.po.Doctor;
 import com.gop3.service.intf.AttentionService;
-import com.gop3.utils.OpenIdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +26,7 @@ public class AttentionServiceImpl implements AttentionService {
     @Autowired
     private DoctorMapper doctorMapper;
     @Autowired
-    private MotherDoctorMapper motherDoctorMapper;
+    private AttentionMapper attentionMapper;
     /**
      * @Description:妈妈关注的医生列表
      * @Author: jinli
@@ -37,7 +36,7 @@ public class AttentionServiceImpl implements AttentionService {
      **/
     public List<AttenDoctorDTO> getAttenDoctorListById(String wx_openid){
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
-        List<AttenDoctorDTO> doctorList=doctorMapper.getAttenDoctorListById(mid);
+        List<AttenDoctorDTO> doctorList=attentionMapper.getAttenDoctorListById(mid);
         return doctorList;
     }
     /**
@@ -50,7 +49,7 @@ public class AttentionServiceImpl implements AttentionService {
     @Override
     public List<AttenDoctorDTO> getUnAttenDoctorListById(String wx_openid) {
         Integer mid=motherMapper.getMotherIdByOpenid(wx_openid);
-        List<AttenDoctorDTO> doctorList=doctorMapper.getUnAttenDoctorListById(mid);
+        List<AttenDoctorDTO> doctorList=attentionMapper.getUnAttenDoctorListById(mid);
         return doctorList;
     }
     /**
@@ -62,7 +61,7 @@ public class AttentionServiceImpl implements AttentionService {
      **/
     @Override
     public GetDoctorDTO getDoctorByWxId(String wx_openid )  {
-        GetDoctorDTO getDoctorDTO=doctorMapper.getGetDoctorDTOByOpenid(wx_openid);
+        GetDoctorDTO getDoctorDTO=attentionMapper.getGetDoctorDTOByOpenid(wx_openid);
         return getDoctorDTO;
     }
   /**
@@ -78,7 +77,7 @@ public class AttentionServiceImpl implements AttentionService {
         Integer mid=motherMapper.getMotherIdByOpenid(m_openid);
         Integer did=doctorMapper.getDoctorIdByOpenid(d_openid);
         Date currentTime  = new Date();
-        return motherDoctorMapper.insertDoctorMother(mid,did,currentTime);
+        return attentionMapper.insertDoctorMother(mid,did,currentTime);
     }
     /**
      * @Description:取消关注，删除关注表信息
@@ -92,7 +91,44 @@ public class AttentionServiceImpl implements AttentionService {
     public Boolean deleteDoctorMother(String m_openid, String d_openid) {
         Integer mid=motherMapper.getMotherIdByOpenid(m_openid);
         Integer did=doctorMapper.getDoctorIdByOpenid(d_openid);
-        return motherDoctorMapper.deleteDoctorMother(mid,did);
+        return attentionMapper.deleteDoctorMother(mid,did);
+    }
+    /**
+     * @Description:关注医生的妈妈列表
+     * @Author: jinli
+     * @Date: 2020/2/17 22:03
+     * @param wx_openid:
+     * @return: java.util.List<com.gop3.dto.AttenMotherDTO>
+     **/
+    @Override
+    public List<AttenMotherDTO> getAttenMotherListById(String wx_openid) {
+        Integer did=motherMapper.getMotherIdByOpenid(wx_openid);
+        List<AttenMotherDTO> doctorList=attentionMapper.getAttenMonterListById(did);
+        return doctorList;
+    }
+    /**
+     * @Description:获取某一位医生信息
+     * @Author: jinli
+     * @Date: 2020/2/17 22:57
+     * @param wx_openid:
+     * @return: com.gop3.dto.GetMotherDTO
+     **/
+    @Override
+    public GetMotherDTO getMotherByWxId(String wx_openid) {
+        GetMotherDTO getMotherDTO=attentionMapper.getGetMotherDTOByOpenid(wx_openid);
+        if(getMotherDTO.getBaby_weeks()==null){
+            getMotherDTO.setBaby_born_ornot(-1);
+        }
+        else{
+            getMotherDTO.setBaby_born_ornot(1);
+        }
+        if (getMotherDTO.getPrenancy_weeks()==null){
+            getMotherDTO.setPrenancy(-1);
+        }
+        else{
+            getMotherDTO.setPrenancy(1);
+        }
+        return getMotherDTO;
     }
 
 }

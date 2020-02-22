@@ -9,8 +9,8 @@ import com.gop3.po.OpenIdJson;
  */
 //@RestController
 public class OpenIdUtil {
-    private static final String APP_ID = "xxxxxx";//小程序id
-    private static final String APP_SECRET = "xxxxxx";//小程序密钥
+    private static final String APP_ID = "xxx";//小程序id
+    private static final String APP_SECRET = "xxx";//小程序密钥
    // @PostMapping("/getopenid")
     /**
      * @Description: 用code换取openid

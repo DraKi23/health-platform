@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 7th upload~~">
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/mapper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CheckArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/ArticleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/ArticleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CheckArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CheckArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../git/VBlog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/gop3/mapper" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
@@ -95,8 +90,8 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gop3.controller" />
-      <recent name="com.gop3.service.intf" />
       <recent name="com.gop3.service.impl" />
+      <recent name="com.gop3.service.intf" />
       <recent name="com.gop3.dto" />
       <recent name="com.gop3.utils" />
     </key>
@@ -105,6 +100,18 @@
       <recent name="D:\idea\health-platform\src\main\java\com\gop3\controller" />
       <recent name="D:\idea\health-platform\src\main\java\com\gop3" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="HealthPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -273,18 +280,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -315,6 +310,8 @@
       <workItem from="1581602548318" duration="1773000" />
       <workItem from="1581831648110" duration="5349000" />
       <workItem from="1581923215777" duration="4142000" />
+      <workItem from="1581952786922" duration="1307000" />
+      <workItem from="1582032115889" duration="2512000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -400,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581847404740</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="lijin 5th upload~~">
+      <created>1581954034956</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1581954034956</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +433,8 @@
     <MESSAGE value="jinli 3rd upload~~" />
     <MESSAGE value="drgn 6th upload~~" />
     <MESSAGE value="drgn 6th upload~~private" />
-    <option name="LAST_COMMIT_MESSAGE" value="drgn 6th upload~~private" />
+    <MESSAGE value="lijin 5th upload~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="lijin 5th upload~~" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575101065572">
