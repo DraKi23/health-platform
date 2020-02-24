@@ -7,10 +7,7 @@ import com.gop3.dto.SimpleCommentDTO;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -55,7 +52,7 @@ public class CommentController {
      * @param casePictureDTO: 前台上传的病例相关信息
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/case/pictures")
+    @PostMapping("/case/pictures")
     public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO){
         boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
         return AjaxResponse.success(insertSuccess);
