@@ -1,9 +1,6 @@
 package com.gop3.controller;
 
-import com.gop3.dto.CasePictureDTO;
-import com.gop3.dto.CommentDetailDTO;
-import com.gop3.dto.CommentDetailReqDTO;
-import com.gop3.dto.SimpleCommentDTO;
+import com.gop3.dto.*;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +38,8 @@ public class CommentController {
      **/
     @GetMapping("/comment/detail")
     public AjaxResponse getCommentDetailForMom(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
-        CommentDetailDTO commentDetailDTO = commentService.getCommentDetailForMom(commentDetailReqDTO);
-        return AjaxResponse.success(commentDetailDTO);
+        CommentDetailForMomDTO commentDetailForMomDTO = commentService.getCommentDetailForMom(commentDetailReqDTO);
+        return AjaxResponse.success(commentDetailForMomDTO);
     }
 
     /**
@@ -56,6 +53,43 @@ public class CommentController {
     public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO){
         boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
         return AjaxResponse.success(insertSuccess);
+    }
+
+    /**
+     * @Description: 获取医生未处理的妈妈等待咨询的信息列表
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:35
+     * @param doctorOpenid: 医生openID
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    @GetMapping("/doc/simple/{did}")
+    public AjaxResponse getSimpleCommentInfo(@PathVariable("did") String doctorOpenid){
+        List<UnResolveBookInfoDTO> simpleCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
+        return AjaxResponse.success(simpleCommentList);
+    }
+
+    /**
+     * @Description: 插入医生医疗建议的记录到数据库中
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:39
+     * @param commentDetailByDocDTO: 前台传入后台的医疗建议
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    @GetMapping("/doc/add/detail")
+    public AjaxResponse createCommentDetailByDoc(@RequestBody CommentDetailByDocDTO commentDetailByDocDTO){
+        return AjaxResponse.success(commentService.insertCommentDetailByDoc(commentDetailByDocDTO));
+    }
+
+    /**
+     * @Description: 获取某一妈妈被处理的详情信息
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:42
+     * @param commentDetailReqDTO: 青苔请求的医疗建议详情标识
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    @GetMapping("/doc/show/detail")
+    public AjaxResponse getCommentDetailToDoc(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
+        return AjaxResponse.success(commentService.getCommentDetailToDoc(commentDetailReqDTO));
     }
 
 }

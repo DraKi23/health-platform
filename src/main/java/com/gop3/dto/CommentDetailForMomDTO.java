@@ -9,7 +9,7 @@ import java.util.List;
  * Create by Drgn on 2020/2/15 15:06
  */
 @Data
-public class CommentDetailDTO {
+public class CommentDetailForMomDTO {
     private String icon;//医生头像
     private String name;//医生姓名
     private Date create_time;//上传日期

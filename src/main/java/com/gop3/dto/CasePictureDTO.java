@@ -18,5 +18,6 @@ public class CasePictureDTO {
     private String pictureURL;//单张病例照片的URL
     private List<String> pictures;//病例照片列表
     private Date submitTime;//病例上传时间
+    private Date bookTime;//等待评论时间
     private Date createPictureTime;//创建病例照片表记录时间
 }

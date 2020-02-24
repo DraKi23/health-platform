@@ -1,9 +1,6 @@
 package com.gop3.service.impl;
 
-import com.gop3.dto.CasePictureDTO;
-import com.gop3.dto.CommentDetailDTO;
-import com.gop3.dto.CommentDetailReqDTO;
-import com.gop3.dto.SimpleCommentDTO;
+import com.gop3.dto.*;
 import com.gop3.mapper.CommentMapper;
 import com.gop3.mapper.DoctorMapper;
 import com.gop3.mapper.MotherMapper;
@@ -48,15 +45,15 @@ public class CommentServiceImpl implements CommentService {
      * @return: com.gop3.dto.CommentDetailDTO
      **/
     @Override
-    public CommentDetailDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
+    public CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
         // 根据前台的请求标识寻找相关评论信息
-        CommentDetailDTO commentDetailDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
+        CommentDetailForMomDTO commentDetailForMomDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
         // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
         Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
         Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
         List<String> pictures = commentMapper.getCasePictureListForMom(commentDetailReqDTO);
-        commentDetailDTO.setPicture(pictures);
-        return commentDetailDTO;
+        commentDetailForMomDTO.setPicture(pictures);
+        return commentDetailForMomDTO;
     }
 
     /**
@@ -85,9 +82,50 @@ public class CommentServiceImpl implements CommentService {
                 casePictureDTO.setPictureURL(pictureURL);
                 commentMapper.insertCasePictures(casePictureDTO);
             }
+            // 创建医疗建议记录
+            Date bookTime = new Date();
+            casePictureDTO.setBookTime(bookTime);
+            commentMapper.insertCommentDetailByMom(casePictureDTO);
             // 程序执行到此处，表示所有数据插入成功
             insertSuccess = true;
         }
         return insertSuccess;
+    }
+
+    /**
+     * @Description: 获取医生未处理的妈妈等待咨询的信息列表
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:18
+     * @param doctorOpenid: 医生用户的openID
+     * @return: java.util.List<com.gop3.dto.UnResolveBookInfoDTO>
+     **/
+    @Override
+    public List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(String doctorOpenid) {
+        return commentMapper.getSimpleCommentListForDoc(doctorOpenid);
+    }
+
+    /**
+     * @Description: 插入医生医疗建议的记录到数据库中
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:18
+     * @param commentDetailByDocDTO: 前台上传的评论医疗建议
+     * @return: int
+     **/
+    @Override
+    public boolean insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO) {
+        int i = commentMapper.insertCommentDetailByDoc(commentDetailByDocDTO);
+        return i>0?true:false;
+    }
+
+    /**
+     * @Description: 获取某一妈妈被处理的详情信息
+     * @Author: Drgn
+     * @Date: 2020/2/24 23:18
+     * @param commentDetailReqDTO: 前台请求的医疗建议详情请求标识
+     * @return: com.gop3.dto.CommentDetailByDocDTO
+     **/
+    @Override
+    public CommentDetailByDocDTO getCommentDetailToDoc(CommentDetailReqDTO commentDetailReqDTO) {
+        return commentMapper.getCommentDetailToDoc(commentDetailReqDTO);
     }
 }
