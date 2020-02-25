@@ -1,6 +1,7 @@
 package com.gop3.service.impl;
 
 import com.gop3.dto.BookInfoDTO;
+import com.gop3.dto.BookReplyDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 import com.gop3.mapper.BookMapper;
@@ -65,6 +66,23 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<MyDoctorInfoDTO> getMyDocInfoList(String openid) {
         return bookMapper.getMyDocInfoList(openid);
+    }
+
+    /**
+     * @Description:
+     * @Author: jinli
+     * @Date: 2020/2/25 13:54
+     * @param doctor_openid:
+     * @return: java.util.List<com.gop3.dto.BookReplyDTO>
+     **/
+    @Override
+    public List<BookReplyDTO> getUnreplyBookList(String doctor_openid) {
+        return bookMapper.getUnreplyBookList(doctor_openid);
+    }
+
+    @Override
+    public List<BookReplyDTO> getreplyBookList(String doctor_openid) {
+        return bookMapper.getreplyBookList(doctor_openid);
     }
 
     /*
