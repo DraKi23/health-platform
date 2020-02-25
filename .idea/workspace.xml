@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookReplyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +304,7 @@
       <workItem from="1581923215777" duration="4142000" />
       <workItem from="1581952786922" duration="1307000" />
       <workItem from="1582032115889" duration="2512000" />
-      <workItem from="1582602671962" duration="6821000" />
+      <workItem from="1582602671962" duration="7066000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -407,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581954034956</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="lijin 6th upload~~">
+      <created>1582612729492</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1582612729493</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +434,8 @@
     <MESSAGE value="drgn 6th upload~~" />
     <MESSAGE value="drgn 6th upload~~private" />
     <MESSAGE value="lijin 5th upload~~" />
-    <option name="LAST_COMMIT_MESSAGE" value="lijin 5th upload~~" />
+    <MESSAGE value="lijin 6th upload~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="lijin 6th upload~~" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575101065572">
