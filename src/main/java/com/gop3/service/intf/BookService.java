@@ -1,6 +1,7 @@
 package com.gop3.service.intf;
 
 import com.gop3.dto.BookInfoDTO;
+import com.gop3.dto.BookReplyDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 
@@ -28,4 +29,10 @@ public interface BookService {
 //    List<BookVO> getBookListForDoc(BookVO book);
 //    //回复未处理的预约记录,修改预约复诊的状态位
 //    boolean updateBookingState(BookVO book);
+
+    //回复预约
+    //通过某位医生的openid查找未处理预约记录
+    List<BookReplyDTO> getUnreplyBookList(String doctor_openid);
+    //通过某位医生的openid查找已经处理预约记录
+    List<BookReplyDTO> getreplyBookList(String doctor_openid);
 }

@@ -1,6 +1,7 @@
 package com.gop3.mapper;
 
 import com.gop3.dto.BookInfoDTO;
+import com.gop3.dto.BookReplyDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 import com.gop3.po.Book;
@@ -56,4 +57,11 @@ public interface BookMapper {
     Book getBookInfoForDoc(String openid);
     //未处理预约信息处理（修改预约信息状态isReturn）
     boolean updateBookingState(Book book);
+
+    //复诊回复
+    //通过某位医生的openid查找未处理预约记录
+    List<BookReplyDTO> getUnreplyBookList(String doctor_openid);
+    //通过某位医生的openid查找已经处理预约记录
+    List<BookReplyDTO> getreplyBookList(String doctor_openid);
+
 }

@@ -1,6 +1,7 @@
 package com.gop3.controller;
 
 import com.gop3.dto.BookInfoDTO;
+import com.gop3.dto.BookReplyDTO;
 import com.gop3.dto.BookedInfoDTO;
 import com.gop3.dto.MyDoctorInfoDTO;
 import com.gop3.entity.AjaxResponse;
@@ -57,5 +58,26 @@ public class BookController {
         List<MyDoctorInfoDTO> myDocInfoList = bookService.getMyDocInfoList(mother_openid);
         return AjaxResponse.success(myDocInfoList);
     }
-
+    /**
+     * @Description:返回还未处理的的预约列表
+     * @Author: jinli
+     * @Date: 2020/2/25 14:20
+     * @param doctor_openid:
+     * @return: java.util.List<com.gop3.dto.BookReplyDTO>
+     **/
+    @GetMapping("/mom/getUnreplyBook/{doctor_openid}")
+   public List<BookReplyDTO> getUnreplyBookList(@PathVariable String doctor_openid){
+        return bookService.getUnreplyBookList(doctor_openid);
+   }
+   /**
+    * @Description:返回已经回复的的预约列表
+    * @Author: jinli
+    * @Date: 2020/2/25 14:20
+    * @param doctor_openid:
+    * @return: java.util.List<com.gop3.dto.BookReplyDTO>
+    **/
+    @GetMapping("/mom/getreplyBook/{doctor_openid}")
+    public List<BookReplyDTO> getreplyBookList(@PathVariable String doctor_openid){
+        return bookService.getreplyBookList(doctor_openid);
+    }
 }

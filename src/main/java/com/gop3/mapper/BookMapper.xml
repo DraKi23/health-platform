@@ -109,4 +109,19 @@
         set isReturn = #{isReturn}
         where mid=#{mid} and did = #{did} and isReturn=-1
     </update>
+
+    <!--复诊回复相关-->
+    <!--未回复列表-->
+    <select id="getUnreplyBookList"  parameterType="String" resultType="com.gop3.dto.BookReplyDTO">
+        select a.icon,b.name,b.bookTime,b.isReturn from health_mother as a,health_book as b
+        where a.id=b.mid and b.did in (select id from health_doctor where wx_openid = #{doctor_openid})
+        and b.isReturn=-1
+    </select>
+    <!--已经回复列表-->
+    <select id="getreplyBookList"  parameterType="String" resultType="com.gop3.dto.BookReplyDTO">
+        select a.icon,b.name,b.bookTime,b.isReturn from health_mother as a,health_book as b
+        where a.id=b.mid and b.did in (select id from health_doctor where wx_openid = #{doctor_openid})
+        and b.isReturn != -1
+    </select>
+
 </mapper>
