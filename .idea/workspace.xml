@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 7th upload~~">
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CheckArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CheckArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CheckArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CheckArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +49,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Maven-Repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../maven/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
+        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -82,7 +79,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/gop3/mapper" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -100,18 +97,6 @@
       <recent name="D:\idea\health-platform\src\main\java\com\gop3\controller" />
       <recent name="D:\idea\health-platform\src\main\java\com\gop3" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="HealthPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -280,6 +265,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -312,6 +309,9 @@
       <workItem from="1581923215777" duration="4142000" />
       <workItem from="1581952786922" duration="1307000" />
       <workItem from="1582032115889" duration="2512000" />
+      <workItem from="1582464649045" duration="5294000" />
+      <workItem from="1582524746083" duration="18370000" />
+      <workItem from="1582598140964" duration="2392000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -404,7 +404,35 @@
       <option name="project" value="LOCAL" />
       <updated>1581954034956</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="drgn 7th upload~~">
+      <created>1582465140882</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1582465140882</updated>
+    </task>
+    <task id="LOCAL-00015" summary="drgn 8th upload~~ post/get">
+      <created>1582524993535</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1582524993535</updated>
+    </task>
+    <task id="LOCAL-00016" summary="drgn 8th upload~~ commentToDoc">
+      <created>1582559178211</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1582559178211</updated>
+    </task>
+    <task id="LOCAL-00017" summary="drgn 8th upload~~comment update2.0">
+      <created>1582598863204</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1582598863204</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +462,11 @@
     <MESSAGE value="drgn 6th upload~~" />
     <MESSAGE value="drgn 6th upload~~private" />
     <MESSAGE value="lijin 5th upload~~" />
-    <option name="LAST_COMMIT_MESSAGE" value="lijin 5th upload~~" />
+    <MESSAGE value="drgn 7th upload~~" />
+    <MESSAGE value="drgn 8th upload~~ post/get" />
+    <MESSAGE value="drgn 8th upload~~ commentToDoc" />
+    <MESSAGE value="drgn 8th upload~~comment update2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="drgn 8th upload~~comment update2.0" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Inspections" timestamp="1575101065572">
@@ -449,50 +481,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="173" y="36" width="1092" height="691" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1575114662669" />
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1581845611044">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1582557494154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581845611044" />
-    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1581928285841">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582557494154" />
+    <state x="236" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582553130223">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581928285841" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1581846406449">
+    <state x="236" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582553130223" />
+    <state x="180" y="0" key="CommitChangelistDialog2" timestamp="1582598861656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581846406449" />
-    <state width="1323" height="17" key="GridCell.Tab.0.bottom" timestamp="1581928251819">
+    <state x="180" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582598861656" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1582465424850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.0.center" timestamp="1581928251819">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582465424850" />
+    <state width="1323" height="97" key="GridCell.Tab.0.bottom" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.0.left" timestamp="1581928251819">
+    <state width="1323" height="97" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.0.center" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.0.right" timestamp="1581928251819">
+    <state width="1323" height="97" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.0.left" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.1.bottom" timestamp="1581928251820">
+    <state width="1323" height="97" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.0.right" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581928251820" />
-    <state width="1323" height="17" key="GridCell.Tab.1.center" timestamp="1581928251819">
+    <state width="1323" height="97" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.1.bottom" timestamp="1582470327971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.1.left" timestamp="1581928251819">
+    <state width="1323" height="97" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582470327971" />
+    <state width="1323" height="97" key="GridCell.Tab.1.center" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1581928251819" />
-    <state width="1323" height="17" key="GridCell.Tab.1.right" timestamp="1581928251820">
+    <state width="1323" height="97" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.1.left" timestamp="1582470327969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="17" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1581928251820" />
+    <state width="1323" height="97" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
+    <state width="1323" height="97" key="GridCell.Tab.1.right" timestamp="1582470327969">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="97" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582470327969" />
     <state width="1323" height="95" key="GridCell.Tab.2.bottom" timestamp="1575123695245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -517,18 +553,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="392" y="79" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1575123893409" />
-    <state x="298" y="12" width="916" height="716" key="SettingsEditor" timestamp="1575114285466">
+    <state x="182" y="0" width="1119" height="716" key="SettingsEditor" timestamp="1582525374400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="298" y="12" width="916" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1575114285466" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581850798980">
+    <state x="182" y="0" width="1119" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582525374400" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1582598871642">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1581850798980" />
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1581923217551">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1582598871642" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1582598140953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581923217551" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582598140953" />
+    <state x="345" y="155" key="git4idea.merge.GitPullDialog" timestamp="1582618351271">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="345" y="155" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1582618351271" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/health_platform$HealthPlatformApplication.ic" NAME="HealthPlatformApplication Coverage Results" MODIFIED="1574952729576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
