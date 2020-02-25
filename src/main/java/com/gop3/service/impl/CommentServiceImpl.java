@@ -51,7 +51,7 @@ public class CommentServiceImpl implements CommentService {
         // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
         Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
         Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
-        List<String> pictures = commentMapper.getCasePictureListForMom(commentDetailReqDTO);
+        List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
         commentDetailForMomDTO.setPicture(pictures);
         return commentDetailForMomDTO;
     }
@@ -113,6 +113,8 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public boolean insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO) {
+        Date create_time = new Date();
+        commentDetailByDocDTO.setCreate_time(create_time);
         int i = commentMapper.insertCommentDetailByDoc(commentDetailByDocDTO);
         return i>0?true:false;
     }
@@ -126,6 +128,11 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailByDocDTO getCommentDetailToDoc(CommentDetailReqDTO commentDetailReqDTO) {
-        return commentMapper.getCommentDetailToDoc(commentDetailReqDTO);
+        CommentDetailByDocDTO commentDetailByDocDTO = commentMapper.getCommentDetailToDoc(commentDetailReqDTO);
+        List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
+        Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
+        Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
+        commentDetailByDocDTO.setPictures(pictures);
+        return commentDetailByDocDTO;
     }
 }

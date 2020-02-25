@@ -25,7 +25,7 @@
     </select>
 
     <!-- 获取妈妈与医生之间的病历表图片列表 -->
-    <select id="getCasePictureListForMom" resultType="String"
+    <select id="getCasePictureList" resultType="String"
             parameterType="com.gop3.dto.CommentDetailReqDTO">
         select picture
         from health_case a, health_comment b, health_mother_picture c
@@ -67,8 +67,8 @@
     </select>
     <!-- 插入医生医疗建议的记录到数据库中 -->
     <insert id="insertCommentDetailByDoc" parameterType="com.gop3.dto.CommentDetailByDocDTO">
-        insert into health_comment(did, mid, create_time, content)
-        values (#{did}, #{mid}, #{create_time}, #{content})
+        insert into health_comment(did, mid, create_time, content,bookTime)
+        values (#{did}, #{mid}, #{create_time}, #{content}, #{bookTime})
     </insert>
 
     <!-- 获取某一妈妈被处理的详情信息 -->

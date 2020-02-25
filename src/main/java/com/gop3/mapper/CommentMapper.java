@@ -16,7 +16,7 @@ public interface CommentMapper {
     // 获取某条咨询医疗建议的详细信息
     CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO);
     // 获取妈妈与医生之间的病历表图片列表
-    List<String> getCasePictureListForMom(CommentDetailReqDTO commentDetailReqDTO);
+    List<String> getCasePictureList(CommentDetailReqDTO commentDetailReqDTO);
     // 创建上传给医生病例记录
     int insertCaseInfo(CasePictureDTO casePictureDTO);
     // 创建病例图片记录
