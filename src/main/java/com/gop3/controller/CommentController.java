@@ -75,7 +75,7 @@ public class CommentController {
      * @param commentDetailByDocDTO: 前台传入后台的医疗建议
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/doc/add/detail")
+    @PostMapping("/doc/add/detail")
     public AjaxResponse createCommentDetailByDoc(@RequestBody CommentDetailByDocDTO commentDetailByDocDTO){
         return AjaxResponse.success(commentService.insertCommentDetailByDoc(commentDetailByDocDTO));
     }
