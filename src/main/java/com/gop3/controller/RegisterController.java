@@ -63,7 +63,7 @@ public class RegisterController {
     @RequestMapping(value = {"/doctorRegister"},method = RequestMethod.POST)
     @ResponseBody
     public AjaxResponse addDoctor(@RequestBody RegDoctorDTO regDoctorDTO) throws JsonProcessingException {
-        regDoctorDTO.setWx_openid(OpenIdUtil.getOpenid(regDoctorDTO.getCode()));
+        //regDoctorDTO.setWx_openid(OpenIdUtil.getOpenid(regDoctorDTO.getCode()));
         Date currentTime  = new Date();
         regDoctorDTO.setCreateTime(currentTime );
         Boolean registerSuccess = false;
@@ -81,7 +81,7 @@ public class RegisterController {
     @RequestMapping(value = {"/motherRegister"},method = RequestMethod.POST)
     @ResponseBody
     public AjaxResponse addMother(@RequestBody(required = false) RegMotherDTO regMotherDTO) throws JsonProcessingException {
-        regMotherDTO.setWx_openid(OpenIdUtil.getOpenid(regMotherDTO.getCode()));
+       // regMotherDTO.setWx_openid(OpenIdUtil.getOpenid(regMotherDTO.getCode()));
         Date currentTime  = new Date();
         regMotherDTO.setCreateTime(currentTime );
         Boolean registerSuccess = false;
