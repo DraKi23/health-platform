@@ -62,6 +62,6 @@ public interface BookMapper {
     //通过某位医生的openid查找未处理预约记录
     List<BookReplyDTO> getUnreplyBookList(String doctor_openid);
     //通过某位医生的openid查找已经处理预约记录
-    List<BookReplyDTO> getreplyBookList(String doctor_openid);
+    List<BookReplyDTO> getReplyBookList(String doctor_openid);
 
 }
