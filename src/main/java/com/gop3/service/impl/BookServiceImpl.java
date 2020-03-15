@@ -82,7 +82,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookReplyDTO> getreplyBookList(String doctor_openid) {
-        return bookMapper.getreplyBookList(doctor_openid);
+        return bookMapper.getReplyBookList(doctor_openid);
     }
 
     /*
