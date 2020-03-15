@@ -120,7 +120,7 @@
     <!--已经回复列表-->
     <select id="getReplyBookList"  parameterType="String" resultType="com.gop3.dto.BookReplyDTO">
         select a.icon,b.name,b.bookTime,b.isReturn from health_mother as a,health_book as b
-        where a.id=b.mid and b.id in (select id from health_doctor where wx_openid = #{doctor_openid})
+        where a.id=b.mid and b.did in (select id from health_doctor where wx_openid = #{doctor_openid})
         and b.isReturn != -1
     </select>
 
