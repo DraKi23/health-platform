@@ -7,9 +7,12 @@ import com.gop3.dto.RegisterDTO;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.RegisterService;
 import com.gop3.utils.OpenIdUtil;
+import com.gop3.utils.UploadImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -62,10 +65,15 @@ public class RegisterController {
      **/
     @RequestMapping(value = {"/doctorRegister"},method = RequestMethod.POST)
     @ResponseBody
-    public AjaxResponse addDoctor(@RequestBody RegDoctorDTO regDoctorDTO) throws JsonProcessingException {
+    public AjaxResponse addDoctor(RegDoctorDTO regDoctorDTO, MultipartFile file) throws JsonProcessingException {
         //regDoctorDTO.setWx_openid(OpenIdUtil.getOpenid(regDoctorDTO.getCode()));
+        String filePath = UploadImageUtil.uploadImage(file);
+        if(filePath!=null){
+            regDoctorDTO.setCredentials(filePath);
+        }
+        System.out.println(regDoctorDTO);
         Date currentTime  = new Date();
-        regDoctorDTO.setCreateTime(currentTime );
+        regDoctorDTO.setCreateTime(currentTime);
         Boolean registerSuccess = false;
         registerSuccess = registerService.insertDoctorData(regDoctorDTO);
         return AjaxResponse.success(registerSuccess);
