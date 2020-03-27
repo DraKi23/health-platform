@@ -29,7 +29,7 @@
     <!-- 创建预约记录 -->
     <insert id="createBookInfo" parameterType="com.gop3.dto.BookInfoDTO">
         insert into health_book(did, mid, name, phone, bookTime, create_time)
-        value #{did},#{mid},#{name},#{phone},#{bookTime},#{createTime}
+        value (#{did},#{mid},#{name},#{phone},#{bookTime},#{createTime})
     </insert>
 
     <!-- 获取关注医生信息列表 -->
@@ -44,53 +44,6 @@
         <result column="hospital" property="hospital"/>
         <result column="icon" property="icon"/>
     </resultMap>
-
-<!--    &lt;!&ndash; 预约复诊信息查看&ndash;&gt;-->
-<!--    <select id="getBookInfoForMom" parameterType="String" resultType="com.gop3.po.Book">-->
-<!--        select * from health_book-->
-<!--        where mid in(select id from health_mother where wx_openid = #{openid}) and isReturn = -1;-->
-<!--    </select>-->
-<!--    &lt;!&ndash; 预约复诊信息修改 &ndash;&gt;-->
-<!--    <update id="updateBookInfo" parameterType="com.gop3.po.Book">-->
-<!--        update health_book-->
-<!--        set name=#{name}, phone=#{phone}, bookTime=#{bookTime}, create_time=#{create_time}-->
-<!--        where mid=#{mid} and did = #{did} and isReturn=-1-->
-<!--    </update>-->
-<!--    &lt;!&ndash;预约复诊信息取消/删除&ndash;&gt;-->
-<!--    <delete id="deleteBookInfo" parameterType="com.gop3.po.Book">-->
-<!--        delete from health_book-->
-<!--        where mid=#{mid} and did = #{did} and isReturn=-1-->
-<!--    </delete>-->
-
-<!--    &lt;!&ndash; 已处理预约信息记录删除 &ndash;&gt;-->
-<!--    <delete id="deleteBookedInfo" parameterType="com.gop3.po.Book">-->
-<!--        delete from health_book-->
-<!--        where did in (select id from health_mother where wx_openid = #{wx_openid})-->
-<!--        and isReturn != -1 and bookTime = #{bookTime}-->
-<!--        and doc_deleted = 1 and mom_deleted = 1-->
-<!--    </delete>-->
-<!--    &lt;!&ndash; 修改妈妈的删除记录位mom_deleted &ndash;&gt;-->
-<!--    <update id="updateDelStateForMom" parameterType="com.gop3.po.Book">-->
-<!--        update health_book-->
-<!--        set mom_deleted = #{mom_deleted}-->
-<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
-<!--    </update>-->
-<!--    &lt;!&ndash; 修改医生的删除记录位doc_deleted &ndash;&gt;-->
-<!--    <update id="updateDelStateForDoc" parameterType="com.gop3.po.Book">-->
-<!--        update health_book-->
-<!--        set doc_deleted = #{doc_deleted}-->
-<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
-<!--    </update>-->
-<!--    &lt;!&ndash;  查询妈妈的删除记录位mom_deleted &ndash;&gt;-->
-<!--    <select id="getMomDeleted" parameterType="com.gop3.po.Book">-->
-<!--        select mom_deleted from health_book-->
-<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
-<!--    </select>-->
-<!--    &lt;!&ndash;  查询医生的删除记录位doc_deleted &ndash;&gt;-->
-<!--    <select id="getDocDeleted" parameterType="com.gop3.po.Book">-->
-<!--        select doc_deleted from health_book-->
-<!--        where mid=#{mid} and did = #{did} and isReturn!=-1 and bookTime=#{bookTime}-->
-<!--    </select>-->
 
     <!-- 医生预约回复相关 -->
     <!-- 已处理预约信息列表查询 -->

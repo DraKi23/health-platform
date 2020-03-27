@@ -28,26 +28,6 @@ public interface BookMapper {
     //获取关注医生列表
     List<MyDoctorInfoDTO> getMyDocInfoList(String openid);
 
-//    //预约复诊信息查看
-//    Book getBookInfoForMom(String openid);
-//    //预约复诊信息修改
-//    boolean updateBookInfo(Book book);
-//    //预约复诊信息取消/删除
-//    boolean deleteBookInfo(Book book);
-
-    //这里有一个矛盾：删除历史记录，只要有医生或者妈妈任意一方删除历史记录，就会在数据库里删除一条记录
-    //可是可能另一方可能想保存记录，所以应该如何处理？？？？？
-//    //预约复诊历史记录删除
-//    boolean deleteBookedInfo(Book book);
-//    //修改妈妈的删除记录位mom_deleted
-//    boolean updateDelStateForMom(Book book);
-//    //修改医生的删除记录位doc_deleted
-//    boolean updateDelStateForDoc(Book book);
-//    //查询妈妈的删除记录位mom_deleted
-//    Integer getMomDeleted(Book book);
-//    //查询医生的删除记录位doc_deleted
-//    Integer getDocDeleted(Book book);
-
     //医生相关
     //已处理预约信息列表查询
     List<Book> getAllBookedListForDoc(String openid);

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 10th upload~~ uploadImages">
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 10th upload~~ little error">
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/controller/RegisterController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../uploadDemo" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -339,7 +337,8 @@
       <workItem from="1585143147672" duration="3122000" />
       <workItem from="1585148641749" duration="78000" />
       <workItem from="1585226899925" duration="3861000" />
-      <workItem from="1585281161224" duration="1362000" />
+      <workItem from="1585281161224" duration="2752000" />
+      <workItem from="1585299817790" duration="2698000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -488,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585148050190</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="drgn 10th upload~~ little error">
+      <created>1585282768331</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1585282768331</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +530,8 @@
     <MESSAGE value="drgn 9th upload~~ little error" />
     <MESSAGE value="drgn 9th upload~~" />
     <MESSAGE value="drgn 10th upload~~ uploadImages" />
-    <option name="LAST_COMMIT_MESSAGE" value="drgn 10th upload~~ uploadImages" />
+    <MESSAGE value="drgn 10th upload~~ little error" />
+    <option name="LAST_COMMIT_MESSAGE" value="drgn 10th upload~~ little error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1584803871793">
@@ -535,10 +542,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581845611044" />
-    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1585282731698">
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1585282766282">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585282731698" />
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585282766282" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1584802267728">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -547,38 +554,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585146109184" />
-    <state width="1323" height="337" key="GridCell.Tab.0.bottom" timestamp="1585282572867">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1585306411639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585282572867" />
-    <state width="1323" height="337" key="GridCell.Tab.0.center" timestamp="1585282572867">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585306411639" />
+    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1585306411638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585282572867" />
-    <state width="1323" height="337" key="GridCell.Tab.0.left" timestamp="1585282572867">
+    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585306411638" />
+    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1585306411638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585282572867" />
-    <state width="1323" height="337" key="GridCell.Tab.0.right" timestamp="1585282572867">
+    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585306411638" />
+    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1585306411638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585282572867" />
-    <state width="1323" height="337" key="GridCell.Tab.1.bottom" timestamp="1585282572868">
+    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585306411638" />
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1585306411640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585282572868" />
-    <state width="1323" height="337" key="GridCell.Tab.1.center" timestamp="1585282572868">
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585306411640" />
+    <state width="1323" height="227" key="GridCell.Tab.1.center" timestamp="1585306411640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585282572868" />
-    <state width="1323" height="337" key="GridCell.Tab.1.left" timestamp="1585282572867">
+    <state width="1323" height="227" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585306411640" />
+    <state width="1323" height="227" key="GridCell.Tab.1.left" timestamp="1585306411639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585282572867" />
-    <state width="1323" height="337" key="GridCell.Tab.1.right" timestamp="1585282572868">
+    <state width="1323" height="227" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585306411639" />
+    <state width="1323" height="227" key="GridCell.Tab.1.right" timestamp="1585306411640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585282572868" />
+    <state width="1323" height="227" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585306411640" />
     <state width="1323" height="244" key="GridCell.Tab.2.bottom" timestamp="1584291163968">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -595,18 +602,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="244" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1584291163968" />
-    <state x="184" y="6" width="1124" height="716" key="SettingsEditor" timestamp="1585148673102">
+    <state x="184" y="6" width="1124" height="716" key="SettingsEditor" timestamp="1585282938298">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" width="1124" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585148673102" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585227789730">
+    <state x="184" y="6" width="1124" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585282938298" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585282787824">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585227789730" />
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585281162211">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585282787824" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585299818415">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585281162211" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585299818415" />
     <state x="345" y="155" key="git4idea.merge.GitPullDialog" timestamp="1583056745960">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
