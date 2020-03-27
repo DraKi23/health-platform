@@ -17,7 +17,7 @@
     <select id="getAllBookedListForMom" parameterType="String" resultMap="bookedInfo">
         select b.icon, b.name, a.bookTime, a.isReturn
         from health_book a, health_doctor b
-        where a.id = b.did and a.mid in (select id from health_mother where wx_openid = #{openid}) and isReturn != -1
+        where a.did = b.id and a.mid in (select id from health_mother where wx_openid = #{openid}) and isReturn != -1
     </select>
     <resultMap id="bookedInfo" type="com.gop3.dto.BookedInfoDTO">
         <result column="icon" property="icon"/>

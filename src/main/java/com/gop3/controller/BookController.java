@@ -27,8 +27,8 @@ public class BookController {
      * @param mother_openid: 妈妈的小程序用户信息
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/mom/bookedList/{mother_openid}")
-    public AjaxResponse getBookedInfoForMom(@PathVariable String mother_openid){
+    @GetMapping("/mom/bookedList")
+    public AjaxResponse getBookedInfoForMom(@RequestParam String mother_openid){
         List<BookedInfoDTO> bookedInfoDTOList = bookService.getBookedListForMom(mother_openid);
         return AjaxResponse.success(bookedInfoDTOList);
     }
@@ -42,8 +42,8 @@ public class BookController {
      **/
     @PostMapping("/mom/bookInfo")
     public AjaxResponse createBookInfo(@RequestBody BookInfoDTO bookInfoDTO){
-        boolean createBookInfoSuccesss = bookService.createBookInfo(bookInfoDTO);
-        return AjaxResponse.success(createBookInfoSuccesss);
+        boolean createBookInfoSuccess = bookService.createBookInfo(bookInfoDTO);
+        return AjaxResponse.success(createBookInfoSuccess);
     }
 
     /**
