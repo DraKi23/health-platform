@@ -3,9 +3,12 @@ package com.gop3.controller;
 import com.gop3.dto.*;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.CommentService;
+import com.gop3.utils.UploadImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +53,13 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @PostMapping("/case/pictures")
-    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO){
+    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO, List<MultipartFile> casePictures){
+        List<String> pictures = new ArrayList<String>();
+        for(MultipartFile file:casePictures){
+            String path = UploadImageUtil.uploadImage(file);
+            pictures.add(path);
+        }
+        casePictureDTO.setPictures(pictures);
         boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
         return AjaxResponse.success(insertSuccess);
     }

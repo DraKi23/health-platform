@@ -8,8 +8,8 @@ import com.gop3.po.OpenIdJson;
  * Create by jinli on 2020/2/8 21:57
  */
 public class OpenIdUtil {
-    private static final String APP_ID = "xxxxxxxx";//小程序id
-    private static final String APP_SECRET = "xxxxxxxxx";//小程序密钥
+    private static final String APP_ID = "xxxxx";//小程序id
+    private static final String APP_SECRET = "yyyy";//小程序密钥
    // @PostMapping("/getopenid")
     /**
      * @Description: 用code换取openid
