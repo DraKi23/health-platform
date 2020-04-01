@@ -66,22 +66,26 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
         boolean insertSuccess = false;
+        // 上传时间，即评论咨询记录创建时间
         Date submitTime = new Date();
         casePictureDTO.setSubmitTime(submitTime);
-        boolean flag = insertCasePictureInfo(casePictureDTO);
-        if(flag){
+        int flag = commentMapper.insertCommentDetailByMom(casePictureDTO);
+        if(flag > 0){
+            // 创建时间，该时间指的是生成上传病例图片记录的时间
             Date createPictureTime = new Date();
             casePictureDTO.setCreatePictureTime(createPictureTime);
             // 根据妈妈和医生openID和上传时间获取病历表的主键id
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
             casePictureDTO.setCaseID(caseID);
             // 获取前台上传的病历图片集合
-            List<String> pictures = casePictureDTO.getPictures();
-            // 遍历每一张病例图片并插入到数据库对应的表中
-            for(String pictureURL:pictures){
-                casePictureDTO.setPictureURL(pictureURL);
-                commentMapper.insertCasePictures(casePictureDTO);
-            }
+//            List<String> pictures = casePictureDTO.getPictures();
+//            // 遍历每一张病例图片并插入到数据库对应的表中
+//            for(String pictureURL:pictures){
+//                casePictureDTO.setPictureURL(pictureURL);
+//                commentMapper.insertCasePictures(casePictureDTO);
+//            }
+            String pictureURL = casePictureDTO.getPictureURL();
+            commentMapper.insertCasePictures(casePictureDTO);
             // 创建医疗建议记录
             Date bookTime = new Date();
             casePictureDTO.setBookTime(bookTime);

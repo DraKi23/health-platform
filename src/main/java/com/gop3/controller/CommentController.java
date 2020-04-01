@@ -53,13 +53,9 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @PostMapping("/case/pictures")
-    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO, List<MultipartFile> casePictures){
-        List<String> pictures = new ArrayList<String>();
-        for(MultipartFile file:casePictures){
-            String path = UploadImageUtil.uploadImage(file);
-            pictures.add(path);
-        }
-        casePictureDTO.setPictures(pictures);
+    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO, MultipartFile casePicture){
+        String path = UploadImageUtil.uploadImage(casePicture);
+        casePictureDTO.setPictureURL(path);
         boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
         return AjaxResponse.success(insertSuccess);
     }
