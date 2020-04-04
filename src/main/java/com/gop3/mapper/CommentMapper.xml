@@ -34,15 +34,15 @@
     </select>
 
     <!-- 创建上传给医生病例图片的记录 -->
-    <insert id="insertCasePicture" parameterType="com.gop3.dto.CasePictureDTO">
+    <insert id="insertCaseInfo" parameterType="com.gop3.dto.CasePictureDTO">
         insert into health_case(mid, did, create_time)
         values(#{motherID}, #{doctorID},#{submitTime})
     </insert>
 
     <!-- 创建病例图片记录 -->
     <insert id="insertCasePictures" parameterType="com.gop3.dto.CasePictureDTO">
-        insert into health_mother_picture(cid, picture, create_time)
-        values(#{caseID}, #{pictureURL}, #{createPictureTime})
+        insert into health_mother_picture(cid, mid, picture, create_time)
+        values(#{caseID}, #{motherID}, #{pictureURL}, #{createPictureTime})
     </insert>
 
     <insert id="insertCommentDetailByMom" parameterType="com.gop3.dto.CasePictureDTO">

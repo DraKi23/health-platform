@@ -62,6 +62,11 @@ public class CommentServiceImpl implements CommentService {
      * @Date: 2020/2/16 17:35
      * @param casePictureDTO: 前台上传的病例相关信息
      * @return: boolean
+     *
+     * 上传病例图片给医生：
+     * 1、根据医生和妈妈的openID找到对应的表ID，完善casePictureDTO
+     * 2、创建case表【caseID】记录mother_picture表记录
+     * 3、创建comment表的记录
      **/
     @Override
     public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
@@ -69,7 +74,13 @@ public class CommentServiceImpl implements CommentService {
         // 上传时间，即评论咨询记录创建时间
         Date submitTime = new Date();
         casePictureDTO.setSubmitTime(submitTime);
-        int flag = commentMapper.insertCommentDetailByMom(casePictureDTO);
+        // 获取表中医生和妈妈的ID
+        Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
+        Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
+        casePictureDTO.setMotherID(motherID);
+        casePictureDTO.setDoctorID(doctorID);
+        // 创建Case表记录
+        int flag = commentMapper.insertCaseInfo(casePictureDTO);
         if(flag > 0){
             // 创建时间，该时间指的是生成上传病例图片记录的时间
             Date createPictureTime = new Date();
@@ -77,13 +88,6 @@ public class CommentServiceImpl implements CommentService {
             // 根据妈妈和医生openID和上传时间获取病历表的主键id
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
             casePictureDTO.setCaseID(caseID);
-            // 获取前台上传的病历图片集合
-//            List<String> pictures = casePictureDTO.getPictures();
-//            // 遍历每一张病例图片并插入到数据库对应的表中
-//            for(String pictureURL:pictures){
-//                casePictureDTO.setPictureURL(pictureURL);
-//                commentMapper.insertCasePictures(casePictureDTO);
-//            }
             String pictureURL = casePictureDTO.getPictureURL();
             commentMapper.insertCasePictures(casePictureDTO);
             // 创建医疗建议记录
