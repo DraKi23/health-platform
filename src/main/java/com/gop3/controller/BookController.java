@@ -53,8 +53,8 @@ public class BookController {
      * @param mother_openid: 妈妈的小程序用户信息
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/mom/myDocInfo/{mother_openid}")
-    public AjaxResponse getMyDocInfoList(@PathVariable String mother_openid){
+    @GetMapping("/mom/myDocInfo")
+    public AjaxResponse getMyDocInfoList(@RequestParam String mother_openid){
         List<MyDoctorInfoDTO> myDocInfoList = bookService.getMyDocInfoList(mother_openid);
         return AjaxResponse.success(myDocInfoList);
     }
@@ -65,8 +65,8 @@ public class BookController {
      * @param doctor_openid:
      * @return: java.util.List<com.gop3.dto.BookReplyDTO>
      **/
-    @GetMapping("/mom/getUnreplyBook/{doctor_openid}")
-   public List<BookReplyDTO> getUnreplyBookList(@PathVariable String doctor_openid){
+    @GetMapping("/mom/getUnreplyBook")
+   public List<BookReplyDTO> getUnreplyBookList(@RequestParam String doctor_openid){
         return bookService.getUnreplyBookList(doctor_openid);
    }
    /**
@@ -76,8 +76,8 @@ public class BookController {
     * @param doctor_openid:
     * @return: java.util.List<com.gop3.dto.BookReplyDTO>
     **/
-    @GetMapping("/mom/getreplyBook/{doctor_openid}")
-    public List<BookReplyDTO> getreplyBookList(@PathVariable String doctor_openid){
+    @GetMapping("/mom/getreplyBook")
+    public List<BookReplyDTO> getreplyBookList(@RequestParam String doctor_openid){
         return bookService.getreplyBookList(doctor_openid);
     }
 }

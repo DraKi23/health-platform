@@ -26,8 +26,8 @@ public class CommentController {
      * @param mid: 妈妈的openID
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/comment/simple/{mid}")
-    public AjaxResponse getCommentListForMom(@PathVariable String mid){
+    @GetMapping("/comment/simple")
+    public AjaxResponse getCommentListForMom(@RequestParam String mid){
         List<SimpleCommentDTO> commentList = commentService.getCommentListForMom(mid);
         return AjaxResponse.success(commentList);
     }
@@ -67,8 +67,8 @@ public class CommentController {
      * @param doctorOpenid: 医生openID
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/doc/simple/{did}")
-    public AjaxResponse getSimpleCommentInfo(@PathVariable("did") String doctorOpenid){
+    @GetMapping("/doc/simple")
+    public AjaxResponse getSimpleCommentInfo(@RequestParam("did") String doctorOpenid){
         List<UnResolveBookInfoDTO> simpleCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
         return AjaxResponse.success(simpleCommentList);
     }
