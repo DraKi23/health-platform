@@ -46,7 +46,7 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
-        System.out.println("我在种类大家乐福吖尬聊：" + commentDetailReqDTO);
+//        System.out.println("我在种类大家乐福吖尬聊：" + commentDetailReqDTO);
         // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
         Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
         Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
@@ -54,8 +54,10 @@ public class CommentServiceImpl implements CommentService {
         commentDetailReqDTO.setDoctorID(doctorOpenid);
         // 根据前台的请求标识寻找相关评论信息
         CommentDetailForMomDTO commentDetailForMomDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
-        List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
-        commentDetailForMomDTO.setPicture(pictures);
+        if(commentDetailForMomDTO!=null){
+            List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
+            commentDetailForMomDTO.setPicture(pictures);
+        }
         return commentDetailForMomDTO;
     }
 
@@ -82,7 +84,7 @@ public class CommentServiceImpl implements CommentService {
         Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
         casePictureDTO.setMotherID(motherID);
         casePictureDTO.setDoctorID(doctorID);
-        System.out.println(casePictureDTO);
+//        System.out.println(casePictureDTO);
         // 创建Case表记录
         int flag = commentMapper.insertCaseInfo(casePictureDTO);
         if(flag > 0){

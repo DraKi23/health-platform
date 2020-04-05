@@ -40,7 +40,7 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("/comment/detail")
-    public AjaxResponse getCommentDetailForMom(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
+    public AjaxResponse getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO){
         CommentDetailForMomDTO commentDetailForMomDTO = commentService.getCommentDetailForMom(commentDetailReqDTO);
         return AjaxResponse.success(commentDetailForMomDTO);
     }

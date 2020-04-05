@@ -14,5 +14,5 @@ public class CommentDetailReqDTO {
     private Integer motherID;//妈妈id
     private Integer doctorID;//医生id
     private Date bookTime;//上传咨询时间
-    private Date create_time;//回复日期
+    private String create_time;//回复日期
 }
