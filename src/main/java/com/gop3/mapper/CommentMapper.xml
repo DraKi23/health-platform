@@ -19,7 +19,7 @@
     <select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
             resultType="com.gop3.dto.CommentDetailForMomDTO">
         select b.icon, b.name, a.create_time, a.content
-        from health_comment a, health_doctor b, health_mother c
+        from health_case a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
             and b.wx_openid = #{did} and a.create_time = #{create_time}
     </select>
