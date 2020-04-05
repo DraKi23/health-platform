@@ -2,7 +2,7 @@ server:
   port: 8099
 spring:
   jackson:
-    date-format: yyyy-MM-dd HH:mm
+    date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   datasource:
     url: jdbc:mysql://localhost:3306/health_platform?useUnicode=true&characterEncoding=utf-8&useSSL=FALSE&serverTimezone=UTC

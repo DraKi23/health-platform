@@ -46,11 +46,14 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
-        // 根据前台的请求标识寻找相关评论信息
-        CommentDetailForMomDTO commentDetailForMomDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
+        System.out.println("我在种类大家乐福吖尬聊：" + commentDetailReqDTO);
         // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
         Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
         Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
+        commentDetailReqDTO.setMotherID(motherOpenid);
+        commentDetailReqDTO.setDoctorID(doctorOpenid);
+        // 根据前台的请求标识寻找相关评论信息
+        CommentDetailForMomDTO commentDetailForMomDTO = commentMapper.getCommentDetailForMom(commentDetailReqDTO);
         List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
         commentDetailForMomDTO.setPicture(pictures);
         return commentDetailForMomDTO;
@@ -79,6 +82,7 @@ public class CommentServiceImpl implements CommentService {
         Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
         casePictureDTO.setMotherID(motherID);
         casePictureDTO.setDoctorID(doctorID);
+        System.out.println(casePictureDTO);
         // 创建Case表记录
         int flag = commentMapper.insertCaseInfo(casePictureDTO);
         if(flag > 0){
@@ -87,12 +91,15 @@ public class CommentServiceImpl implements CommentService {
             casePictureDTO.setCreatePictureTime(createPictureTime);
             // 根据妈妈和医生openID和上传时间获取病历表的主键id
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
+            System.out.println("caseID = "+caseID);
+            System.out.println(casePictureDTO);
             casePictureDTO.setCaseID(caseID);
             String pictureURL = casePictureDTO.getPictureURL();
             commentMapper.insertCasePictures(casePictureDTO);
             // 创建医疗建议记录
             Date bookTime = new Date();
             casePictureDTO.setBookTime(bookTime);
+            System.out.println(casePictureDTO);
             commentMapper.insertCommentDetailByMom(casePictureDTO);
             // 程序执行到此处，表示所有数据插入成功
             insertSuccess = true;
