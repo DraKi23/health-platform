@@ -21,7 +21,7 @@
         select b.icon, b.name, a.create_time, a.content
         from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
-            and b.wx_openid = #{did} and a.create_time = #{create_time}
+            and b.wx_openid = #{did} and a.bookTime = #{create_time}
     </select>
 
     <!-- 获取妈妈与医生之间的病历表图片列表 -->
@@ -30,7 +30,7 @@
         select picture
         from health_case a, health_comment b, health_mother_picture c
         where a.mid = #{motherID} and a.did=#{doctorID} and b.mid = #{motherID} and b.did=#{doctorID}
-            and c.cid = a.id and b.create_time = #{create_time}
+            and c.cid = a.id and b.bookTime = #{create_time}
     </select>
 
     <!-- 创建上传给医生病例图片的记录 -->
