@@ -9,7 +9,7 @@ import com.gop3.po.OpenIdJson;
  */
 public class OpenIdUtil {
     private static final String APP_ID = "xxxxx";//小程序id
-    private static final String APP_SECRET = "yyyy";//小程序密钥
+    private static final String APP_SECRET = "yyyyy";//小程序密钥
    // @PostMapping("/getopenid")
     /**
      * @Description: 用code换取openid

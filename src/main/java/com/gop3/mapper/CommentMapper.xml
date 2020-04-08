@@ -4,21 +4,21 @@
 <mapper namespace="com.gop3.mapper.CommentMapper">
     <!-- 根据妈妈openID获取妈妈咨询建议的简要回复信息 -->
     <select id="getCommentListForMom" parameterType="String" resultMap="simpleComment">
-        select b.wx_openid, b.icon, b.name, a.create_time
-        from health_case a, health_doctor b, health_mother c
+        select b.wx_openid, b.icon, b.name, a.bookTime
+        from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{motherOpenid}
     </select>
     <resultMap id="simpleComment" type="com.gop3.dto.SimpleCommentDTO">
         <result column="wx_openid" property="did"/>
         <result column="icon" property="icon"/>
         <result column="name" property="name"/>
-        <result column="create_time" property="create_time"/>
+        <result column="bookTime" property="create_time"/>
     </resultMap>
 
     <!-- 根据请求的字段标识获取评论详细信息 -->
     <select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
             resultType="com.gop3.dto.CommentDetailForMomDTO">
-        select b.icon, b.name, a.create_time, a.content
+        select b.icon, b.name, a.bookTime, a.content
         from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
             and b.wx_openid = #{did} and a.bookTime = #{create_time}

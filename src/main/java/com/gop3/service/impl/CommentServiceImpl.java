@@ -34,7 +34,9 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public List<SimpleCommentDTO> getCommentListForMom(String motherOpenid) {
-        return commentMapper.getCommentListForMom(motherOpenid);
+        List<SimpleCommentDTO> list = commentMapper.getCommentListForMom(motherOpenid);
+//        System.out.println(list);
+        return list;
     }
 
     /**
@@ -72,6 +74,9 @@ public class CommentServiceImpl implements CommentService {
      * 1、根据医生和妈妈的openID找到对应的表ID，完善casePictureDTO
      * 2、创建case表【caseID】记录mother_picture表记录
      * 3、创建comment表的记录
+     *
+     * 注：后台中，bookTime就是上传图片时间，create_time就是医生回复时间
+     * 前台的create_time可能指的是上传图片时间或者医生回复时间
      **/
     @Override
     public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
@@ -93,15 +98,15 @@ public class CommentServiceImpl implements CommentService {
             casePictureDTO.setCreatePictureTime(createPictureTime);
             // 根据妈妈和医生openID和上传时间获取病历表的主键id
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
-            System.out.println("caseID = "+caseID);
-            System.out.println(casePictureDTO);
+//            System.out.println("caseID = "+caseID);
+//            System.out.println(casePictureDTO);
             casePictureDTO.setCaseID(caseID);
             String pictureURL = casePictureDTO.getPictureURL();
             commentMapper.insertCasePictures(casePictureDTO);
             // 创建医疗建议记录
             Date bookTime = new Date();
             casePictureDTO.setBookTime(bookTime);
-            System.out.println(casePictureDTO);
+//            System.out.println(casePictureDTO);
             commentMapper.insertCommentDetailByMom(casePictureDTO);
             // 程序执行到此处，表示所有数据插入成功
             insertSuccess = true;
