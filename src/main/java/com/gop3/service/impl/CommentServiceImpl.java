@@ -35,7 +35,6 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<SimpleCommentDTO> getCommentListForMom(String motherOpenid) {
         List<SimpleCommentDTO> list = commentMapper.getCommentListForMom(motherOpenid);
-//        System.out.println(list);
         return list;
     }
 
@@ -48,7 +47,6 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO) {
-//        System.out.println("我在种类大家乐福吖尬聊：" + commentDetailReqDTO);
         // 根据医生和妈妈的openID和上传时间寻找对应的相片列表
         Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
         Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
@@ -64,55 +62,112 @@ public class CommentServiceImpl implements CommentService {
     }
 
     /**
-     * @Description: 上传妈妈病例图片列表
+     * @Description: 创建病例上传和咨询评论记录
      * @Author: Drgn
-     * @Date: 2020/2/16 17:35
-     * @param casePictureDTO: 前台上传的病例相关信息
-     * @return: boolean
-     *
-     * 上传病例图片给医生：
-     * 1、根据医生和妈妈的openID找到对应的表ID，完善casePictureDTO
-     * 2、创建case表【caseID】记录mother_picture表记录
-     * 3、创建comment表的记录
-     *
-     * 注：后台中，bookTime就是上传图片时间，create_time就是医生回复时间
-     * 前台的create_time可能指的是上传图片时间或者医生回复时间
+     * @Date: 2020/4/13 12:20
+     * @param casePictureDTO: 必要的创建信息
+     * @return: boolean 是否创建成功
      **/
     @Override
-    public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
-        boolean insertSuccess = false;
-        // 上传时间，即评论咨询记录创建时间
-        Date submitTime = new Date();
-        casePictureDTO.setSubmitTime(submitTime);
+    public boolean insertCaseAndCommentForMom(CasePictureDTO casePictureDTO) {
         // 获取表中医生和妈妈的ID
         Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
         Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
         casePictureDTO.setMotherID(motherID);
         casePictureDTO.setDoctorID(doctorID);
-//        System.out.println(casePictureDTO);
-        // 创建Case表记录
+        // 病例记录创建时间
+        Date submitTime = new Date();
+        casePictureDTO.setSubmitTime(submitTime);
         int flag = commentMapper.insertCaseInfo(casePictureDTO);
-        if(flag > 0){
-            // 创建时间，该时间指的是生成上传病例图片记录的时间
-            Date createPictureTime = new Date();
-            casePictureDTO.setCreatePictureTime(createPictureTime);
-            // 根据妈妈和医生openID和上传时间获取病历表的主键id
+        if(flag > 0){// 如果创建case表记录成功，再创建comment表记录
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
-//            System.out.println("caseID = "+caseID);
-//            System.out.println(casePictureDTO);
-            casePictureDTO.setCaseID(caseID);
-            String pictureURL = casePictureDTO.getPictureURL();
-            commentMapper.insertCasePictures(casePictureDTO);
-            // 创建医疗建议记录
             Date bookTime = new Date();
+            casePictureDTO.setCaseID(caseID);
             casePictureDTO.setBookTime(bookTime);
-//            System.out.println(casePictureDTO);
-            commentMapper.insertCommentDetailByMom(casePictureDTO);
-            // 程序执行到此处，表示所有数据插入成功
-            insertSuccess = true;
+            int insertNum = commentMapper.insertCommentDetailByMom(casePictureDTO);
+            if(insertNum > 0){
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
         }
-        return insertSuccess;
     }
+
+    /**
+     * @Description: 创建妈妈上传病例的相关记录
+     * @Author: Drgn
+     * @Date: 2020/4/13 11:57
+     * @param casePictureDTO: 病例上传的必要信息
+     * @return: boolean 是否创建记录成功
+     *
+     * 1、先创建case记录
+     * 2、再创建picture记录
+     **/
+    @Override
+    public boolean insertCasePictureForMom(CasePictureDTO casePictureDTO) {
+        Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
+        Integer caseID = commentMapper.getCaseID(casePictureDTO);
+        Date createPictureTime = new Date();
+        casePictureDTO.setMotherID(motherID);
+        casePictureDTO.setCaseID(caseID);
+        casePictureDTO.setCreatePictureTime(createPictureTime);
+        int flag = commentMapper.insertCasePictures(casePictureDTO);
+        if(flag > 0){
+            return true;
+        }
+        return false;
+    }
+
+
+
+//    /**
+//     * @Description: 上传妈妈病例图片列表
+//     * @Author: Drgn
+//     * @Date: 2020/2/16 17:35
+//     * @param casePictureDTO: 前台上传的病例相关信息
+//     * @return: boolean
+//     *
+//     * 上传病例图片给医生：
+//     * 1、根据医生和妈妈的openID找到对应的表ID，完善casePictureDTO
+//     * 2、创建case表【caseID】记录mother_picture表记录
+//     * 3、创建comment表的记录
+//     *
+//     * 注：后台中，bookTime就是上传图片时间，create_time就是医生回复时间
+//     * 前台的create_time可能指的是上传图片时间或者医生回复时间
+//     **/
+//    @Override
+//    public boolean insertCasePictureInfo(CasePictureDTO casePictureDTO) {
+//        boolean insertSuccess = false;
+//        // 上传时间，即评论咨询记录创建时间
+//        Date submitTime = new Date();
+//        casePictureDTO.setSubmitTime(submitTime);
+//        // 获取表中医生和妈妈的ID
+//        Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
+//        Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
+//        casePictureDTO.setMotherID(motherID);
+//        casePictureDTO.setDoctorID(doctorID);
+//        // 创建Case表记录
+//        int flag = commentMapper.insertCaseInfo(casePictureDTO);
+//        if(flag > 0){
+//            // 创建时间，该时间指的是生成上传病例图片记录的时间
+//            Date createPictureTime = new Date();
+//            casePictureDTO.setCreatePictureTime(createPictureTime);
+//            // 根据妈妈和医生openID和上传时间获取病历表的主键id
+//            Integer caseID = commentMapper.getCaseID(casePictureDTO);
+//            casePictureDTO.setCaseID(caseID);
+//            String pictureURL = casePictureDTO.getPictureURL();
+//            commentMapper.insertCasePictures(casePictureDTO);
+//            // 创建医疗建议记录
+//            Date bookTime = new Date();
+//            casePictureDTO.setBookTime(bookTime);
+//            commentMapper.insertCommentDetailByMom(casePictureDTO);
+//            // 程序执行到此处，表示所有数据插入成功
+//            insertSuccess = true;
+//        }
+//        return insertSuccess;
+//    }
 
     /**
      * @Description: 获取医生未处理的妈妈等待咨询的信息列表

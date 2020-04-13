@@ -45,18 +45,47 @@ public class CommentController {
         return AjaxResponse.success(commentDetailForMomDTO);
     }
 
+//    /**
+//     * @Description: 上传妈妈病例图片列表
+//     * @Author: Drgn
+//     * @Date: 2020/2/17 16:25
+//     * @param casePictureDTO: 前台上传的病例相关信息
+//     * @return: com.gop3.entity.AjaxResponse
+//     **/
+//    @PostMapping("/case/pictures")
+//    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO, MultipartFile casePicture){
+//        String path = UploadImageUtil.uploadImage(casePicture);
+//        casePictureDTO.setPictureURL(path);
+//        boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
+//        return AjaxResponse.success(insertSuccess);
+//    }
+
     /**
-     * @Description: 上传妈妈病例图片列表
+     * @Description: 创建上传病例和请求咨询的相关记录
      * @Author: Drgn
-     * @Date: 2020/2/17 16:25
-     * @param casePictureDTO: 前台上传的病例相关信息
-     * @return: com.gop3.entity.AjaxResponse
+     * @Date: 2020/4/13 12:45
+     * @param casePictureDTO: 必要的创建信息
+     * @return: com.gop3.entity.AjaxResponse 是否成功创建
      **/
-    @PostMapping("/case/pictures")
-    public AjaxResponse insertCasePictureInfo(CasePictureDTO casePictureDTO, MultipartFile casePicture){
+    @PostMapping("/case/comment")
+    public AjaxResponse insertCaseAndCommentForMom(CasePictureDTO casePictureDTO){
+        boolean flag = commentService.insertCaseAndCommentForMom(casePictureDTO);
+        return AjaxResponse.success(flag);
+    }
+
+    /**
+     * @Description: 创建上传的病例图片记录
+     * @Author: Drgn
+     * @Date: 2020/4/13 12:48
+     * @param casePictureDTO: 必要的创建信息
+     * @param casePicture: 接收的图片资源
+     * @return: com.gop3.entity.AjaxResponse 是否成功创建
+     **/
+    @PostMapping("/case/picture")
+    public AjaxResponse insertCasePicture(CasePictureDTO casePictureDTO, MultipartFile casePicture){
         String path = UploadImageUtil.uploadImage(casePicture);
         casePictureDTO.setPictureURL(path);
-        boolean insertSuccess = commentService.insertCasePictureInfo(casePictureDTO);
+        boolean insertSuccess = commentService.insertCasePictureForMom(casePictureDTO);
         return AjaxResponse.success(insertSuccess);
     }
 

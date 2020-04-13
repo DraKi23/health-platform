@@ -13,8 +13,11 @@ public interface CommentService {
     List<SimpleCommentDTO> getCommentListForMom(String motherOpenid);
     // 获取某条咨询医疗建议的详细信息
     CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO);
-    // 上传妈妈病例图片列表
-    boolean insertCasePictureInfo(CasePictureDTO casePictureDTO);
+
+    // 创建上传病例和咨询建议记录
+    boolean insertCaseAndCommentForMom(CasePictureDTO casePictureDTO);
+    // 创建上传的病例图片记录
+    boolean insertCasePictureForMom(CasePictureDTO casePictureDTO);
 
     // 获取医生未处理的妈妈等待咨询的信息列表
     List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(String doctorOpenid);
