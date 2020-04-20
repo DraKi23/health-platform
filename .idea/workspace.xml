@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CasePictureDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CommentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +344,8 @@
       <workItem from="1586084488220" duration="12185000" />
       <workItem from="1586178556837" duration="3810000" />
       <workItem from="1586351918629" duration="6117000" />
-      <workItem from="1586749593755" duration="3370000" />
+      <workItem from="1586749593755" duration="7569000" />
+      <workItem from="1587380047693" duration="2212000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -581,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586355608416</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="drgn 13th upload~~ case-comment-picture">
+      <created>1586753774210</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1586753774210</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +613,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="drgn first upload" />
     <MESSAGE value="drgn first upload~" />
     <MESSAGE value="drgn second upload~~" />
     <MESSAGE value="drgn 3rd upload~" />
@@ -627,7 +637,8 @@
     <MESSAGE value="drgn 12th upload~~ comment changes" />
     <MESSAGE value="drgn 12th upload~~ comment changes3" />
     <MESSAGE value="drgn 12th upload~~ comment changes4" />
-    <option name="LAST_COMMIT_MESSAGE" value="drgn 12th upload~~ comment changes4" />
+    <MESSAGE value="drgn 13th upload~~ case-comment-picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="drgn 13th upload~~ case-comment-picture" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1584803871793">
@@ -638,10 +649,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586750213344" />
-    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1586355607279">
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1586753772518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586355607279" />
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586753772518" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1584802267728">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -706,14 +717,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" width="1124" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585282938298" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1586355622430">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1586753783030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1586355622430" />
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586749606973">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1586753783030" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587380047023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586749606973" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587380047023" />
     <state x="345" y="155" key="git4idea.merge.GitPullDialog" timestamp="1583056745960">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

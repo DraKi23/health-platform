@@ -76,14 +76,14 @@ public class CommentServiceImpl implements CommentService {
         casePictureDTO.setMotherID(motherID);
         casePictureDTO.setDoctorID(doctorID);
         // 病例记录创建时间
-        Date submitTime = new Date();
-        casePictureDTO.setSubmitTime(submitTime);
+//        Date submitTime = new Date();
+//        casePictureDTO.setSubmitTime(submitTime);
         int flag = commentMapper.insertCaseInfo(casePictureDTO);
         if(flag > 0){// 如果创建case表记录成功，再创建comment表记录
             Integer caseID = commentMapper.getCaseID(casePictureDTO);
-            Date bookTime = new Date();
+//            Date bookTime = new Date();
             casePictureDTO.setCaseID(caseID);
-            casePictureDTO.setBookTime(bookTime);
+//            casePictureDTO.setBookTime(bookTime);
             int insertNum = commentMapper.insertCommentDetailByMom(casePictureDTO);
             if(insertNum > 0){
                 return true;
@@ -109,10 +109,10 @@ public class CommentServiceImpl implements CommentService {
     public boolean insertCasePictureForMom(CasePictureDTO casePictureDTO) {
         Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
         Integer caseID = commentMapper.getCaseID(casePictureDTO);
-        Date createPictureTime = new Date();
+//        Date createPictureTime = new Date();
         casePictureDTO.setMotherID(motherID);
         casePictureDTO.setCaseID(caseID);
-        casePictureDTO.setCreatePictureTime(createPictureTime);
+//        casePictureDTO.setCreatePictureTime(createPictureTime);
         int flag = commentMapper.insertCasePictures(casePictureDTO);
         if(flag > 0){
             return true;
@@ -190,8 +190,8 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public boolean insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO) {
-        Date create_time = new Date();
-        commentDetailByDocDTO.setCreate_time(create_time);
+//        Date create_time = new Date();
+//        commentDetailByDocDTO.setCreate_time(create_time);
         int i = commentMapper.insertCommentDetailByDoc(commentDetailByDocDTO);
         return i>0?true:false;
     }
