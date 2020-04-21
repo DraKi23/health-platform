@@ -46,15 +46,15 @@
     </insert>
 
     <insert id="insertCommentDetailByMom" parameterType="com.gop3.dto.CasePictureDTO">
-        insert into health_comment(mid, did, bookTime)
-        values (#{motherID}, #{doctorID}, #{bookTime})
+        insert into health_comment(mid, did, bookTime,cid)
+        values (#{motherID}, #{doctorID}, #{bookTime},#{caseID})
     </insert>
 
     <!-- 查找病例表记录id -->
     <select id="getCaseID" parameterType="com.gop3.dto.CasePictureDTO" resultType="Integer">
         select id
-        from health_case
-        where mid = #{motherID} and did = #{doctorID} and create_time = #{submitTime}
+        from health_case a
+        where a.mid = #{motherID} and a.did = #{doctorID} and a.create_time = #{bookTime}
     </select>
 
     <!-- 获取医生未处理的妈妈等待咨询的信息列表 -->

@@ -8,6 +8,7 @@ import com.gop3.service.intf.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Date;
 import java.util.List;
@@ -106,11 +107,13 @@ public class CommentServiceImpl implements CommentService {
      * 2、再创建picture记录
      **/
     @Override
-    public boolean insertCasePictureForMom(CasePictureDTO casePictureDTO) {
+    public boolean insertCasePictureForMom(@RequestBody CasePictureDTO casePictureDTO) {
         Integer motherID = motherMapper.getMotherIdByOpenid(casePictureDTO.getMid());
-        Integer caseID = commentMapper.getCaseID(casePictureDTO);
+        Integer doctorID = doctorMapper.getDoctorIdByOpenid(casePictureDTO.getDid());
 //        Date createPictureTime = new Date();
         casePictureDTO.setMotherID(motherID);
+        casePictureDTO.setDoctorID(doctorID);
+        Integer caseID = commentMapper.getCaseID(casePictureDTO);
         casePictureDTO.setCaseID(caseID);
 //        casePictureDTO.setCreatePictureTime(createPictureTime);
         int flag = commentMapper.insertCasePictures(casePictureDTO);
