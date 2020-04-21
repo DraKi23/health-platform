@@ -68,7 +68,7 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse 是否成功创建
      **/
     @PostMapping("/case/comment")
-    public AjaxResponse insertCaseAndCommentForMom(CasePictureDTO casePictureDTO){
+    public AjaxResponse insertCaseAndCommentForMom(@RequestBody CasePictureDTO casePictureDTO){
         boolean flag = commentService.insertCaseAndCommentForMom(casePictureDTO);
         return AjaxResponse.success(flag);
     }

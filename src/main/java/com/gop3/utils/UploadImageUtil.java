@@ -31,7 +31,7 @@ public class UploadImageUtil {
         // 1、图片后缀校验
         String fileName = file.getOriginalFilename();
         String name = fileName.toLowerCase();
-        if( !name.matches("^.+\\.(jpg|png|gif)$") ){
+        if( !name.matches("^.+\\.(jpg|png|gif|jpeg)$") ){
             return null;
         }
 
