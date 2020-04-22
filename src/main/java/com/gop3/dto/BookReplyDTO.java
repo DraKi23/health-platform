@@ -13,4 +13,5 @@ public class BookReplyDTO {
     private  String name;//妈妈姓名
     private Date bookTime;//预约时间
     private String isReturn;//处理情况
+    private String wx_openid;//妈妈openid
 }
