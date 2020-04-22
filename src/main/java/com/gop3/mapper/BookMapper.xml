@@ -76,5 +76,12 @@
         where a.id=b.mid and b.did in (select id from health_doctor where wx_openid = #{doctor_openid})
         and b.isReturn != -1
     </select>
+    <select id="getBookInfoDetailForDoc" parameterType="com.gop3.dto.BookInfoDetailReqDTO"
+            resultType="com.gop3.dto.BookInfoDetailDTO">
+        select a.icon, a.name, a.addresss, a.pregnent_weeks, a.baby_weeks, c.bookTime, c.isReturn
+        from health_mother a, health_doctor b, health_book c
+        where a.id = c.mid and b.id = c.did and a.id = #{motherID}
+            and b.id=#{doctorID} and c.bookTime=#{bookTime}
+    </select>
 
 </mapper>

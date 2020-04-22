@@ -1,9 +1,6 @@
 package com.gop3.mapper;
 
-import com.gop3.dto.BookInfoDTO;
-import com.gop3.dto.BookReplyDTO;
-import com.gop3.dto.BookedInfoDTO;
-import com.gop3.dto.MyDoctorInfoDTO;
+import com.gop3.dto.*;
 import com.gop3.po.Book;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -43,5 +40,7 @@ public interface BookMapper {
     List<BookReplyDTO> getUnreplyBookList(String doctor_openid);
     //通过某位医生的openid查找已经处理预约记录
     List<BookReplyDTO> getReplyBookList(String doctor_openid);
+    // 医生获取某一位妈妈的预约详情
+    BookInfoDetailDTO getBookInfoDetailForDoc(BookInfoDetailReqDTO bookInfoDetailReqDTO);
 
 }

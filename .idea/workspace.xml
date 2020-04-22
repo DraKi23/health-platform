@@ -5,9 +5,16 @@
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookInfoDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookInfoDetailReqDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookReplyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookReplyDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/utils/OpenIdUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +355,7 @@
       <workItem from="1587443699217" duration="1791000" />
       <workItem from="1587445556574" duration="1021000" />
       <workItem from="1587448387278" duration="10486000" />
-      <workItem from="1587526391122" duration="441000" />
+      <workItem from="1587526391122" duration="7711000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -616,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587458540109</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="drgn 15th upload~~ book-little-change1">
+      <created>1587527015746</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1587527015746</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +651,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="drgn 4th upload~~" />
     <MESSAGE value="drgn 5th upload~~" />
     <MESSAGE value="jinli 3rd upload~~" />
     <MESSAGE value="drgn 6th upload~~" />
@@ -662,21 +675,22 @@
     <MESSAGE value="drgn 14th upload~~ case-comment-pricture-time" />
     <MESSAGE value="drgn 14th upload~~ case-comment-pricture-time-little-change" />
     <MESSAGE value="drgn 14th upload~~ case-comment-pricture-time-little-change2" />
-    <option name="LAST_COMMIT_MESSAGE" value="drgn 14th upload~~ case-comment-pricture-time-little-change2" />
+    <MESSAGE value="drgn 15th upload~~ book-little-change1" />
+    <option name="LAST_COMMIT_MESSAGE" value="drgn 15th upload~~ book-little-change1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1584803871793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1366.728@0.0.1366.728" timestamp="1584803871793" />
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1586750213344">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1587553066126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586750213344" />
-    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1587458538570">
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587553066126" />
+    <state x="168" y="0" key="CommitChangelistDialog2" timestamp="1587554480886">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587458538570" />
+    <state x="168" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587554480886" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1584802267728">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -741,10 +755,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" width="1124" height="716" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585282938298" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1587458561819">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1587527024690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587458561819" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587527024690" />
     <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587526393157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

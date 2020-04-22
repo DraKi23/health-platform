@@ -1,9 +1,6 @@
 package com.gop3.controller;
 
-import com.gop3.dto.BookInfoDTO;
-import com.gop3.dto.BookReplyDTO;
-import com.gop3.dto.BookedInfoDTO;
-import com.gop3.dto.MyDoctorInfoDTO;
+import com.gop3.dto.*;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,4 +77,17 @@ public class BookController {
     public List<BookReplyDTO> getreplyBookList(@RequestParam String doctor_openid){
         return bookService.getreplyBookList(doctor_openid);
     }
+
+    /**
+     * @Description: 返回预约复诊的详情
+     * @Author: Drgn
+     * @Date: 2020/4/22 18:38
+     * @param bookInfoDetailReqDTO: 必要的请求标识信息
+     * @return: com.gop3.dto.BookInfoDetailDTO 返回的预约信息
+     **/
+    @GetMapping("/doc/detailbook")
+    public BookInfoDetailDTO getBookInfoDetail(@RequestBody BookInfoDetailReqDTO bookInfoDetailReqDTO){
+        return bookService.getBookInfoDetailForDoc(bookInfoDetailReqDTO);
+    }
+
 }

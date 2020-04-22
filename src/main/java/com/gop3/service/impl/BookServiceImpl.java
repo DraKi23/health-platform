@@ -1,10 +1,9 @@
 package com.gop3.service.impl;
 
-import com.gop3.dto.BookInfoDTO;
-import com.gop3.dto.BookReplyDTO;
-import com.gop3.dto.BookedInfoDTO;
-import com.gop3.dto.MyDoctorInfoDTO;
+import com.gop3.dto.*;
 import com.gop3.mapper.BookMapper;
+import com.gop3.mapper.DoctorMapper;
+import com.gop3.mapper.MotherMapper;
 import com.gop3.service.intf.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +20,10 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookMapper bookMapper;
+    @Autowired
+    private MotherMapper motherMapper;
+    @Autowired
+    private DoctorMapper doctorMapper;
 
     /*
      * 妈妈相关的预约复诊功能
@@ -85,26 +88,28 @@ public class BookServiceImpl implements BookService {
         return bookMapper.getReplyBookList(doctor_openid);
     }
 
-    /*
-     *  医生相关的功能
-     */
-//    @Override
-//    public List<BookVO> getBookedListForDoc(BookVO book) {
-//        return null;
-//    }
-//
-//    @Override
-//    public boolean updateDocDeleted(BookVO book) {
-//        return false;
-//    }
-//
-//    @Override
-//    public List<BookVO> getBookListForDoc(BookVO book) {
-//        return null;
-//    }
-//
-//    @Override
-//    public boolean updateBookingState(BookVO book) {
-//        return false;
-//    }
+    /**
+     * @Description: 处理获取妈妈预约详情的逻辑
+     * @Author: Drgn
+     * @Date: 2020/4/22 19:17
+     * @param bookInfoDetailReqDTO: 必要请求信息
+     * @return: com.gop3.dto.BookInfoDetailDTO 返回的数据
+     **/
+    @Override
+    public BookInfoDetailDTO getBookInfoDetailForDoc(BookInfoDetailReqDTO bookInfoDetailReqDTO) {
+        // 根据openID获取表中的id
+        Integer motherID = motherMapper.getMotherIdByOpenid(bookInfoDetailReqDTO.getMid());
+        Integer doctorID = doctorMapper.getDoctorIdByOpenid(bookInfoDetailReqDTO.getDid());
+        bookInfoDetailReqDTO.setMotherID(motherID);
+        bookInfoDetailReqDTO.setDoctorID(doctorID);
+        // 查询需要的数据
+        BookInfoDetailDTO detailDTO = bookMapper.getBookInfoDetailForDoc(bookInfoDetailReqDTO);
+        // 设置是否怀孕和出生
+        int isPregnant = detailDTO.getPregnant_weeks()>0 ? 1:-1;
+        int isBorn = detailDTO.getPregnant_weeks()>0? 1:-1;
+        detailDTO.setIsPregnant(isPregnant);
+        detailDTO.setIsBorn(isBorn);
+        return detailDTO;
+    }
+
 }
