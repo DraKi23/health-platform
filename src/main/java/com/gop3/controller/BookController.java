@@ -86,7 +86,7 @@ public class BookController {
      * @return: com.gop3.dto.BookInfoDetailDTO 返回的预约信息
      **/
     @GetMapping("/doc/detailbook")
-    public BookInfoDetailDTO getBookInfoDetail(@RequestBody BookInfoDetailReqDTO bookInfoDetailReqDTO){
+    public BookInfoDetailDTO getBookInfoDetail(BookInfoDetailReqDTO bookInfoDetailReqDTO){
         return bookService.getBookInfoDetailForDoc(bookInfoDetailReqDTO);
     }
 

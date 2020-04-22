@@ -106,7 +106,7 @@ public class BookServiceImpl implements BookService {
         BookInfoDetailDTO detailDTO = bookMapper.getBookInfoDetailForDoc(bookInfoDetailReqDTO);
         // 设置是否怀孕和出生
         int isPregnant = detailDTO.getPregnant_weeks()>0 ? 1:-1;
-        int isBorn = detailDTO.getPregnant_weeks()>0? 1:-1;
+        int isBorn = detailDTO.getBaby_weeks()>0? 1:-1;
         detailDTO.setIsPregnant(isPregnant);
         detailDTO.setIsBorn(isBorn);
         return detailDTO;
