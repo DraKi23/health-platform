@@ -84,4 +84,9 @@
             and b.id=#{doctorID} and c.bookTime=#{bookTime}
     </select>
 
+    <update id="updateBookState" >
+        update health_book
+        set isReturn = #{isReturn}
+        where mid=#{doctorId} and did = #{motherId} and bookTime=#{bookTime}
+    </update>
 </mapper>

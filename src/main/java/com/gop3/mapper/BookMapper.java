@@ -4,6 +4,7 @@ import com.gop3.dto.*;
 import com.gop3.po.Book;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,5 +43,7 @@ public interface BookMapper {
     List<BookReplyDTO> getReplyBookList(String doctor_openid);
     // 医生获取某一位妈妈的预约详情
     BookInfoDetailDTO getBookInfoDetailForDoc(BookInfoDetailReqDTO bookInfoDetailReqDTO);
+    //医生处理某一条预约信息
+    boolean updateBookState(int doctorId, int motherId, String bookTime, int isReturn);
 
 }

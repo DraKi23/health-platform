@@ -111,5 +111,22 @@ public class BookServiceImpl implements BookService {
         detailDTO.setIsBorn(isBorn);
         return detailDTO;
     }
-
+    /**
+     * @Description:医生处理预约
+     * @Author: jinli
+     * @Date: 2020/4/23 11:47
+     * @param doctor_openid: 医生openid
+     * @param mother_openid: 妈妈openid
+     * @param bookTime: 预约时间
+     * @param isReturn: 处理情况
+     * @return: java.lang.Boolean
+     **/
+    @Override
+    public Boolean handleBook(String doctor_openid, String mother_openid, String bookTime, int isReturn) {
+        int doctorId=doctorMapper.getDoctorIdByOpenid(doctor_openid);
+        int motherId=motherMapper.getMotherIdByOpenid(mother_openid);
+        System.out.println("萨哈的："+motherId);
+        System.out.println("萨哈的："+doctorId);
+        return bookMapper.updateBookState(doctorId,motherId,bookTime,isReturn);
+    }
 }
