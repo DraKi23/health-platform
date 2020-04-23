@@ -97,9 +97,9 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("/doc/simple")
-    public AjaxResponse getSimpleCommentInfo(@RequestParam("did") String doctorOpenid){
-        List<UnResolveBookInfoDTO> simpleCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
-        return AjaxResponse.success(simpleCommentList);
+    public List<SimpleCommentDTO> getSimpleCommentInfo(@RequestParam("did") String doctorOpenid){
+        List<SimpleCommentDTO> simpleCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
+        return simpleCommentList;
     }
     /**
      * @Description:获取医生已经处理的妈妈等待咨询的信息列表
@@ -110,7 +110,7 @@ public class CommentController {
      **/
     @GetMapping("/doc/dealt")
     public List<SimpleCommentDTO> getDealtCommentInfo(@RequestParam("did") String doctorOpenid){
-        List<SimpleCommentDTO> dealtCommentList= commentService.getDealtCommentListForDoc(doctorOpenid);
+        List<SimpleCommentDTO> dealtCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
         return dealtCommentList;
     }
     /**

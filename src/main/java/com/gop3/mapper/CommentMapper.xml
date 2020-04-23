@@ -62,7 +62,7 @@
             resultType="com.gop3.dto.UnResolveBookInfoDTO">
         select c.wx_openid, c.icon, c.name, a.bookTime
         from health_comment a, health_doctor b, health_mother c
-        where a.did = b.id and a.mid = c.id and c.wx_openid = #{doctorOpenid}
+        where a.did = b.id and a.mid = c.id and b.wx_openid = #{doctorOpenid}
             and a.content is null
     </select>
 

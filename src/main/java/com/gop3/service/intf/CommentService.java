@@ -19,7 +19,7 @@ public interface CommentService {
     // 创建上传的病例图片记录
     boolean insertCasePictureForMom(CasePictureDTO casePictureDTO);
     // 获取医生未处理的妈妈等待咨询的信息列表
-    List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(String doctorOpenid);
+    List<SimpleCommentDTO> getSimpleCommentListForDoc(String doctorOpenid);
     // 获取医生已经处理的妈妈等待咨询的信息列表
     List<SimpleCommentDTO> getDealtCommentListForDoc(String doctorOpenid);
     // 插入医生医疗建议的记录到数据库中

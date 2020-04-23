@@ -182,8 +182,18 @@ public class CommentServiceImpl implements CommentService {
      * @return: java.util.List<com.gop3.dto.UnResolveBookInfoDTO>
      **/
     @Override
-    public List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(String doctorOpenid) {
-        return commentMapper.getSimpleCommentListForDoc(doctorOpenid);
+    public List<SimpleCommentDTO> getSimpleCommentListForDoc(String doctorOpenid) {
+        List<UnResolveBookInfoDTO> unResolveBookInfoDTOS=commentMapper.getSimpleCommentListForDoc(doctorOpenid);
+        List<SimpleCommentDTO> simpleCommentDTOS = new ArrayList<SimpleCommentDTO>();
+        for (int i=0;i<unResolveBookInfoDTOS.size();i++){
+            SimpleCommentDTO simpleCommentDTO=new SimpleCommentDTO();
+            simpleCommentDTO.setDid(unResolveBookInfoDTOS.get(i).getWx_openid());
+            simpleCommentDTO.setCreate_time(unResolveBookInfoDTOS.get(i).getBookTime());
+            simpleCommentDTO.setIcon(unResolveBookInfoDTOS.get(i).getIcon());
+            simpleCommentDTO.setName(unResolveBookInfoDTOS.get(i).getName());
+            simpleCommentDTOS.add(simpleCommentDTO);
+        }
+        return simpleCommentDTOS;
     }
     /**
      * @Description:获取医生已经处理的妈妈等待咨询的信息列表
