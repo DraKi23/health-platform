@@ -101,7 +101,18 @@ public class CommentController {
         List<UnResolveBookInfoDTO> simpleCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
         return AjaxResponse.success(simpleCommentList);
     }
-
+    /**
+     * @Description:获取医生已经处理的妈妈等待咨询的信息列表
+     * @Author: jinli
+     * @Date: 2020/4/23 19:13
+     * @param doctorOpenid: 医生openID
+     * @return: com.gop3.entity.AjaxResponse
+     **/
+    @GetMapping("/doc/dealt")
+    public List<SimpleCommentDTO> getDealtCommentInfo(@RequestParam("did") String doctorOpenid){
+        List<SimpleCommentDTO> dealtCommentList= commentService.getDealtCommentListForDoc(doctorOpenid);
+        return dealtCommentList;
+    }
     /**
      * @Description: 插入医生医疗建议的记录到数据库中
      * @Author: Drgn

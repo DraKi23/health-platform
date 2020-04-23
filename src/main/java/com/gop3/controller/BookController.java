@@ -90,23 +90,22 @@ public class BookController {
     public BookInfoDetailDTO getBookInfoDetail(BookInfoDetailReqDTO bookInfoDetailReqDTO){
         return bookService.getBookInfoDetailForDoc(bookInfoDetailReqDTO);
     }
-
     /**
      * @Description:将医生处理妈妈预约复诊的结果存进数据库
      * @Author: jinli
-     * @Date: 2020/4/23 18:05
-     * @param bookHandleDTO:
+     * @Date: 2020/4/23 11:51
+     * @param did:openid
+     * @param mid:openid
+     * @param bookTime:
+     * @param isReturn:
      * @return: java.lang.Boolean
      **/
-   /* @GetMapping("/doc/handlebook")
+    @GetMapping("/doc/handlebook")
      public Boolean handleBook(@RequestParam String did,
                                @RequestParam String mid,
                                @RequestParam String bookTime,
                                @RequestParam int isReturn){
          return bookService.handleBook(did,mid,bookTime,isReturn);
-     }*/
-    @GetMapping("/doc/handlebook")
-    public Boolean handleBook(BookHandleDTO bookHandleDTO){
-        return bookService.handleBook(bookHandleDTO);
-    }
+     }
+
 }

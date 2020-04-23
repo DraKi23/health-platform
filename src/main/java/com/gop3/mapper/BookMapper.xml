@@ -87,6 +87,6 @@
     <update id="updateBookState" >
         update health_book
         set isReturn = #{isReturn}
-        where mid=#{doctorId} and did = #{motherId} and bookTime=#{bookTime}
+        where mid=#{motherId} and did = #{doctorId} and bookTime=#{bookTime}
     </update>
 </mapper>

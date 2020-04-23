@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class CommentServiceImpl implements CommentService {
     private MotherMapper motherMapper;
     @Autowired
     private DoctorMapper doctorMapper;
+
 
     /**
      * @Description: 获取咨询医疗建议列表
@@ -182,6 +184,28 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(String doctorOpenid) {
         return commentMapper.getSimpleCommentListForDoc(doctorOpenid);
+    }
+    /**
+     * @Description:获取医生已经处理的妈妈等待咨询的信息列表
+     * @Author: jinli
+     * @Date: 2020/4/23 19:11
+     * @param doctorOpenid:
+     * @return: java.util.List<com.gop3.dto.UnResolveBookInfoDTO>
+     **/
+    @Override
+    public List<SimpleCommentDTO> getDealtCommentListForDoc(String doctorOpenid) {
+        List<UnResolveBookInfoDTO> unResolveBookInfoDTOS=commentMapper.getDealtCommentListForDoc(doctorOpenid);
+        List<SimpleCommentDTO> simpleCommentDTOS = new ArrayList<SimpleCommentDTO>();
+        System.out.println(unResolveBookInfoDTOS.size()+unResolveBookInfoDTOS.get(0).getWx_openid());
+        for (int i=0;i<unResolveBookInfoDTOS.size();i++){
+            SimpleCommentDTO simpleCommentDTO=new SimpleCommentDTO();
+            simpleCommentDTO.setDid(unResolveBookInfoDTOS.get(i).getWx_openid());
+            simpleCommentDTO.setCreate_time(unResolveBookInfoDTOS.get(i).getBookTime());
+            simpleCommentDTO.setIcon(unResolveBookInfoDTOS.get(i).getIcon());
+            simpleCommentDTO.setName(unResolveBookInfoDTOS.get(i).getName());
+            simpleCommentDTOS.add(simpleCommentDTO);
+        }
+        return simpleCommentDTOS;
     }
 
     /**

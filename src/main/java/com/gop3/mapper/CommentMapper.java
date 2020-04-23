@@ -32,5 +32,7 @@ public interface CommentMapper {
     int insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO);
     // 获取某一妈妈被处理的详情信息
     CommentDetailByDocDTO getCommentDetailToDoc(CommentDetailReqDTO commentDetailReqDTO);
+    // 获取医生已经处理的妈妈等待咨询的信息列表
+    List<UnResolveBookInfoDTO> getDealtCommentListForDoc(@Param("doctorOpenid") String doctorOpenid);
 
 }
