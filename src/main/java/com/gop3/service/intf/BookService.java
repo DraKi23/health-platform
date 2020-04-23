@@ -26,6 +26,7 @@ public interface BookService {
     // 医生获取某一位妈妈的预约详情
     BookInfoDetailDTO getBookInfoDetailForDoc(BookInfoDetailReqDTO bookInfoDetailReqDTO);
     //医生处理预约复诊信息，将处理结果写入数据库
-    Boolean handleBook(String doctor_openid,String mother_openid, String bookTime, int isReturn);
+   // Boolean handleBook(String doctor_openid,String mother_openid, String bookTime, int isReturn);
+    Boolean handleBook(BookHandleDTO bookHandleDTO);
 
 }

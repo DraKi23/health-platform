@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="drgn 15th upload~~">
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookHandleDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/BookMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/BookInfoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
@@ -357,7 +357,11 @@
       <workItem from="1587607928306" duration="1835000" />
       <workItem from="1587609814273" duration="190000" />
       <workItem from="1587610040808" duration="143000" />
-      <workItem from="1587610216557" duration="6306000" />
+      <workItem from="1587610216557" duration="6480000" />
+      <workItem from="1587629875062" duration="1024000" />
+      <workItem from="1587630937193" duration="643000" />
+      <workItem from="1587632386743" duration="766000" />
+      <workItem from="1587634977461" duration="1365000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -639,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587554551454</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="jinli 7th upload~~">
+      <created>1587616658819</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1587616658819</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="jinli 3rd upload~~" />
     <MESSAGE value="drgn 6th upload~~" />
     <MESSAGE value="drgn 6th upload~~private" />
     <MESSAGE value="lijin 5th upload~~" />
@@ -685,7 +695,8 @@
     <MESSAGE value="drgn 14th upload~~ case-comment-pricture-time-little-change2" />
     <MESSAGE value="drgn 15th upload~~ book-little-change1" />
     <MESSAGE value="drgn 15th upload~~ book-getInfoDetail" />
-    <option name="LAST_COMMIT_MESSAGE" value="drgn 15th upload~~ book-getInfoDetail" />
+    <MESSAGE value="jinli 7th upload~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="jinli 7th upload~~" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" />
