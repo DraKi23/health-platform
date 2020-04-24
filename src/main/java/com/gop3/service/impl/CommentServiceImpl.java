@@ -187,7 +187,7 @@ public class CommentServiceImpl implements CommentService {
         List<SimpleCommentDTO> simpleCommentDTOS = new ArrayList<SimpleCommentDTO>();
         for (int i=0;i<unResolveBookInfoDTOS.size();i++){
             SimpleCommentDTO simpleCommentDTO=new SimpleCommentDTO();
-            simpleCommentDTO.setDid(unResolveBookInfoDTOS.get(i).getWx_openid());
+            simpleCommentDTO.setMid(unResolveBookInfoDTOS.get(i).getWx_openid());
             simpleCommentDTO.setCreate_time(unResolveBookInfoDTOS.get(i).getBookTime());
             simpleCommentDTO.setIcon(unResolveBookInfoDTOS.get(i).getIcon());
             simpleCommentDTO.setName(unResolveBookInfoDTOS.get(i).getName());
@@ -206,10 +206,9 @@ public class CommentServiceImpl implements CommentService {
     public List<SimpleCommentDTO> getDealtCommentListForDoc(String doctorOpenid) {
         List<UnResolveBookInfoDTO> unResolveBookInfoDTOS=commentMapper.getDealtCommentListForDoc(doctorOpenid);
         List<SimpleCommentDTO> simpleCommentDTOS = new ArrayList<SimpleCommentDTO>();
-        System.out.println(unResolveBookInfoDTOS.size()+unResolveBookInfoDTOS.get(0).getWx_openid());
         for (int i=0;i<unResolveBookInfoDTOS.size();i++){
             SimpleCommentDTO simpleCommentDTO=new SimpleCommentDTO();
-            simpleCommentDTO.setDid(unResolveBookInfoDTOS.get(i).getWx_openid());
+            simpleCommentDTO.setMid(unResolveBookInfoDTOS.get(i).getWx_openid());
             simpleCommentDTO.setCreate_time(unResolveBookInfoDTOS.get(i).getBookTime());
             simpleCommentDTO.setIcon(unResolveBookInfoDTOS.get(i).getIcon());
             simpleCommentDTO.setName(unResolveBookInfoDTOS.get(i).getName());

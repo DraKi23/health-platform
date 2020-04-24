@@ -9,7 +9,7 @@ import java.util.Date;
  */
 @Data
 public class SimpleCommentDTO {
-    private String did;//医生openid
+    private String mid;//医生openid
     private String icon;//医生头像
     private String name;//医生姓名
     private Date create_time;//上传日期

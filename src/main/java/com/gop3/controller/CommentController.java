@@ -110,7 +110,7 @@ public class CommentController {
      **/
     @GetMapping("/doc/dealt")
     public List<SimpleCommentDTO> getDealtCommentInfo(@RequestParam("did") String doctorOpenid){
-        List<SimpleCommentDTO> dealtCommentList= commentService.getSimpleCommentListForDoc(doctorOpenid);
+        List<SimpleCommentDTO> dealtCommentList= commentService.getDealtCommentListForDoc(doctorOpenid);
         return dealtCommentList;
     }
     /**
