@@ -228,6 +228,8 @@ public class CommentServiceImpl implements CommentService {
     public boolean insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO) {
 //        Date create_time = new Date();
 //        commentDetailByDocDTO.setCreate_time(create_time);
+        commentDetailByDocDTO.setMotherID( motherMapper.getMotherIdByOpenid(commentDetailByDocDTO.getMid()));
+        commentDetailByDocDTO.setDoctorID( doctorMapper.getDoctorIdByOpenid(commentDetailByDocDTO.getDid()));
         int i = commentMapper.insertCommentDetailByDoc(commentDetailByDocDTO);
         return i>0?true:false;
     }

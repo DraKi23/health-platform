@@ -10,11 +10,13 @@ import java.util.List;
  */
 @Data
 public class CommentDetailByDocDTO {
-    //private String did;//医生openID
-    //private String mid;//妈妈openID
+    private String did;//医生openID
+    private String mid;//妈妈openID
+    private Integer motherID;//妈妈id
+    private Integer doctorID;//医生id
     private String icon;
     private String name;
-    //private Date bookTime;//上传时间
+    private Date bookTime;//上传时间
     private String content;//评论内容
     private String create_time;//评论时间
     private List<String> picture;

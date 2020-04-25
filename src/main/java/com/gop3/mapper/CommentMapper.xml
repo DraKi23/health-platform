@@ -77,7 +77,7 @@
     <!-- 插入医生医疗建议的记录到数据库中 -->
     <insert id="insertCommentDetailByDoc" parameterType="com.gop3.dto.CommentDetailByDocDTO">
         insert into health_comment(did, mid, create_time, content,bookTime)
-        values (#{did}, #{mid}, #{create_time}, #{content}, #{bookTime})
+        values (#{doctorID}, #{motherID}, #{create_time}, #{content}, #{bookTime})
     </insert>
 
     <!-- 获取某一妈妈被处理的详情信息 -->

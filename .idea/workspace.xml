@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Picture.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -359,7 +357,9 @@
       <workItem from="1587632386743" duration="766000" />
       <workItem from="1587634977461" duration="8511000" />
       <workItem from="1587688371617" duration="668000" />
-      <workItem from="1587797662162" duration="2497000" />
+      <workItem from="1587797662162" duration="3069000" />
+      <workItem from="1587800788863" duration="42000" />
+      <workItem from="1587815745073" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>
@@ -669,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587645317669</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="jinli 13th upload~~">
+      <created>1587800217654</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1587800217654</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +697,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="lijin 6th upload~~" />
     <MESSAGE value="drgn 9th upload~~ book-did" />
     <MESSAGE value="drgn 9th upload~~ little error" />
     <MESSAGE value="drgn 9th upload~~" />
@@ -715,7 +721,8 @@
     <MESSAGE value="jinli 8th upload~~" />
     <MESSAGE value="jinli 9th upload~~" />
     <MESSAGE value="jinli 10th upload~~" />
-    <option name="LAST_COMMIT_MESSAGE" value="jinli 10th upload~~" />
+    <MESSAGE value="jinli 13th upload~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="jinli 13th upload~~" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="217" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" />
