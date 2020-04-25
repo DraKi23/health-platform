@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -221,16 +223,16 @@ public class CommentServiceImpl implements CommentService {
      * @Description: 插入医生医疗建议的记录到数据库中
      * @Author: Drgn
      * @Date: 2020/2/24 23:18
-     * @param commentDetailByDocDTO: 前台上传的评论医疗建议
+     * @param commentDetailReqDTO: 前台上传的评论医疗建议
      * @return: int
      **/
     @Override
-    public boolean insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO) {
+    public boolean updateCommentDetailByDoc(CommentDetailReqDTO commentDetailReqDTO) {
 //        Date create_time = new Date();
 //        commentDetailByDocDTO.setCreate_time(create_time);
-        commentDetailByDocDTO.setMotherID( motherMapper.getMotherIdByOpenid(commentDetailByDocDTO.getMid()));
-        commentDetailByDocDTO.setDoctorID( doctorMapper.getDoctorIdByOpenid(commentDetailByDocDTO.getDid()));
-        int i = commentMapper.insertCommentDetailByDoc(commentDetailByDocDTO);
+        commentDetailReqDTO.setMotherID( motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid()));
+        commentDetailReqDTO.setDoctorID( doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid()));
+        int i = commentMapper.updateCommentDetailByDoc(commentDetailReqDTO);
         return i>0?true:false;
     }
 

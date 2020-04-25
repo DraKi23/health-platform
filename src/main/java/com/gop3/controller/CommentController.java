@@ -117,12 +117,12 @@ public class CommentController {
      * @Description: 插入医生医疗建议的记录到数据库中
      * @Author: Drgn
      * @Date: 2020/2/24 23:39
-     * @param commentDetailByDocDTO: 前台传入后台的医疗建议
+     * @param commentDetailReqDTO: 前台传入后台的医疗建议
      * @return: com.gop3.entity.AjaxResponse
      **/
     @PostMapping("/doc/add/detail")
-    public AjaxResponse createCommentDetailByDoc(@RequestBody CommentDetailByDocDTO commentDetailByDocDTO){
-        return AjaxResponse.success(commentService.insertCommentDetailByDoc(commentDetailByDocDTO));
+    public AjaxResponse createCommentDetailByDoc(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
+        return AjaxResponse.success(commentService.updateCommentDetailByDoc(commentDetailReqDTO));
     }
 
     /**

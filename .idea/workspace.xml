@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
+    <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="jinli 13th upload~~">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/GetMotherReturnDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/AttentionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenMotherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/AttenMotherDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailByDocDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/CommentDetailReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/AttentionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/AttentionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/AttentionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/AttentionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/intf/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -360,6 +372,7 @@
       <workItem from="1587797662162" duration="3069000" />
       <workItem from="1587800788863" duration="42000" />
       <workItem from="1587815745073" duration="764000" />
+      <workItem from="1587819992178" duration="7870000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>

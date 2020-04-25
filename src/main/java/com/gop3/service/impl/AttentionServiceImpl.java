@@ -1,9 +1,6 @@
 package com.gop3.service.impl;
 
-import com.gop3.dto.AttenDoctorDTO;
-import com.gop3.dto.AttenMotherDTO;
-import com.gop3.dto.GetDoctorDTO;
-import com.gop3.dto.GetMotherDTO;
+import com.gop3.dto.*;
 import com.gop3.mapper.AttentionMapper;
 import com.gop3.mapper.DoctorMapper;
 import com.gop3.mapper.MotherMapper;
@@ -102,7 +99,7 @@ public class AttentionServiceImpl implements AttentionService {
      **/
     @Override
     public List<AttenMotherDTO> getAttenMotherListById(String wx_openid) {
-        Integer did=motherMapper.getMotherIdByOpenid(wx_openid);
+        Integer did=doctorMapper.getDoctorIdByOpenid(wx_openid);
         List<AttenMotherDTO> doctorList=attentionMapper.getAttenMonterListById(did);
         return doctorList;
     }
@@ -114,21 +111,29 @@ public class AttentionServiceImpl implements AttentionService {
      * @return: com.gop3.dto.GetMotherDTO
      **/
     @Override
-    public GetMotherDTO getMotherByWxId(String wx_openid) {
+    public GetMotherReturnDTO getMotherByWxId(String wx_openid) {
+        GetMotherReturnDTO getMotherReturnDTO=new GetMotherReturnDTO();
         GetMotherDTO getMotherDTO=attentionMapper.getGetMotherDTOByOpenid(wx_openid);
         if(getMotherDTO.getBaby_weeks()==null){
-            getMotherDTO.setBaby_born_ornot(-1);
+            getMotherReturnDTO.setIsBorn(-1);
         }
         else{
-            getMotherDTO.setBaby_born_ornot(1);
+            getMotherReturnDTO.setIsBorn(1);
         }
-        if (getMotherDTO.getPrenancy_weeks()==null){
-            getMotherDTO.setPrenancy(-1);
+        if (getMotherReturnDTO.getPregnant_weeks()==null){
+            getMotherReturnDTO.setIsPregnant(-1);
         }
         else{
-            getMotherDTO.setPrenancy(1);
+            getMotherReturnDTO.setIsPregnant(1);
         }
-        return getMotherDTO;
+        getMotherReturnDTO.setAddress(getMotherDTO.getAddress());
+        getMotherReturnDTO.setBaby_weeks(getMotherDTO.getBaby_weeks());
+        getMotherReturnDTO.setBirthday(getMotherDTO.getBirthday());
+        getMotherReturnDTO.setIcon(getMotherDTO.getIcon());
+        getMotherReturnDTO.setName(getMotherDTO.getName());
+        getMotherReturnDTO.setPhone(getMotherDTO.getPhone());
+        getMotherReturnDTO.setPregnant_weeks(getMotherDTO.getPrenancy_weeks());
+        return getMotherReturnDTO;
     }
 
 }

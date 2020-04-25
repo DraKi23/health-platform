@@ -29,7 +29,7 @@ public interface CommentMapper {
     // 获取医生未处理的妈妈等待咨询的信息列表
     List<UnResolveBookInfoDTO> getSimpleCommentListForDoc(@Param("doctorOpenid") String doctorOpenid);
     // 插入医生医疗建议的记录到数据库中
-    int insertCommentDetailByDoc(CommentDetailByDocDTO commentDetailByDocDTO);
+    int updateCommentDetailByDoc(CommentDetailReqDTO commentDetailReqDTO);
     // 获取某一妈妈被处理的详情信息
     CommentDetailByDocDTO getCommentDetailToDoc(CommentDetailReqDTO commentDetailReqDTO);
     // 获取医生已经处理的妈妈等待咨询的信息列表

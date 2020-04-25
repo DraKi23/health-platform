@@ -1,13 +1,11 @@
 package com.gop3.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.gop3.dto.AttenDoctorDTO;
-import com.gop3.dto.AttenMotherDTO;
-import com.gop3.dto.GetDoctorDTO;
-import com.gop3.dto.GetMotherDTO;
+import com.gop3.dto.*;
 import com.gop3.entity.AjaxResponse;
 import com.gop3.service.intf.AttentionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +26,7 @@ public class AttentionController {
      * @param wx_openid: 登陆凭证
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
-    @RequestMapping("/attenDoctorList")
+    @GetMapping("/attenDoctorList")
     public List<AttenDoctorDTO> getDoctorList(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
         List<AttenDoctorDTO> doctorList=attentionService.getAttenDoctorListById(wx_openid);
         return doctorList;
@@ -42,7 +40,7 @@ public class AttentionController {
      * @param wx_openid: 登陆凭证
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
-    @RequestMapping("/unattenDoctorList")
+    @GetMapping("/unattenDoctorList")
     public List<AttenDoctorDTO> getUnDoctorList(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
         List<AttenDoctorDTO> doctorList=attentionService.getUnAttenDoctorListById(wx_openid);
         return doctorList;
@@ -57,7 +55,7 @@ public class AttentionController {
      * @param wx_openid:前台传来的
      * @return: com.gop3.po.Doctor
      **/
-    @RequestMapping("/getDoctor")
+    @GetMapping("/getDoctor")
     public GetDoctorDTO getDoctor(@RequestParam("wx_openid") String wx_openid) throws JsonProcessingException {
         return attentionService.getDoctorByWxId(wx_openid);
 
@@ -70,7 +68,7 @@ public class AttentionController {
      * @param d_openid:
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @RequestMapping("/attendoctor")
+    @GetMapping("/attendoctor")
     public AjaxResponse addDoctorMother(@RequestParam String m_openid, @RequestParam String d_openid){
         Boolean attenSuccess = false;
         attenSuccess = attentionService.insertDoctorMother(m_openid,d_openid);
@@ -99,20 +97,20 @@ public class AttentionController {
      * @param wx_openid:
      * @return: java.util.List<com.gop3.dto.AttenDoctorDTO>
      **/
-    @RequestMapping("/attenMotherList")
+    @GetMapping("/attenMotherList")
     public List<AttenMotherDTO> getMotherList(@RequestParam("wx_openid") String wx_openid){
         List<AttenMotherDTO> motherList=attentionService.getAttenMotherListById(wx_openid);
         return motherList;
     }
     /**
-     * @Description:获取某一位医生信息
+     * @Description:获取某一位妈妈信息
      * @Author: jinli
      * @Date: 2020/2/17 23:03
      * @param wx_openid:
      * @return: com.gop3.dto.GetMotherDTO
      **/
-    @RequestMapping("/getMother")
-    public GetMotherDTO getMother(@RequestParam("wx_openid") String wx_openid) {
+    @GetMapping("/getMother")
+    public GetMotherReturnDTO getMother(@RequestParam("wx_openid") String wx_openid) {
         return attentionService.getMotherByWxId(wx_openid);
 
     }

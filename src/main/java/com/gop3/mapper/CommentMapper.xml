@@ -75,10 +75,11 @@
     </select>
 
     <!-- 插入医生医疗建议的记录到数据库中 -->
-    <insert id="insertCommentDetailByDoc" parameterType="com.gop3.dto.CommentDetailByDocDTO">
-        insert into health_comment(did, mid, create_time, content,bookTime)
-        values (#{doctorID}, #{motherID}, #{create_time}, #{content}, #{bookTime})
-    </insert>
+    <update id="updateCommentDetailByDoc" parameterType="com.gop3.dto.CommentDetailReqDTO">
+        update health_comment
+        set create_time=""#{create_time}"",content=#{content}
+        where bookTime=#{bookTime} and  mid=#{motherID} and did=#{doctorID}
+    </update>
 
     <!-- 获取某一妈妈被处理的详情信息 -->
     <select id="getCommentDetailToDoc" parameterType="com.gop3.dto.CommentDetailReqDTO"
@@ -86,6 +87,6 @@
         select a.icon, a.name, b.content, b.create_time
         from health_mother a, health_comment b
         where a.id = b.mid and b.mid = #{motherID} and b.did = #{doctorID}
-            and b.bookTime = #{bookTime} and b.content is not null
+            and b.bookTime = #{bookTime}
     </select>
 </mapper>

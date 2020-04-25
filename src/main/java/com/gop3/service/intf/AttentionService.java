@@ -1,9 +1,6 @@
 package com.gop3.service.intf;
 
-import com.gop3.dto.AttenDoctorDTO;
-import com.gop3.dto.AttenMotherDTO;
-import com.gop3.dto.GetDoctorDTO;
-import com.gop3.dto.GetMotherDTO;
+import com.gop3.dto.*;
 
 import java.util.List;
 
@@ -24,5 +21,5 @@ public interface AttentionService {
     //获取医生被关注的妈妈列表
     List<AttenMotherDTO> getAttenMotherListById(String wx_openid);
     //获取某一位妈妈信息
-    GetMotherDTO getMotherByWxId(String wx_openid);
+    GetMotherReturnDTO getMotherByWxId(String wx_openid);
 }

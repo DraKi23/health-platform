@@ -32,7 +32,7 @@
     </delete>
     <!--查找妈妈关注的医生列表-->
     <select id="getAttenMonterListById" parameterType="Integer" resultType="com.gop3.dto.AttenMotherDTO">
-         select name,wx_openid,birthday from health_mother where id in
+         select name,wx_openid,birthday,icon from health_mother where id in
         (select mid from health_mother_doctor where did=#{did})
     </select>
 
