@@ -132,9 +132,9 @@ public class CommentController {
      * @param commentDetailReqDTO: 青苔请求的医疗建议详情标识
      * @return: com.gop3.entity.AjaxResponse
      **/
-    @GetMapping("/doc/show/detail")
-    public AjaxResponse getCommentDetailToDoc(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
-        return AjaxResponse.success(commentService.getCommentDetailToDoc(commentDetailReqDTO));
+    @PostMapping("/doc/show/detail")
+    public CommentDetailByDocDTO getCommentDetailToDoc(@RequestBody CommentDetailReqDTO commentDetailReqDTO){
+        return commentService.getCommentDetailToDoc(commentDetailReqDTO);
     }
 
 }

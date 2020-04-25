@@ -241,11 +241,11 @@ public class CommentServiceImpl implements CommentService {
      **/
     @Override
     public CommentDetailByDocDTO getCommentDetailToDoc(CommentDetailReqDTO commentDetailReqDTO) {
+        commentDetailReqDTO.setMotherID( motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid()));
+        commentDetailReqDTO.setDoctorID( doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid()));
         CommentDetailByDocDTO commentDetailByDocDTO = commentMapper.getCommentDetailToDoc(commentDetailReqDTO);
         List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
-        Integer motherOpenid = motherMapper.getMotherIdByOpenid(commentDetailReqDTO.getMid());
-        Integer doctorOpenid = doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid());
-        commentDetailByDocDTO.setPictures(pictures);
+        commentDetailByDocDTO.setPicture(pictures);
         return commentDetailByDocDTO;
     }
 }

@@ -13,6 +13,6 @@ public class CommentDetailReqDTO {
     private String did;//医生openID
     private Integer motherID;//妈妈id
     private Integer doctorID;//医生id
-    private Date bookTime;//上传咨询时间
-    private String create_time;//回复日期
+    private String bookTime;//上传咨询时间
+    private String create_time;//回复日期zz
 }

@@ -12,6 +12,5 @@ public class Picture {
     private Integer id;//病历图片id
     private String picture;//病例图片url
     private Date creteTime;//创建时间
-
     private Mother mother;//关联妈妈表，多对一
 }
