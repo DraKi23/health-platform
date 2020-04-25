@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6da540f8-caa6-49c4-838e-bf50e987c224" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/dto/SimpleCommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/dto/SimpleCommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/health-platform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/mapper/CommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gop3/service/impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gop3/po/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gop3/po/Picture.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/idea/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../img" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
@@ -358,6 +359,7 @@
       <workItem from="1587632386743" duration="766000" />
       <workItem from="1587634977461" duration="8511000" />
       <workItem from="1587688371617" duration="668000" />
+      <workItem from="1587797662162" duration="2497000" />
     </task>
     <task id="LOCAL-00001" summary="drgn first upload">
       <created>1574780583851</created>

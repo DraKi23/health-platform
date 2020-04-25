@@ -28,9 +28,8 @@
     <select id="getCasePictureList" resultType="String"
             parameterType="com.gop3.dto.CommentDetailReqDTO">
         select picture
-        from health_case a, health_comment b, health_mother_picture c
-        where a.mid = #{motherID} and a.did=#{doctorID} and b.mid = #{motherID} and b.did=#{doctorID}
-            and c.cid = a.id and b.bookTime = #{bookTime}
+        from  health_comment a, health_mother_picture b
+        where a.mid = #{motherID} and a.did=#{doctorID} and a.cid=b.cid and a.bookTime = #{bookTime} and a.bookTime=b.create_time
     </select>
 
     <!-- 创建上传给医生病例图片的记录 -->

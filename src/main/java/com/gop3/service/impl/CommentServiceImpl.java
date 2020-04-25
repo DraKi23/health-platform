@@ -245,7 +245,9 @@ public class CommentServiceImpl implements CommentService {
         commentDetailReqDTO.setDoctorID( doctorMapper.getDoctorIdByOpenid(commentDetailReqDTO.getDid()));
         CommentDetailByDocDTO commentDetailByDocDTO = commentMapper.getCommentDetailToDoc(commentDetailReqDTO);
         List<String> pictures = commentMapper.getCasePictureList(commentDetailReqDTO);
-        commentDetailByDocDTO.setPicture(pictures);
+        if(pictures.size()!=0&&commentDetailByDocDTO!=null){
+            commentDetailByDocDTO.setPicture(pictures);
+        }
         return commentDetailByDocDTO;
     }
 }
