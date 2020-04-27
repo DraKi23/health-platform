@@ -14,7 +14,7 @@
 
     <!--发表文章-->
     <insert id="insertArticle" parameterType="com.gop3.dto.ArticleDTO">
-        insert into health_article(did,title,description,context,picture,create_time)
-        values(#{did},#{title},#{description},#{context},#{picture},#{create_time})
+        insert into health_article(did,title,description,context,picture,create_time,type)
+        values(#{did},#{title},#{description},#{context},#{picture},#{create_time},#{type})
     </insert>
 </mapper>

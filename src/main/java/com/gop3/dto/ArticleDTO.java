@@ -17,4 +17,5 @@ public class ArticleDTO {
     private String context;//文章内容
     private String picture;//文章插图url
     private Date create_time;//文章创建时间
+    private Integer type;//权限类型
 }

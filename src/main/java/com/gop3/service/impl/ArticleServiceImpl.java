@@ -61,8 +61,7 @@ public class ArticleServiceImpl implements ArticleService {
     public Boolean publishArticle(ArticleDTO articleDTO) {
         //根据openid获取did
         articleDTO.setDid(doctorMapper.getDoctorIdByOpenid(articleDTO.getWx_openid()));
-        Date currentTime  = new Date();
-        articleDTO.setCreate_time(currentTime);
+        System.out.println(articleDTO.getPicture());
         return articleMapper.insertArticle(articleDTO);
     }
 }
