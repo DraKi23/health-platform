@@ -1,9 +1,6 @@
 package com.gop3.mapper;
 
-import com.gop3.dto.AttenDoctorDTO;
-import com.gop3.dto.AttenMotherDTO;
-import com.gop3.dto.GetDoctorDTO;
-import com.gop3.dto.GetMotherDTO;
+import com.gop3.dto.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,6 +25,6 @@ public interface AttentionMapper {
     //通过医生id查找关注他的妈妈列表
     List<AttenMotherDTO> getAttenMonterListById(@Param("did") Integer did);
     //根据微信id获取医生对象
-    GetMotherDTO getGetMotherDTOByOpenid(@Param("openid") String openid);
+    GetMotherReturnDTO getGetMotherDTOByOpenid(@Param("openid") String openid);
 
 }

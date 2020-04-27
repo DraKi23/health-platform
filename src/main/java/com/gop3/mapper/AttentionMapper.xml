@@ -37,7 +37,7 @@
     </select>
 
     <!--查找妈妈对象-->
-    <select id="getGetMotherDTOByOpenid" parameterType="String" resultType="com.gop3.dto.GetMotherDTO">
+    <select id="getGetMotherDTOByOpenid" parameterType="String" resultType="com.gop3.dto.GetMotherReturnDTO">
         select * from health_mother where wx_openid=#{openid}
     </select>
 

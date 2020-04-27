@@ -112,27 +112,19 @@ public class AttentionServiceImpl implements AttentionService {
      **/
     @Override
     public GetMotherReturnDTO getMotherByWxId(String wx_openid) {
-        GetMotherReturnDTO getMotherReturnDTO=new GetMotherReturnDTO();
-        GetMotherDTO getMotherDTO=attentionMapper.getGetMotherDTOByOpenid(wx_openid);
-        if(getMotherDTO.getBaby_weeks()==null){
+        GetMotherReturnDTO getMotherReturnDTO=attentionMapper.getGetMotherDTOByOpenid(wx_openid);
+        if(getMotherReturnDTO.getBaby_weeks()==0){
             getMotherReturnDTO.setIsBorn(-1);
         }
         else{
             getMotherReturnDTO.setIsBorn(1);
         }
-        if (getMotherReturnDTO.getPregnant_weeks()==null){
+        if (getMotherReturnDTO.getPregnant_weeks()==0){
             getMotherReturnDTO.setIsPregnant(-1);
         }
         else{
             getMotherReturnDTO.setIsPregnant(1);
         }
-        getMotherReturnDTO.setAddress(getMotherDTO.getAddress());
-        getMotherReturnDTO.setBaby_weeks(getMotherDTO.getBaby_weeks());
-        getMotherReturnDTO.setBirthday(getMotherDTO.getBirthday());
-        getMotherReturnDTO.setIcon(getMotherDTO.getIcon());
-        getMotherReturnDTO.setName(getMotherDTO.getName());
-        getMotherReturnDTO.setPhone(getMotherDTO.getPhone());
-        getMotherReturnDTO.setPregnant_weeks(getMotherDTO.getPrenancy_weeks());
         return getMotherReturnDTO;
     }
 
