@@ -27,9 +27,13 @@ public class CommentController {
      * @return: com.gop3.entity.AjaxResponse
      **/
     @GetMapping("/comment/simple")
-    public AjaxResponse getCommentListForMom(@RequestParam String mid){
+    /*public AjaxResponse getCommentListForMom(@RequestParam String mid){
         List<SimpleCommentDTO> commentList = commentService.getCommentListForMom(mid);
         return AjaxResponse.success(commentList);
+    }*/
+    public List<SimpleCommentShowDTO> getCommentListForMom(@RequestParam String mid){
+        List<SimpleCommentShowDTO> commentList = commentService.getCommentListForMom(mid);
+        return commentList;
     }
 
     /**

@@ -12,7 +12,8 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
     // 获取咨询医疗建议列表
-    List<SimpleCommentDTO> getCommentListForMom(@Param("motherOpenid") String motherOpenid);
+    //List<SimpleCommentDTO> getCommentListForMom(@Param("motherOpenid") String motherOpenid);
+    List<SimpleCommentShowDTO> getCommentListForMom(@Param("motherOpenid") String motherOpenid);
     // 获取某条咨询医疗建议的详细信息
     CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO);
     // 获取妈妈与医生之间的病历表图片列表

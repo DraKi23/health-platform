@@ -10,7 +10,8 @@ import java.util.List;
  */
 public interface CommentService {
     // 获取咨询医疗建议列表
-    List<SimpleCommentDTO> getCommentListForMom(String motherOpenid);
+    //List<SimpleCommentDTO> getCommentListForMom(String motherOpenid);
+    List<SimpleCommentShowDTO> getCommentListForMom(String motherOpenid);
     // 获取某条咨询医疗建议的详细信息
     CommentDetailForMomDTO getCommentDetailForMom(CommentDetailReqDTO commentDetailReqDTO);
 

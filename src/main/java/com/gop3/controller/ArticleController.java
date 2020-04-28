@@ -47,11 +47,30 @@ public class ArticleController {
      * @Description:发表文章
      * @Author: jinli
      * @Date: 2020/2/18 22:25
-     * @param articleDTO:
+     * @param :文件和表单
      * @return: com.gop3.entity.AjaxResponse
      **/
     @RequestMapping("/publishArticle")
-    public AjaxResponse publishArticle(@RequestBody ArticleDTO articleDTO, MultipartFile articlePicture) {
+   /* public AjaxResponse publishArticle(@RequestBody ArticleDTO articleDTO, MultipartFile articlePicture) {
+        String path = UploadImageUtil.uploadImage(articlePicture);
+        articleDTO.setPicture(path);
+        boolean publishSuccess= articleService.publishArticle(articleDTO);
+        return AjaxResponse.success(publishSuccess);
+    }*/
+    public AjaxResponse publishArticle(@RequestParam("title")String title,
+                                       @RequestParam("content")String content,
+                                       @RequestParam("description")String description,
+                                       @RequestParam("did")String wx_openid,
+                                       @RequestParam("type")Integer type,
+                                       @RequestParam("create_time") String create_time,
+                                       @RequestParam("picture") MultipartFile articlePicture) {
+        ArticleDTO articleDTO=new ArticleDTO();
+        articleDTO.setWx_openid(wx_openid);
+        articleDTO.setContext(content);
+        articleDTO.setTitle(title);
+        articleDTO.setDescription(description);
+        articleDTO.setCreate_time(create_time);
+        articleDTO.setType(type);
         String path = UploadImageUtil.uploadImage(articlePicture);
         articleDTO.setPicture(path);
         boolean publishSuccess= articleService.publishArticle(articleDTO);

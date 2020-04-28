@@ -38,8 +38,12 @@ public class CommentServiceImpl implements CommentService {
      * @return: java.util.List<com.gop3.dto.SimpleCommentDTO>
      **/
     @Override
-    public List<SimpleCommentDTO> getCommentListForMom(String motherOpenid) {
+   /* public List<SimpleCommentDTO> getCommentListForMom(String motherOpenid) {
         List<SimpleCommentDTO> list = commentMapper.getCommentListForMom(motherOpenid);
+        return list;
+    }*/
+    public List<SimpleCommentShowDTO> getCommentListForMom(String motherOpenid) {
+        List<SimpleCommentShowDTO> list = commentMapper.getCommentListForMom(motherOpenid);
         return list;
     }
 

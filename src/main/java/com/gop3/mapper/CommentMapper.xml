@@ -8,7 +8,7 @@
         from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{motherOpenid}
     </select>
-    <resultMap id="simpleComment" type="com.gop3.dto.SimpleCommentDTO">
+    <resultMap id="simpleComment" type="com.gop3.dto.SimpleCommentShowDTO">
         <result column="wx_openid" property="did"/>
         <result column="icon" property="icon"/>
         <result column="name" property="name"/>
