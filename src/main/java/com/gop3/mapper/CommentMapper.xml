@@ -12,16 +12,23 @@
         <result column="wx_openid" property="did"/>
         <result column="icon" property="icon"/>
         <result column="name" property="name"/>
-        <result column="bookTime" property="create_time"/>
+        <result column="bookTime" property="bookTime"/>
     </resultMap>
 
     <!-- 根据请求的字段标识获取评论详细信息 -->
-    <select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
+    <!--<select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
             resultType="com.gop3.dto.CommentDetailForMomDTO">
         select b.icon, b.name, a.bookTime, a.content
         from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
             and b.wx_openid = #{did} and a.bookTime = #{create_time}
+    </select>-->
+    <select id="getCommentDetailForMom" parameterType="com.gop3.dto.CommentDetailReqDTO"
+            resultType="com.gop3.dto.CommentDetailForMomDTO">
+        select b.icon, b.name, a.create_time, a.content
+        from health_comment a, health_doctor b, health_mother c
+        where a.did = b.id and a.mid = c.id and c.wx_openid = #{mid}
+            and b.wx_openid = #{did} and a.bookTime = #{bookTime}
     </select>
 
     <!-- 获取妈妈与医生之间的病历表图片列表 -->

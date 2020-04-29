@@ -31,9 +31,9 @@ public class CommentController {
         List<SimpleCommentDTO> commentList = commentService.getCommentListForMom(mid);
         return AjaxResponse.success(commentList);
     }*/
-    public List<SimpleCommentShowDTO> getCommentListForMom(@RequestParam String mid){
+    public AjaxResponse getCommentListForMom(@RequestParam String mid){
         List<SimpleCommentShowDTO> commentList = commentService.getCommentListForMom(mid);
-        return commentList;
+        return AjaxResponse.success(commentList);
     }
 
     /**
