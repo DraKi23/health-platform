@@ -10,7 +10,6 @@ spring:
     password: xxxxx
     ## com.mysql.cj.jdbc.Driver
     driver-class-name: com.mysql.jdbc.Driver
-    ##driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 logging:

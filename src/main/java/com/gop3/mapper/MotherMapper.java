@@ -1,5 +1,6 @@
 package com.gop3.mapper;
 
+import com.gop3.dto.MotherEditInfoDTO;
 import com.gop3.dto.RegMotherDTO;
 import com.gop3.po.Mother;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,4 +18,9 @@ public interface MotherMapper {
     Boolean insertMother(RegMotherDTO regMotherDTO);
     //通过微信openid查找到妈妈的id
     Integer getMotherIdByOpenid(@Param("openid")String openid);
+
+    // 根据微信openID获取妈妈的相关信息
+    MotherEditInfoDTO getMotherInfo(String motherOpenid);
+    // 修改妈妈的相关信息
+    boolean updateMotherInfo(MotherEditInfoDTO motherEditInfoDTO);
 }

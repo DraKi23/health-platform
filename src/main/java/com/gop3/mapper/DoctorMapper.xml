@@ -27,4 +27,24 @@
     <select id="getOpenidById"  parameterType="Integer" resultType="String">
          select wx_openid from health_doctor where id=#{id}
     </select>
+
+    <!--  获取医生的相关信息  -->
+    <select id="getDocInfo" parameterType="String" resultType="com.gop3.dto.DoctorEditInfoDTO">
+        select
+            name, wx_openid, phone, hospital, address, introduce, icon, credentials
+        from
+            health_doctor
+        where
+            wx_openid = #{docOpenid}
+    </select>
+
+    <!-- 修改医生的相关信息 -->
+    <update id="updateDocInfo" parameterType="com.gop3.dto.DoctorEditInfoDTO">
+        update
+            health_doctor
+        set
+            name = #{name}, phone = #{phone}, hospital = #{hospital}, address = #{address}, introduce = #{introduce}, credentials == #{credentials}
+        where
+            wx_openid = #{wx_openid}
+    </update>
 </mapper>

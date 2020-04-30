@@ -1,6 +1,7 @@
 package com.gop3.mapper;
 
 import com.gop3.dto.AttenDoctorDTO;
+import com.gop3.dto.DoctorEditInfoDTO;
 import com.gop3.dto.GetDoctorDTO;
 import com.gop3.dto.RegDoctorDTO;
 import com.gop3.po.Doctor;
@@ -27,4 +28,8 @@ public interface DoctorMapper {
     //通过id查找openid
     String getOpenidById(@Param("id")Integer id);
 
+    // 根据openID获取医生相关信息
+    DoctorEditInfoDTO getDocInfo(String docOpenid);
+    // 修改医生的相关信息
+    boolean updateDocInfo(DoctorEditInfoDTO doctorEditInfoDTO);
 }
