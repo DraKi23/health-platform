@@ -34,6 +34,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <!-- 这里的版本要不要看MySQL的版本,我的是mysql5,需要这行，否则注释掉 -->
+            <version>5.1.48</version>
             <scope>runtime</scope>
         </dependency>
 

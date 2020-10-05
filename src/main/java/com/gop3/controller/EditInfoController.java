@@ -3,11 +3,13 @@ package com.gop3.controller;
 import com.gop3.dto.DoctorEditInfoDTO;
 import com.gop3.dto.MotherEditInfoDTO;
 import com.gop3.service.intf.EditInfoService;
+import com.gop3.utils.UploadImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Create by Drgn on 2020/4/30 13:58
@@ -61,7 +63,9 @@ public class EditInfoController {
      * @return: boolean
      **/
     @GetMapping("/doc/edit")
-    public boolean updateDocInfo(@RequestBody DoctorEditInfoDTO doctorEditInfoDTO){
+    public boolean updateDocInfo(@RequestBody DoctorEditInfoDTO doctorEditInfoDTO, MultipartFile crePicture){
+        String path = UploadImageUtil.uploadImage(crePicture);
+        doctorEditInfoDTO.setCredentials(path);
         return editInfoService.updateDocInfo(doctorEditInfoDTO);
     }
 

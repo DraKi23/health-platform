@@ -17,4 +17,24 @@
         select id from health_mother where wx_openid=#{openid}
     </select>
 
+    <!--  获取妈妈的相关信息  -->
+    <select id="getMotherInfo" resultType="com.gop3.dto.MotherEditInfoDTO" parameterType="String">
+        select
+            wx_openid, phone, address, birthday, pregnant_weeks, icon, baby_weeks
+        from
+            health_mother
+        where
+            wx_openid = #{motherOpenid}
+    </select>
+
+    <!-- 编辑修改妈妈的相关信息 -->
+    <update id="updateMotherInfo" parameterType="com.gop3.dto.MotherEditInfoDTO">
+        update
+            health_mother
+        set
+            phone = #{phone},name = #{name},birthday = #{birthday},address = #{address}, pregnant_weeks = #{pregnant_weeks}
+        where
+            wx_openid = #{wx_openid}
+    </update>
+
 </mapper>
