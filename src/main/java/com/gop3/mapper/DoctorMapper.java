@@ -30,6 +30,9 @@ public interface DoctorMapper {
 
     // 根据openID获取医生相关信息
     DoctorEditInfoDTO getDocInfo(String docOpenid);
-    // 修改医生的相关信息
+    // 修改医生的相关信息(未更换照片)
     boolean updateDocInfo(DoctorEditInfoDTO doctorEditInfoDTO);
+
+    // 修改医生的相关信息(更换照片)
+    boolean updateDocInfoIfUpdatePhoto(DoctorEditInfoDTO doctorEditInfoDTO);
 }

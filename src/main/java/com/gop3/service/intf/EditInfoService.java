@@ -18,4 +18,6 @@ public interface EditInfoService {
     DoctorEditInfoDTO getDocInfo(String doctorOpenid);
     // 编辑资料
     boolean updateDocInfo(DoctorEditInfoDTO doctorEditInfoDTO);
+
+    boolean updateDocInfoIfUpdatePhoto(DoctorEditInfoDTO doctorEditInfoDTO);
 }

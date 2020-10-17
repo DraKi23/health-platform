@@ -60,10 +60,27 @@ public class EditInfoController {
      * @return: boolean
      **/
     @PostMapping("/doc/edit")
-    public boolean updateDocInfo(@RequestBody DoctorEditInfoDTO doctorEditInfoDTO, MultipartFile crePicture){
-        String path = UploadImageUtil.uploadImage(crePicture);
-        doctorEditInfoDTO.setCredentials(path);
+    public boolean updateDocInfo(@RequestBody DoctorEditInfoDTO doctorEditInfoDTO){
         return editInfoService.updateDocInfo(doctorEditInfoDTO);
+    }
+
+    /**
+     * @Description: 如果图片被修改时，走这条接口进行信息的修改
+     * @Author: Drgn
+     * @Date: 2020/10/17 23:34
+     * @param doctorEditInfoDTO:
+     * @param crePicture:
+     * @return: boolean
+     **/
+    @PostMapping("/doc/edit/update")
+    public boolean updateDocInfoIfUpdate(DoctorEditInfoDTO doctorEditInfoDTO, MultipartFile crePicture){
+        String path = UploadImageUtil.uploadImage(crePicture);
+        // 如果修改的图片不能被存储，将可修改的信息修改，图片的路径不被修改
+        if (path == null){
+            return editInfoService.updateDocInfo(doctorEditInfoDTO);
+        }
+        doctorEditInfoDTO.setCredentials(path);
+        return editInfoService.updateDocInfoIfUpdatePhoto(doctorEditInfoDTO);
     }
 
 

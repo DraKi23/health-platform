@@ -68,4 +68,16 @@ public class EditInfoServiceImpl implements EditInfoService {
     public boolean updateDocInfo(DoctorEditInfoDTO doctorEditInfoDTO) {
         return doctorMapper.updateDocInfo(doctorEditInfoDTO);
     }
+
+    /**
+     * @Description: 修改医生的相关信息
+     * @Author: Drgn
+     * @Date: 2020/4/30 16:07
+     * @param doctorEditInfoDTO:
+     * @return: boolean
+     **/
+    @Override
+    public boolean updateDocInfoIfUpdatePhoto(DoctorEditInfoDTO doctorEditInfoDTO) {
+        return doctorMapper.updateDocInfoIfUpdatePhoto(doctorEditInfoDTO);
+    }
 }

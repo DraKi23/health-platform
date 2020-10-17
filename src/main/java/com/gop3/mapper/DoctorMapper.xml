@@ -43,7 +43,17 @@
         update
             health_doctor
         set
-            name = #{name}, phone = #{phone}, hospital = #{hospital}, address = #{address}, introduce = #{introduce}, credentials == #{credentials}
+            name = #{name}, phone = #{phone}, hospital = #{hospital}, address = #{address}, introduce = #{introduce}
+        where
+            wx_openid = #{wx_openid}
+    </update>
+
+    <!-- 修改医生的相关信息 -->
+    <update id="updateDocInfoIfUpdatePhoto" parameterType="com.gop3.dto.DoctorEditInfoDTO">
+        update
+            health_doctor
+        set
+            name = #{name}, phone = #{phone}, hospital = #{hospital}, address = #{address}, introduce = #{introduce} ,credentials=#{credentials}
         where
             wx_openid = #{wx_openid}
     </update>
