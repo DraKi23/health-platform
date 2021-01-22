@@ -20,7 +20,7 @@
     <!--  获取妈妈的相关信息  -->
     <select id="getMotherInfo" resultType="com.gop3.dto.MotherEditInfoDTO" parameterType="String">
         select
-            wx_openid, phone, address, birthday, pregnant_weeks, icon, baby_weeks
+            wx_openid, name, phone, address, birthday, pregnant_weeks, icon, baby_weeks
         from
             health_mother
         where

@@ -12,6 +12,7 @@ public class MotherEditInfoDTO {
     private String name;//妈妈姓名
     private String phone;//妈妈电话号码
     private String address;//妈妈住址
+    private String birthday;//妈妈生日
     private Integer pregnant_weeks;//妈妈怀孕周数
     private Integer baby_weeks;//宝宝出生周数
 }

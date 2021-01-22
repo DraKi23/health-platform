@@ -35,7 +35,7 @@ public class EditInfoController {
      * @param motherEditInfoDTO:
      * @return: boolean
      **/
-    @GetMapping("/mom/edit")
+    @PostMapping("/mom/edit")
     public boolean updateMotherInfo(@RequestBody MotherEditInfoDTO motherEditInfoDTO){
         return editInfoService.updateMotherInfo(motherEditInfoDTO);
     }
