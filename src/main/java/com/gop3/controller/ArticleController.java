@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -62,14 +63,13 @@ public class ArticleController {
                                        @RequestParam("description")String description,
                                        @RequestParam("did")String wx_openid,
                                        @RequestParam("type")Integer type,
-                                       @RequestParam("create_time") String create_time,
                                        @RequestParam("picture") MultipartFile articlePicture) {
         ArticleDTO articleDTO=new ArticleDTO();
         articleDTO.setWx_openid(wx_openid);
         articleDTO.setContext(content);
         articleDTO.setTitle(title);
         articleDTO.setDescription(description);
-        articleDTO.setCreate_time(create_time);
+        articleDTO.setCreate_time(new Date());
         articleDTO.setType(type);
         String path = UploadImageUtil.uploadImage(articlePicture);
         articleDTO.setPicture(path);
