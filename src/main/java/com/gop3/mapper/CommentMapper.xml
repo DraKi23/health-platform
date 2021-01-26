@@ -4,7 +4,7 @@
 <mapper namespace="com.gop3.mapper.CommentMapper">
     <!-- 根据妈妈openID获取妈妈咨询建议的简要回复信息 -->
     <select id="getCommentListForMom" parameterType="String" resultMap="simpleComment">
-        select b.wx_openid, b.icon, b.name, a.bookTime
+        select b.wx_openid, b.icon, b.name, DATE_FORMAT(a.bookTime,'%Y-%m-%d %H:%i:%s') bookTime
         from health_comment a, health_doctor b, health_mother c
         where a.did = b.id and a.mid = c.id and c.wx_openid = #{motherOpenid}
     </select>
